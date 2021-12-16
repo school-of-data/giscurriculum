@@ -1,0 +1,70 @@
+---
+slug: Bangladesh
+title: Bangladesh
+language: English
+description: Gentle Introduction to GIS concepts
+date: ""
+author: Ben Hur
+prev: "/en/bangladesh/module/module7"
+next: "/en/bangladesh/module/module9"
+mods:
+  - Gentle Introduction to GIS concepts[/en/bangladesh/module/module0]
+  - Introduction to QGIS[/en/bangladesh/module/module1]
+  - Layers in QGIS[/en/bangladesh/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/en/bangladesh/module/module3]
+  - Layer Styling and Symbology[/en/bangladesh/module/module4]
+  - Map Design and Creation[/en/bangladesh/module/module5]
+  - Layer Attributes[/en/bangladesh/module/module6]
+  - Layer Creation and Editing[/en/bangladesh/module/module7]
+  - Vector Processing and Analysis[/en/bangladesh/module/module8]
+  - Raster Processing and Analysis[/en/bangladesh/module/module9]
+  - QGIS Plugins[/en/bangladesh/module/module10]
+outlines:
+  - Pedagogical Introduction [pedagogical-introduction]
+  - Main content [main-content]
+---
+
+# **Module 8 - Vector processing and analysis**
+
+**Author**: Codrina Ilie
+
+## Pedagogical Introduction
+
+This module is focused on a specific type of geographical data model: vector geodata.
+
+By the end of this module, learners will have the basic understanding of the following concepts:
+
+- vector data model
+- metadata
+- vector processing
+- spatial data analysis
+- geostatistics
+- topology
+- geoprocessing
+
+and acquire the following skills:
+
+- Checking geometric vector dataset quality using algorithms to check vector data topology and perform basic automatic corrections;
+- Working with algorithms to identify errors in the attribute table;
+- Vector data processing - running simple geoprocessing algorithms to answer potential requirements, such as how many public buildings are in my administrative region?
+- Vector data processing - using geostatistics algorithms to fill in missing data.
+
+## Required tools and resources
+
+- This module has been prepared using [QGIS version 3.16 - Hannover](https://qgis.org/en/site/forusers/download.html)
+- [module8.gpkg](data/module8.gpkg) which contains the following layers:
+  - pois (point)
+  - pofw (point)
+  - road (line)
+  - waterways (line)
+  - buildings (polygon)
+  - landuse (polygon)
+  - admin_boundary (polygon)
+- The coordinate reference system used is the Gulshan 303 / Bangladesh Transverse Mercator, EPSG 3106. As it is a projected coordinate system, it allows geometric calculations.
+
+## Prerequisites
+
+- Basic knowledge of operating a computer
+- A robust understanding of modules 0, 1 and 2 and 6 of this curriculum. Module 0 introduces the notion of vector data model that is at the core of this current section. Prior understanding of modules 1, 2 and 6 allows you to focus strictly on the new notions and QGIS functionalities introduced in this new section, without having to wonder how you could load a new layer into your project, or how to work with the attribute table of your dataset.
+
+As part of this module, you will learn how to efficiently work with vector geographical datasets so that you can extract new information. This includes a more in depth understanding of what vector data is, what quality standards it must comply so that it is truly useful, what are the most common operations done on vector data (geoprocessing, geostatistics).

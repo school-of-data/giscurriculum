@@ -1,0 +1,199 @@
+---
+slug: ghana
+title: Germany
+language: English
+description: Gentle Introduction to GIS concepts
+date: ""
+author: Ben Hur
+prev: "/en/ghana"
+next: "/en/ghana/module/module1"
+mods:
+  - Gentle Introduction to GIS concepts[/en/ghana/module/module0]
+  - Introduction to QGIS[/en/ghana/module/module1]
+  - Layers in QGIS[/en/ghana/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/en/ghana/module/module3]
+  - Layer Styling and Symbology[/en/ghana/module/module4]
+  - Map Design and Creation[/en/ghana/module/module5]
+  - Layer Attributes[/en/ghana/module/module6]
+  - Layer Creation and Editing[/en/ghana/module/module7]
+  - Vector Processing and Analysis[/en/ghana/module/module8]
+  - Raster Processing and Analysis[/en/ghana/module/module9]
+  - QGIS Plugins[/en/ghana/module/module10]
+outlines:
+  - Pedagogical Introduction [pedagogical-introduction]
+  - Main content [main-content]
+---
+
+# Module 2 - Layers in QGIS
+
+**Author**: Ben Hur
+
+## Pedagogical Introduction
+
+This module will teach you the basic concepts of layers in QGIS and how to load them. At the end of this module, learners should be familiar with:
+
+- the different data sources and file formats that can be loaded in QGIS
+- the different ways that data can be loaded in QGIS
+- some common data file formats
+
+They should also be able to:
+
+- load layers (both vectors and rasters) using the Browser Panel and the Data Source Manager
+- connect QGIS to remote services
+- work with temporary and virtual layers
+- install some plugins that will load other datasets in QGIS
+- show layer properties such as metadata information
+- save and export layers
+
+## Required tools and resources
+
+The required tools and resources for this module are:
+
+- working computer
+- internet connection
+- QGIS 3.16 installed in the computer ([https://qgis.org/en/site/forusers/download.html](https://qgis.org/en/site/forusers/download.html))
+
+## Prerequisites
+
+- basic knowledge of operating a computer
+- familiarity with spatial data formats and the QGIS interface (completion of Modules 0 and 1)
+
+## Additional resources
+
+- QGIS User Guide - [https://docs.qgis.org/3.16/en/docs/user_manual/](https://docs.qgis.org/3.16/en/docs/user_manual/)
+- QGIS Training Manual - [https://docs.qgis.org/3.16/en/docs/training_manual/index.html](https://docs.qgis.org/3.16/en/docs/training_manual/index.html)
+- Basemaps in QGIS - [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+- Connecting QGIS to Remote Services -[https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+- Spreadsheet Layers Plugin - [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+
+## Thematic introduction
+
+![Multiple layer analysis in GIS](media/spatial-layers.jpg "Multiple layer analysis in GIS")
+
+Figure 2.1. A map overlay containing different layers and data types ([https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html))
+
+We learned from the previous modules that spatial data models such as vectors and rasters are models of real-world objects and phenomena and while it is perfectly okay to have a single layer that models one thing (e.g. elevation, temperature, household locations, zoning, etc.), in practice if we want to perform useful analysis or create a model that reflects the real-world better then we would need to use several data and layers together. Overlaying multiple thematic maps of the same area by putting them on top of each other is one of the oldest and most common geographic analysis techniques.
+
+## Breakdown of the concepts
+
+The picture above gives us a simple and concrete example of this. Imagine being a GIS consultant tasked with finding the best location for a new franchise restaurant (e.g. Jollibee or McDonalds). In order to do this, you would need to gather the relevant information that would help you decide. This can include information on the city streets, parcels of land, location and distribution of possible customers, the topography of the area, land use, etc.
+
+These datasets can come in different types and formats. Some could be vector files while others can be rasters. Some can be in the same coordinate reference system while others can be in different coordinate reference systems. Some can be local files found in your computer while others can only be loaded via the internet. Because of the many possibilities as to what kind of data you would need for your spatial analysis, a good GIS should be able to handle and manage a variety of data sources.
+
+## Main content
+
+### Phase 1 title: Data Types, File Formats, the Browser Panel, and the Layers Panel
+
+#### **Common Data Types and File Formats**
+
+Aside from the spatial data models (rasters and vectors) discussed in the first module, familiarity with geospatial file formats and their pros and cons is also important for anyone doing spatial analysis.
+
+Most people who are new to GIS usually get introduced to spatial data via shapefiles. Most people never outgrow this and use shapefile to mean all types and forms of vector data. This is similar to how a specific brand like Coca Cola starts to get used as the general term for soft drinks. This isn’t necessarily wrong but is rather unfortunate since shapefiles are but one of the many kinds of vector data format. In fact, in some cases, other vector formats like geopackage, geojson, topojson, and flatgeobuf. The shapefile format, while ubiquitous, has some significant limitations such as:
+
+- It is not just 1 file. A shapefile actually consists of several files, 3 of which are mandatory: .shp, .shx, .dbf. All other files are called sidecar files.
+- It has a 2GB size limit for each individual file.
+- Field names are limited to 10 characters.
+- Attribute columns are limited to 255 columns.
+- There is no support for some data types such as time.
+- It does not explicitly store topology.
+
+Other data formats such as GeoPackage, GeoJSON, TopoJSON, and flatgeobuff remedy these limitations of shapefiles. In fact, QGIS and GRASS GIS have switched to GeoPackage as the default vector file format when importing or exporting layers and although GeoPackage also has some limitations, being a completely open format allows the community to help shape the future of the format.
+
+So, if not shapefiles, what should you use?
+
+There’s nothing wrong with using shapefiles especially if it fits your use-case. If you don’t need a dataset that goes beyond 2GB; if you’re okay with having a limit of 10 characters to your field names; or if you’re working with a small number of files locally, a shapefile is completely fine.
+
+However, if you want to package your QGIS project together with all the layers (vectors, rasters), styling, and models; or you want to share multiple types of layers and spatial data in a single file, a GeoPackage is worth a look. GeoPackages and GeoJSONs are also web-friendly and can be used directly by web mapping libraries such as Mapbox and Leaflet.
+
+You can read more in the link below: [https://bnhr.xyz/2018/12/12/i-choose-geopackage.html](https://bnhr.xyz/2018/12/12/i-choose-geopackage.html)
+
+Meanwhile, any format that can be represented as a grid of pixels or cells can be read by QGIS as raster data. This includes image formats such as PNG (.png) and JPEG (.jpg). It’s worth noting that although all image file formats can be read as rasters, not all of them are georeferenced or contain geospatial information that allows us to locate them properly on the earth. For instances like this, we can use what’s known as a world file ([https://en.wikipedia.org/wiki/World_file](https://en.wikipedia.org/wiki/World_file)). . A world file is a separate, plaintext data file whose name is the same as the raster file it pertains to and whose file extension has the letter w added to the end. For example, the world file for **world.png** will be named **world.pngw **or **world.pgw**.
+
+Some image file formats contain explicit georeferencing and information and do not need a world file. Some examples are GeoTIFFs (.tif or tiff) and ERDAS Imagine file format (.img).
+
+For more information about file formats you can also check out: [https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html)
+
+Geospatial data can also come in the form of geospatial databases. These can be enterprise-level databases like the free and open source Postgres with PostGIS extension ([https://postgis.net/](https://postgis.net/)) or ESRI’s proprietary ArcSDE. There are also file geodatabases that can store different types of data (e.g. vectors and rasters) inside them. Some examples are the free and open OGC GeoPackage (.gpkg) ([https://www.geopackage.org/](https://www.geopackage.org/)) and the proprietary File Geodatabase format by ESRI (.gdb).
+
+#### **Types of Data Sources**
+
+One of the most powerful features of QGIS is its ability to connect, load, and use different spatial and non-spatial data from a variety of sources. QGIS can open:
+
+- local raster and vector files
+- local databases
+- files and databases on the internet via their uniform resource identifier (URI) or uniform resource locator (URL),
+- web services (OSGeo web services and ArcGIS web services), tile services, and data portals such as GeoNode
+- and many more...
+
+QGIS can also connect and load data from services such as NASA’s SRTM data, Planet imagery, SentinelHub, Google Earth Engine, and OpenStreetMap through the power of plugins.
+
+This makes QGIS an integral component for any spatial data infrastructure or workflow.
+
+#### **Loading Layers in QGIS**
+
+There are several ways to load layers in QGIS. These include:
+
+1. **Drag-and-drop** the layer in the QGIS Map Canvas or Layer Panel. This might be the easiest way to load a layer in QGIS but is not the recommended approach as there are gotchas when using this approach like when loading non-spatial tabular data like CSVs.
+2. Using the **Browser Panel**.
+3. Using the **Data Source Manager**.
+4. Using the **Data Source Manager toolbar** and the **Manage Layers toolbar**.
+
+**NOTE:** _When loading layers, the default colors of your layers may be different than the default colors shown in this module._
+
+#### **The Browser Panel**
+
+The** Browser Panel **displays a file tree that shows your computer's files and folders as well as connections to databases and web servers. By default, it is docked on the left side of the QGIS user interface together with the Layers Panel.
+
+The Browser Panel exposes a lot of functionalities to connect, load, and show information about layers. You can also create connections to Favorite directories and Spatial Bookmarks in the Browser Panel.
+
+To learn more about the Browser Panel, go to: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/browser.html)
+
+#### **Exercise 01.1: The Browser Panel**
+
+1. Open QGIS.
+2. Check the Browser Pane (Figure 2.2). If you can’t find the Browser Panel, you can make it visible under **View ‣ Panels ‣ Browser Panel** in the Menu bar.
+
+![The QGIS Browser Panel](media/qgis-browser-1.png "The QGIS Browser Panel")
+
+Figure 2.2. The Browser Panel
+
+3. Notice how the drives and folders can be expanded to show the subfolders inside them.
+4. Locate the **Module 2 - Layers in QGIS** folder (Figure 2.3) in the file tree (note where you saved or downloaded the file). You should be able to see the necessary data for this workbook. In my example on the right, I linked the aforementioned folder as one of my Favorites so I can easily go to it from the Browser Panel. You can add a favorite directory to the Browser Panel by right-clicking on Favorites and adding the directory.
+5. Check the files inside the folder (Figure 2.3). There are several of them. From the file tree itself, we can already get an idea of the files and layers that we can load in QGIS. The icons on the left of the names indicate whether the data is a vector ![Vector symbol](media/symbol-vector.png "Vector symbol")
+   , a raster ![Raster symbol](media/symbol-raster.png "Raster symbol"), a database ![Database symbol](media/symbol-db.png "Database symbol"), or simple tabular data ![Table symbol](media/symbol-table.png "Table symbol").
+
+![Module 2 files in the Browser Panel](media/qgis-browser-2.png "Module 2 files in the Browser Panel")
+
+Figure 2.3. The Module files in the Browser Panel
+
+6. There are 5 files under the data folder:
+
+   1. a GeoPackage (ghana_ashanti.gpkg) which contains a vector (ashanti_schools) and raster file (ashanti_SRTM_DEM);
+   2. a GeoJSON (ghana_districts.geojson);
+   3. a flatgeobuf file (ghana_regions.fgb);
+   4. a shapefile (ghana_country_admin_boundary.shp); and
+   5. a comma-separated value (CSV) file (ashanti_McDonalds.csv).
+
+7. Right click on NCR_admin_boundary.shp and click Layer Properties (Figure 2.4). This opens the layer properties window (Figure 2.5). Notice the information provided in the window. What is the geometry of the layer? What CRS is used? How many features are in the layer?
+
+![Checking Layer Properties](media/qgis-browser-3.png "Checking Layer Properties")
+
+Figure 2.4.Checking Layer Properties
+
+![Layer Properties from Browser Panel](media/qgis-browser-layer-properties.png "Layer Properties from Browser Panel")
+
+Figure 2.5. Layer Properties from Browser Panel
+
+8. Aside from providing metadata on the layers, you can also preview the geometry and attributes of the layer in the layer properties window.
+9. You can load a layer from the Browser Panel by:
+
+   1. **double-clicking the layer**
+   2. **right-clicking the layer ‣ Add Layer to Project**
+   3. **dragging the layer to the Map Canvas**
+
+10. Try to load the **ghana_country_admin_boundary**, **ghana_districts**, and **ghana_regions** layers using any of the methods above.
+
+![The vector layers loaded in QGIS](media/vector-layers-loaded-1.png "The vector layers loaded in QGIS")
+
+Figure 2.6. The vector layers loaded in QGIS
+
