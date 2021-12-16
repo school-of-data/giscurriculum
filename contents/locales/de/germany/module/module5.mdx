@@ -1,0 +1,75 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module4"
+next: "/de/germany/module/module6"
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# Modul 5 - Karten erstellen
+
+**Autor:in**: Ketty
+
+## Pädagogische Einführung
+
+In diesem Modul erhalten Sie einen Überblick über die üblichen Schritte, die zur Erstellung einer Karte in QGIS notwendig sind. Am Ende des Moduls werden die Teilnehmenden die folgenden Konzepte kennen;
+
+- Kartenbereich und zugehörige Layer
+- Das Drucklayout und die Druckvorlage
+- Kartenelemente und Eigenschaften
+
+Darüber hinaus werden Sie die folgenden Fähigkeiten erlernt haben:
+
+- Verwenden des Drucklayouts zur Erstellung einer Karte
+- Hinzufügen von Kartenelementen zur Karte
+- Verwalten verschiedener Drucklayouts
+
+## Technische Voraussetzungen
+
+- Arbeitsfähiger Computer
+- Internetzugang
+- QGIS 3.16 oder neuer
+- Mittelsachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+- Schulen-Mittelsachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+- Landkreise_Sachsen (innerhalb von [Modul-5.gpkg](data/Modul-5.gpkg))
+- [Sachsen High Resolution Settlement Layer](data/HRSL_Mittelsachsen.tif)
+
+## Voraussetzungen
+
+- Grundkenntnisse in der Bedienung eines Computers
+- Verständnis für alle vorherigen Module
+
+## Zusätzliche Ressourcen
+
+- QGIS Kartenlayout - [https://docs.qgis.org/3.16/de/docs/training_manual/map_composer/index.html](https://docs.qgis.org/3.16/de/docs/training_manual/map_composer/index.html)
+- Layout-Hub - [https://layout-hub.github.io/](https://layout-hub.github.io/)
+- Der Style Manager - [https://docs.qgis.org/3.16/de/docs/user_manual/style_library/style_manager.html](https://docs.qgis.org/3.16/de/docs/user_manual/style_library/style_manager.html)
+- Die Stilbibliothek - [https://docs.qgis.org/3.16/de/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/de/docs/user_manual/style_library/index.html)
+
+## Thematische Einführung
+
+Lassen Sie uns mit einem Beispiel beginnen:
+
+Um eine Karte zu erstellen, benötigen Sie eine Frage, das Sie besser verstehen möchten, z. B. "Räumliche Verteilung von Schulen in Mittelsachsen". Sie werden feststellen, dass die Frage sowohl ein zu erforschendes Thema als auch die geografische Lage vorgibt. Mit diesen Informationen und den relevanten Daten, die es Ihnen erlauben, die Frage weiter zu erforschen, können Sie loslegen und eine Karte erstellen.
+
+### Gliederung der Konzepte
+
+Dieses Modul konzentriert sich auf die folgenden Schlüsselkonzepte der Kartenerstellung: die Kartenansicht und die zugehörigen Layer, das Drucklayout sowie die Kartenelemente und -eigenschaften. Zunächst werden die einzelnen Begriffe kurz definiert;
+
+- Die **Kartenansicht und das Layer-Bedienfeld**: sind wahrscheinlich die wichtigste Widgets innerhalb von QGIS. Sie zeigen die aus überlagerten Kartenebenen zusammengesetzte Karte und erlaubt die Interaktion mit der Karte und den Ebenen. Beides wurde im Modul 0: Einführung in QGIS behandelt
+- das **Drucklayout** : Das Drucklayout bietet Layout- und Druckfunktionen. Es erlaubt Ihnen, Elemente wie die QGIS-Kartenansicht, Textbeschriftungen, Bilder, Legenden, Maßstabsbalken, Grundformen, Pfeile, Attributtabellen und HTML-Rahmen hinzuzufügen. Mit dem Druck-Layout können Sie schöne Karten und Atlanten erstellen, die gedruckt oder als PDF-Datei, ein Bild oder eine SVG-Datei gespeichert werden können. Dies ist eine leistungsfähige Möglichkeit, mit QGIS erstellte geografische Informationen weiterzugeben, die in Berichte aufgenommen oder veröffentlicht werden können. Sie können das Layout als Vorlage speichern und in einer anderen Sitzung wieder laden. Schließlich können Sie mit dem Atlas-Generator mehrere Karten auf Basis einer Vorlage erzeugen. Die Abbildung unten zeigt die Schnittstelle für das Drucken von Layouts und Druckvorlagen. Diese Ansicht wird geöffnet, wenn Sie ein neues Drucklayout öffnen.

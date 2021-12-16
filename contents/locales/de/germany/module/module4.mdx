@@ -1,0 +1,84 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module3"
+next: "/de/germany/module/module5"
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# Modul 4 - Layer-Styling
+
+**Autor:in**: Ketty
+
+## Pädagogische Einführung
+
+In diesem Modul lernen Sie, wie Sie das visuelle Erscheinungsbild einer Karte durch die Auswahl geeigneter Symbole und Kartenfarben verändern können. Am Ende des Moduls sollten Sie Konzepte wie Kartensymbologie und Kartenstile kennen. Außerdem erlernen Sie die folgenden Fähigkeiten:
+
+- Styling von Layern
+- grundlegende Raster- und Vektorsymbole und wie man sie auf einen Layer anwendet
+- Mischmodi und Zeicheneffekte
+- Verwenden von Abfragen, um räumliche Operationen auszuführen
+
+## Technische Voraussetzungen
+
+- Computer
+- Internetverbindung
+- QGIS 3.16 oder neuer
+- Mittelsachsen (innerhalb von [Modul4.gpkg](data/Modul4.gpkg))
+- Schulen-Mittelsachsen (innerhalb von [Modul4.gpkg](data/Modul4.gpkg))
+- [Mittelsachsen High Resolution Settlement Layer](data/HRSL_Mittelsachsen.tif)
+
+## Voraussetzungen
+
+- Grundkenntnisse in der Bedienung eines Computers
+- Grundlegendes Verständnis aller vorherigen Module
+
+## Zusätzliche Ressourcen
+
+- QGIS-Symbologie - [https://docs.qgis.org/3.16/de/docs/training_manual/basic_map/symbology.html](https://docs.qgis.org/3.16/de/docs/training_manual/basic_map/symbology.html)
+- Style Sharing Repository - [https://www.gislounge.com/qgis-style-sharing-repository/](https://www.gislounge.com/qgis-style-sharing-repository/)
+- Stile - [https://plugins.qgis.org/styles/](https://plugins.qgis.org/styles/)
+- Style Hub - [https://style-hub.github.io/](https://style-hub.github.io/)
+- Hillshade in QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
+- Kartierung von Eisbergen in QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
+
+## Thematische Einführung
+
+Lassen Sie uns mit einem Beispiel beginnen:
+
+Stellen wir uns vor, Sie sind in einer neuen Stadt, vielleicht als Tourist:in, in der Freizeit oder aus geschäftlichen Gründen. In der Stadt gibt es eine Reihe von Orten, die man gesehen haben muss, wie z. B. Museen, Cafés, Strandpromenaden, Denkmäler, Kulturläden und Märkte. Sie erhalten dann einen Papier-Stadtplan, auf dem Sie die Punkte finden, die Sie unbedingt sehen müssen. Die touristischen Punkte sind alle ausschließlich als rote Punkte markiert. Würde dieser Stadtplan Ihrer Meinung nach Ihre Tour durch die neue Stadt erleichtern? Vermutlich nicht.
+
+Deshalb lernen Sie im folgenden, eine Karte mit verschiedenen Symbolen und Farben zu erstellen. Was Sie nach der Anwendung von Styling-Konzepten in Ihrer Karte sehen, ist eine dynamische visuelle Darstellung der Daten, mit denen Sie arbeiten.
+
+### Wichtige Bedienfelder, Registerkarten und Darstellungsarten
+
+#### **Layergestaltung-Bedienfeld**
+
+Dieses Bedienfeld ist gewissermaßen eine Abkürzung zu einigen Funktionen des Dialogs "Layereigenschaften". Es bietet Ihnen eine schnelle und praktische Möglichkeit, das Rendering und das Verhalten eines Layers zu definieren und seine Auswirkungen zu visualisieren, ohne den Layer-Eigenschaften-Dialog zu öffnen.
+
+Es erspart Ihnen nicht nur den Umgang mit dem modalen und blockierenden Dialog der Layereigenschaften, sondern auch die Überfrachtung des Bildschirms mit Funktionsdialogen, da die meisten von ihnen (Farbauswahl, Effekteigenschaften, Regelbearbeitung, Beschriftungsersetzung...) eingebettet sind: Wenn Sie z. B. auf die Farbschaltflächen im Layer-Bedienfeld klicken, wird der Farbauswahldialog im Layer-Bedienfeld selbst geöffnet und nicht als separater Dialog.
+
+Wählen Sie im Layergestaltung-Bedienfeld aus der Dropdown-Liste einen Layer aus. Sie können nun:
+
+- seine Symbologie, Transparenz und sein Histogramm im Falle einer Rasterebene einstellen. Diese Optionen sind dieselben, die auch im Dialogfeld "Rasterlayereigenschaften" ([https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog](https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog)) verfügbar sind.
+- seine Symbologie und Beschriftung einstellen. Diese Optionen sind auch im Dialogfeld "Vektoreigenschaften" ([https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog](https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog)) verfügbar.
+- die gesamte Historie der Änderungen überblicken, die Sie im aktuellen Projekt auf den Layer-Stil angewendet haben. Sie können also jeden Zustand rückgängig machen oder wiederherstellen, indem Sie ihn in der Liste auswählen und auf Anwenden klicken.
+
+Eine weitere leistungsstarke Funktion dieses Bedienfelds ist das Kontrollkästchen Live-Aktualisierung. Aktivieren Sie es und Ihre Änderungen werden automatisch in der Kartenansicht gerendert, während Sie fortfahren. Sie müssen nicht mehr auf die Schaltfläche "Anwenden" klicken.
+
+Um das Bedienfeld zu aktivieren, klicken Sie auf Ansicht->Bediefelder und markieren Sie dann Layergestaltung.

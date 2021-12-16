@@ -1,0 +1,144 @@
+---
+slug: ghana
+title: Germany
+language: English
+description: Gentle Introduction to GIS concepts
+date: ""
+author: Ben Hur
+prev: "/en/ghana"
+next: "/en/ghana/module/module1"
+mods:
+  - Gentle Introduction to GIS concepts[/en/ghana/module/module0]
+  - Introduction to QGIS[/en/ghana/module/module1]
+  - Layers in QGIS[/en/ghana/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/en/ghana/module/module3]
+  - Layer Styling and Symbology[/en/ghana/module/module4]
+  - Map Design and Creation[/en/ghana/module/module5]
+  - Layer Attributes[/en/ghana/module/module6]
+  - Layer Creation and Editing[/en/ghana/module/module7]
+  - Vector Processing and Analysis[/en/ghana/module/module8]
+  - Raster Processing and Analysis[/en/ghana/module/module9]
+  - QGIS Plugins[/en/ghana/module/module10]
+outlines:
+  - Pedagogical Introduction [pedagogical-introduction]
+  - Main content [main-content]
+---
+
+# Module 10 - QGIS plugins
+
+**Author**: Codrina, Ben Hur
+
+## Pedagogical Introduction
+
+This module will highlight some of the most interesting and, hopefully useful, plugins that the QGIS international community has developed and made available for everyone to use. Given the topic of the module,
+
+## and acquire the following skills:
+
+- How to search and install a new plugin
+- How to switch between the different plugins repositories
+- How to read a plugin documentation and what to look for.
+- Details on some of the most popular(?) plugins functionalities.
+
+## Required Tools and Resources
+
+- This module has been prepared using [QGIS version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html)
+
+## Prerequisites:
+
+- Basic knowledge of operating a computer
+- A robust understanding of all modules, as the plugins we will present apply to various notions/elements that you’ve learned about as going through this curriculum, such as vectors, rasters, attribute tables, cartographic rules and many others.
+
+## Main content
+
+### Phase 1: Introduction to plugin mentality
+
+One of the many advantages of the open source community - developers and users alike - is the incredible speed with which developments and improvements happen, the way in which new ideas spark and then get put into practice.
+
+As you have seen in module 1, QGIS is designed with a ‘plugin’ architecture, allowing it to be easily customized for the user’ needs by adding external plugins. In fact, QGIS is the combination of the **core** and the **external plugins**. The core plugins - as the name suggests - form the main structure, they are maintained by the QGIS Development Team and they are always included in the installation, such as the Processing core plugin, the Zonal Statistics or the Plugin Manager. Over time, given their relevance, different external plugins migrated towards the core.
+
+Of course, given the open source principles, coupled with the great and very detailed documentations available and the many communication channels and dedicated events, one can learn how to build a plugin that answers one’s requirements. And that is an **external plugin**. On the dedicated [web page](https://plugins.qgis.org/), you can find all the necessary documentation. Most external plugins are written in Python, but they can also be written in C++.
+
+In this first phase, we will explore the QGIS plugin setup - how to search for a plugin to solve a specific requirement one might have, how to interpret its documentation and how to report to the developer if you’ve encountered a problem.
+
+### The Plugin manager
+
+QGIS offers a core plugin to allow users to manage, install, update and uninstall external plugins. The functionality is intuitive, providing full access to the official public plugin repository.
+
+It must be highlighted that the external plugins - be they official or experimental - are the work of individual developers or organizations and the QGIS organization does not take any responsibility for them. That being said, there are some rules that the developers that want to share their work via the official repository, must comply with, as well as a series of recommendations for fast acceptance. Requirements include elements such as a compatible license, minimal documentation, clear identification of dependencies and others. The recommendations include checking if the plugin does not duplicate existing functionality, good shape of the source repository, compatible with all platforms (Windows, Linux, macOS) and many others.
+
+Experimental plugins - that are labelled as such in the plugin manager - are plugins that are in early stages of development, that are not suitable for operational use. They are regarded as “proof of concept” testing and users are not advised to install them unless they intend to use them for testing purposes.
+
+Of course, in order to see the experimental plugins, the user must allow it, Thus in the Plugin manager settings, tick the option `Show also experimental plugins` (Figure 10.2a). There is also the possibility to list the deprecated plugins. These are not recommended because they are not maintained anymore.
+
+The two types are well differentiated in Plugin Manager (see figures 10.1 and 10.2b).
+
+![alt_text](media/fig101.png "image_tooltip")
+
+Figure 10.1 - Manager plugin official plugin
+
+![alt_text](media/fig102_a.png "image_tooltip")
+
+Figure 10.2a - Display experimental plugins
+
+![alt_text](media/fig102_b.png "image_tooltip")
+
+Figure 10.2b - Manager plugin experimental plugin
+
+Another aspect worth mentioning is that the Manager plugin is quite a versatile functionality that allows developers to add they’re private repositories (see figure 10.3).
+
+![alt_text](media/fig103.png "image_tooltip")
+
+Figure 10.3 - Add private plugin repository to your QGIS
+
+That is useful, if for example, inside your organization there is a need for more plugins, but which do not comply with QGIS requirements for public hosting in their official repository. A useful resource on how to set up your own plugin repository is available from [GIS OPS](https://gis-ops.com/qgis-3-plugin-tutorial-set-up-a-plugin-repository-explained/).
+
+The simpler method is to prepare a zip package containing a plugin and that can be shared via traditional ways. However, this method is not encouraged.
+
+Apart from Settings, one might have noticed that there are several other tabs on the left-hand side, with names that are self-explanatory: `All, Installed, Not installed, New, Invalid, Install from ZIP` and, as mentioned, `Settings`.
+
+After deciding which types of plugins to list in your manager, one can switch to the `All` tab and let’s investigate how a plugin appears in the Plugin Manager. For demonstration purposes, search the `Cartographic Line Generalization` plugin.
+
+As you have noticed, the Plugin Manager has a search bar available - here is where one can type one or more keywords suitable for a specific requirement. In our case, the keyword is ‘cartographic/cartography’.
+
+![alt_text](media/fig104.png "image_tooltip")
+
+Figure 10.4 - Searching for a specific plugin in the Plugin Manager
+
+As can be noticed, on the right-hand side there is a window presenting a set of documentation elements. You will notice that these are standardised and each plugin should have the same information made available, in the same way.
+
+The metadata display for each plugin is as follows:
+
+1. Name of plugin and subtitle depicting its capabilities;
+2. Description section - depending on the developer, this section can be more or less detailed;
+3. The number of downloads and how many stars has the plugin received from the community;
+4. The tag words chosen by the developer;
+5. A series of very important links: the webpage of the plugin, the **bug tracker **and the code repository
+6. The name of the developer(s), as well as the affiliated organization. Sometimes, the name of the project in which the plugin had been developed is also listed;
+7. The number of the version, with the mention _stable_ or _experimental_, depending on the case;
+8. The pictogram of the plugin.
+
+In figure 10.5, all mentioned metadata elements are identified.
+
+![alt_text](media/fig105.png "image_tooltip")
+
+Figure 10.5 - Documentation of a plugin
+
+On the lower left side, the` Install plugin` button is available. By activating it, the chosen plugin will be installed on your QGIS and a new pictogram or menu will be added to your QGIS interface.
+
+It is important to mention that usually, due to space limitations, the description available in Plugin Manager is not extensive. So, to best understand if the chosen plugin answers the requirements, one must go to the home page. In our case, we observe that the home page is identical with the code repository - on Gitlab, but this is not always the case (see figure 10.6).
+
+![alt_text](media/fig106_a.png "image_tooltip")
+
+Figure 10.6a - Homepage of selected plugin
+
+![alt_text](media/fig106_b.png "image_tooltip")
+
+Figure 10.6b - Detailed metadata on the plugin homepage
+
+Another very important aspect to highlight regarding a plugin documentation is the web indication of the **bug tracker**. A bug tracker system is a software application that keeps track of all reported software issues (aka bugs). In our case the bug tracker is supported by the dedicated code repository Github (see figure 10.7).
+
+![alt_text](media/fig107.png "image_tooltip")
+
+Figure 10.7 - Bug tracking system in Github for a QGIS plugin
+
+Detailing on how to report a software issue on Github exceeds the scope of this module, however it is important to highlight a few aspects. Firstly, the open source ecosystem - be it for geospatial or not - best functions when all involved parties are active in their part, i.e. developers code and users test and report back on issues identified. If one does a quick search on the different bug trackers for [QGIS](https://github.com/qgis/QGIS/issues) or [GRASS](https://github.com/OSGeo/grass/issues) or other open source solution, will notice intense activity. And this is a good thing, it shows that the community is alive, that the interaction between developers and users functions normally. Secondly, before opening a bug report via the many different channels, make sure you have thoroughly searched online for a solution to your problem. Otherwise, you risk being scorned for not taking the time to do your homework.

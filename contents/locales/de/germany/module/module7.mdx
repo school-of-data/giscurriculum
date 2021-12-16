@@ -1,0 +1,62 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module6"
+next: "/de/germany/module/module8"
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# Modul 7 - Erstellen und Bearbeiten von Layern
+
+**Autor:in**: Ketty
+
+## Pädagogische Einführung
+
+In diesem Modul lernen Sie, wie Sie mit den QGIS-Werkzeugen einen neuen GIS-Layer erstellen. Sie lernen Konzepte wie Digitalisieren und Georeferenzieren kennen.
+
+## Technische Voraussetzungen
+
+- Computer
+- Internetzugang
+- QGIS 3.16 oder neuer
+- [Regionalkarte Münster](https://www.govdata.de/web/guest/suchen/-/details/regionalkarte-nw-1-150-000)
+
+## Voraussetzungen
+
+- Grundlegende Kenntnisse aller vorherigen Module
+- Grundkenntnisse in der Bedienung eines Computers
+
+## Zusätzliche Ressourcen
+
+- Erstellen von Layern - [https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html](https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html)
+- Digitalisieren von Waldbeständen - [https://docs.qgis.org/3.16/de/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing](https://docs.qgis.org/3.16/de/docs/training_manual/forestry/stands_digitazing.html?highlight=digitizing)
+- Weitere Lektüre: [Georeferenzierung einer Karte](https://docs.qgis.org/3.16/de/docs/training_manual/forestry/map_georeferencing.html?highlight=georeferencing)
+
+## Thematische Einführung
+
+Lassen Sie uns mit einem Beispiel beginnen:
+
+Stellen wir uns vor, Ihre Abteilung plant den Bau einer neuen Schule in Ihrem Landkreis. Sie möchten vielleicht eine Umweltvorprüfung für das geplante Infrastrukturprojekt durchführen. Die Bewertung kann eine Recherche der verfügbaren Daten beinhalten. Wie Sie sich vielleicht vorstellen können, gibt es eine große Menge an geografischen Daten in Formaten, die nicht sofort mit anderen GIS-Daten integriert werden können. Einige dieser Daten können in Form von alten Karten, hochauflösenden Satellitenbildern oder fernerkundeten Bildern vorliegen, die oft für die Erstellung digitaler Karten wie Google Maps oder OpenStreetMap verwendet werden. Hier kommt das Erstellen und Bearbeiten von Layern ins Spiel. Eine Möglichkeit, wie neue Daten in einem GIS erstellt werden können, ist die Digitalisierung. Andere Methoden sind die Georeferenzierung, das Scannen und Vektorisieren, das Ausschneiden, die Auswahl und das anschließende Speichern.
+
+![Fernerkundete Bilder verschiedener Küstenlinien](media/rs-images.png "Fernerkundete Bilder verschiedener Küstenlinien")
+
+Abbildung 7.1: Fernerkundungsbilder verschiedener Küstenlinien. A. Interferometric Synthetic Aperture Radar (IFSAR)-Daten (Verwendung von Mikrowellen zur Datenerfassung für die Erstellung repräsentativer Bilder), B. topografische und bathymetrische Lidar-Daten (Höhen- und Konturdaten, die durch Farben dargestellt werden), C. hyperspektrale Bilder (Hinzufügen von Farbe zu unsichtbarer Energie) und D. digitale Fotografie (für das menschliche Auge sichtbare Farben, die als solche dargestellt werden)
+
+## Aufschlüsselung der Begriffe
+
+Digitalisierung im GIS ist der Prozess des "Nachzeichnens" von Informationen aus Medien/Karten auf geographisch korrekte Weise.

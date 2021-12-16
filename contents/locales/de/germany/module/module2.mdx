@@ -1,0 +1,114 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module1"
+next: "/de/germany/module/module3"
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# Modul 2 - Ebenen in QGIS
+
+**Autor:in**: Ben Hur
+
+## Pädagogische Einführung
+
+In diesem Modul lernen Sie die grundlegenden Konzepte von Layern in QGIS und wie man sie lädt. Am Ende dieses Moduls sollten die Lernenden vertraut sein mit:
+
+- den verschiedenen Datenquellen und Dateiformaten, die in QGIS geladen werden können
+- den verschiedenen Arten, wie Daten in QGIS geladen werden können
+- einigen gängige Datenformaten
+
+Sie sollten außerdem in der Lage sein:
+
+- Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Bedienfelds und des Datenquellen-Managers zu laden
+- QGIS mit entfernten Diensten zu verbinden
+- mit temporären und virtuellen Layern zu arbeiten
+- Erweiterungen zu installieren, um andere Datensätze in QGIS laden
+- Ebeneneigenschaften wie Metadateninformationen anzeigen
+- Layer speichern und exportieren
+
+## Erforderliche Werkzeuge und Ressourcen
+
+Die benötigten Werkzeuge und Ressourcen für dieses Modul sind:
+
+- Computer
+- Internetverbindung
+- QGIS 3.16 auf dem Computer installiert ([https://qgis.org/de/site/forusers/download.html](https://qgis.org/de/site/forusers/download.html))
+
+## Voraussetzungen
+
+- Grundkenntnisse in der Bedienung eines Computers
+- Vertrautheit mit räumlichen Datenformaten und der QGIS-Oberfläche (Abschluss der Module 0 und 1)
+
+## Zusätzliche Ressourcen
+
+- QGIS Benutzerhandbuch - [https://docs.qgis.org/3.16/de/docs/user_manual/](https://docs.qgis.org/3.16/de/docs/user_manual/)
+- QGIS Schulungshandbuch - [https://docs.qgis.org/3.16/de/docs/training_manual/index.html](https://docs.qgis.org/3.16/de/docs/training_manual/index.html)
+- Basiskarten in QGIS (englischsprachig) - [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+- Verbindung von QGIS mit Remote Services (englischsprachig) - [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+- Spreadsheet Layers Plugin (englischsprachig)- [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
+
+## Thematische Einführung
+
+![Mehrschichtige Analyse im GIS](media/spatial-layers.jpg "Mehrschichtige Analyse im GIS")
+
+Abbildung 2.1. Ein Karten-Overlay mit verschiedenen Layern und Datentypen ([https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s11-02-multiple-layer-analysis.html))
+
+Wir haben in den vorangegangenen Modulen gelernt, dass räumliche Datenmodelle wie Vektoren und Raster eine Modellierung von Objekten und Phänomenen der realen Welt sind.
+Um in der Praxis nützliche Analysen durchzuführen, reicht es nicht, einen einzelnen Layer zu benutzen. Wir müssen häufig mehrerer Datensätze (z.B. Höhe, Temperatur, Bevölkerungsverteilung, Zoneneinteilungs usw). miteinander kombinieren. Das Übereinanderlegen mehrerer thematischer Karten desselben Gebiets ist eine der ältesten und gängigsten geografischen Analysetechniken.
+
+## Aufschlüsselung der Konzepte
+
+Das Bild oben gibt uns ein einfaches und konkretes Beispiel dafür. Stellen Sie sich vor, Sie wären ein:e GIS-Berater:in mit der Aufgabe, den besten Standort für ein neues Franchise-Restaurant (z. B. Starbucks oder McDonalds) zu finden. Dazu müssten Sie die relevanten Informationen sammeln, die Ihnen bei der Entscheidung helfen würden. Dies könnten Informationen über die Straßen der Stadt, die Grundstücke, die Lage und Verteilung möglicher Kunden, die Topographie des Gebiets, die Landnutzung usw. sind.
+
+Diese Datensätze können in verschiedenen Typen und Formaten vorliegen. Einige können Vektordateien sein, während andere Raster sein können. Einige können im gleichen Koordinatenreferenzsystem sein, während andere in verschiedenen Koordinatenreferenzsystemen vorliegen können. Einige können lokale Dateien sein, die sich auf Ihrem Computer befinden, während andere nur über das Internet geladen werden können. Aufgrund der vielen Möglichkeiten, welche Art von Daten Sie für Ihre räumliche Analyse benötigen, sollte ein gutes GIS in der Lage sein, eine Vielzahl von Datenquellen zu verarbeiten und zu verwalten.
+
+## Main content
+
+### Teil 1: Datentypen, Dateiformate, das Browser- und das Layerbedienfeld
+
+#### **Gängige Datentypen und Dateiformate**
+
+Abgesehen von den räumlichen Datenmodellen (Raster und Vektoren), die im ersten Modul besprochen wurden, ist die Vertrautheit mit räumlichen Dateiformaten und ihren Vor- und Nachteilen ebenfalls wichtig für jeden, der räumliche Analysen durchführt.
+
+Die meisten GIS-Neulinge werden in der Regel über Shapefiles an räumliche Daten herangeführt. Die meisten Leute wachsen nie darüber hinaus und verwenden Shapefile für alle Arten und Formen von Vektordaten. Dies ist vergleichbar damit, wie eine bestimmte Marke wie Coca Cola als allgemeiner Begriff für Softdrinks verwendet wird. Das ist nicht unbedingt falsch, aber eher unglücklich, da Shapefiles nur eine der vielen Arten von Vektordatenformaten sind. Tatsächlich gibt es auch viele andere Vektorformate wie z.B. geopackage, geojson, topojson, und flatgeobuf. Das Shapefile-Format ist zwar allgegenwärtig, hat aber einige wesentliche Einschränkungen, wie z. B.:
+
+- Es ist nicht nur 1 Datei. Ein Shapefile besteht eigentlich aus mehreren Dateien, von denen 3 obligatorisch sind: .shp, .shx, .dbf. Alle anderen Dateien werden Sidecar-Dateien genannt.
+- Die Größe jeder einzelnen Datei ist auf 2 GB begrenzt.
+- Feldnamen sind auf 10 Zeichen begrenzt.
+- Attributspalten sind auf 255 Spalten begrenzt.
+- Einige Datentypen, wie z. B. Zeit, werden nicht unterstützt.
+- Es speichert nicht explizit die Topologie.
+
+Andere Datenformate wie GeoPackage, GeoJSON, TopoJSON und flatgeobuff beheben diese Einschränkungen von Shapefiles. Tatsächlich sind QGIS und GRASS GIS auf GeoPackage als Standard-Vektordateiformat umgestiegen, wenn es um den Import oder Export von Layern geht. Obwohl GeoPackage auch einige Einschränkungen hat, erlaubt es der Gemeinschaft, die Zukunft des Formats mitzugestalten, da es ein völlig offenes Format ist.
+
+Wenn also nicht Shapefiles, was sollten Sie dann verwenden?
+
+Es ist nichts falsch daran, Shapefiles zu verwenden, vor allem, wenn es zu Ihrem Anwendungsfall passt. Wenn Sie keinen Datensatz benötigen, der über 2 GB hinausgeht, wenn Sie mit einer Begrenzung der Feldnamen auf 10 Zeichen einverstanden sind oder wenn Sie lokal mit einer kleinen Anzahl von Dateien arbeiten, ist ein Shapefile völlig in Ordnung.
+
+Wenn Sie jedoch Ihr QGIS-Projekt mit allen Layern (Vektoren, Raster), Styling und Modellen zusammenpacken wollen; oder wenn Sie mehrere Typen von Layern und räumlichen Daten in einer einzigen Datei gemeinsam nutzen wollen, ist ein GeoPackage einen Blick wert. GeoPackages und GeoJSONs sind auch web-freundlich und können direkt von Web-Mapping-Bibliotheken wie Mapbox und Leaflet verwendet werden.
+
+Mehr dazu können Sie unter dem folgenden englischsprachigen Link lesen: [https://bnhr.xyz/2018/12/12/i-choose-geopackage.html](https://bnhr.xyz/2018/12/12/i-choose-geopackage.html)
+
+In der Zwischenzeit kann jedes Format, das als Gitter aus Pixeln oder Zellen dargestellt werden kann, von QGIS als Rasterdaten gelesen werden. Dazu gehören Bildformate wie PNG (.png) und JPEG (.jpg). Es ist erwähnenswert, dass, obwohl alle Bilddateiformate als Raster gelesen werden können, nicht alle von ihnen georeferenziert sind oder geospatiale Informationen enthalten, die es uns erlauben, sie richtig auf der Erde zu lokalisieren. Für solche Fälle können wir eine so genannte Weltdatei ([https://en.wikipedia.org/wiki/World_file](https://en.wikipedia.org/wiki/World_file)) verwenden. . Eine Weltdatei ist eine separate Klartext-Datendatei, deren Name derselbe ist wie der der Rasterdatei, zu der sie gehört, und an deren Dateierweiterung der Buchstabe w angehängt ist. Die Weltdatei für **world.png** wird beispielsweise **world.pngw **oder **world.pgw** genannt.
+
+Einige Bilddateiformate enthalten explizite Georeferenzierung und Informationen und benötigen keine Weltdatei. Einige Beispiele sind GeoTIFFs (.tif oder tiff) und das ERDAS Imagine-Dateiformat (.img).
+
+Für weitere Informationen über Dateiformate können Sie auch nachsehen: [https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html](https://saylordotorg.github.io/text_essentials-of-geographic-information-systems/s09-03-file-formats.html)
+
+Geodaten können auch in Form von Geodatenbanken vorliegen. Dies können Datenbanken auf Unternehmensebene sein, wie das freie und quelloffene Postgres mit PostGIS-Erweiterung ([https://postgis.net/](https://postgis.net/)) oder das proprietäre ArcSDE von ESRI. Es gibt auch Dateigeodatenbanken, in denen verschiedene Datentypen (z. B. Vektoren und Raster) gespeichert werden können. Einige Beispiele sind das freie und offene OGC GeoPackage (.gpkg) ([https://www.geopackage.org/](https://www.geopackage.org/)) und das proprietäre File Geodatabase Format von ESRI (.gdb).

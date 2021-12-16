@@ -1,0 +1,78 @@
+---
+slug: Bangladesh
+title: Bangladesh
+language: English
+description: Gentle Introduction to GIS concepts
+date: ""
+author: Ben Hur
+prev: "/en/bangladesh/module/module4"
+next: "/en/bangladesh/module/module6"
+mods:
+  - Gentle Introduction to GIS concepts[/en/bangladesh/module/module0]
+  - Introduction to QGIS[/en/bangladesh/module/module1]
+  - Layers in QGIS[/en/bangladesh/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/en/bangladesh/module/module3]
+  - Layer Styling and Symbology[/en/bangladesh/module/module4]
+  - Map Design and Creation[/en/bangladesh/module/module5]
+  - Layer Attributes[/en/bangladesh/module/module6]
+  - Layer Creation and Editing[/en/bangladesh/module/module7]
+  - Vector Processing and Analysis[/en/bangladesh/module/module8]
+  - Raster Processing and Analysis[/en/bangladesh/module/module9]
+  - QGIS Plugins[/en/bangladesh/module/module10]
+outlines:
+  - Pedagogical Introduction [pedagogical-introduction]
+  - Main content [main-content]
+---
+
+# Module 5 - Making Maps
+
+**Author**: Ketty, Ben Hur
+
+## Pedagogical Introduction
+
+This module will provide you with an overview of the common steps needed to complete a map in QGIS. At the end of the module, participants will know the following concepts;
+
+- Map canvas and related layers
+- The print layout and print layout
+- Map elements and properties
+
+In addition you’ll have learned the following skills;
+
+- Using the print layout to make a map
+- Adding map elements to the map
+- Managing different print layouts
+
+## Required tools and resources
+
+- Working computer
+- Internet access
+- QGIS 3.16 or later
+- Rajshahi administrative boundary layer (inside [module5.gpkg](data/module5.gpkg))
+- Rajshahi clinics (inside [module5.gpkg](data/module5.gpkg))
+- BGD provinces (inside [module5.gpkg](data/module5.gpkg))
+- [Rajshahi High Resolution Settlement Layer](data/HRSL_BGD_Rajshahi_Population.tif)
+
+## Prerequisites
+
+- Basic knowledge of operating a computer
+- An understanding of all previous modules
+
+## Additional resources
+
+- QGIS Map LayOut - [https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html](https://docs.qgis.org/3.16/en/docs/training_manual/map_layout/map_layout.html)
+- Layout Templates - [https://layout-hub.github.io/](https://layout-hub.github.io/)
+- Style Manager - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/style_manager.html)
+- Style Library - [https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html](https://docs.qgis.org/3.16/en/docs/user_manual/style_library/index.html)
+
+## Thematic introduction
+
+Let’s start with an example:
+
+To make a map, you’ll need a topic you may want to understand better, for example ‘Spatial distribution of clinics across Rajshahi division in Bangladesh'. You'll notice the topic provides both a theme to explore and the geographic location. Armed with this information and the relevant data that allows you explore the question further, you may proceed to make a map.
+
+### Breakdown of the concepts
+
+This module will focus on the following key map making concepts; map canvas and related layers, the print layout and map elements and properties. First, here are short definitions on each;
+
+- the **map canvas and related layers**: is probably the most important widget within QGIS because it shows the map composed from overlaid map layers and allows interaction with the map and layers. This is covered in the Module 0: Introduction to QGIS
+- the **print layout and print layout** : The print layout provides growing layout and printing capabilities. It allows you to add elements such as the QGIS map canvas, text labels, images, legends, scale bars, basic shapes, arrows, attribute tables and HTML frames. With the Print layout you can create nice maps and atlases that can be printed or saved as PDF-file, an image or an SVG-file. This is a powerful way to share geographical information produced with QGIS that can be included in reports or published. You can save the layout as a template and load it again in another session. Finally, generating several maps based on a template can be done through the atlas generator. The image below shows the print layout and print layout interface. This interface opens when you open a new print layout.

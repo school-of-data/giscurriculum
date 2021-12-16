@@ -1,0 +1,68 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module9"
+next: ""
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# Modul 10 - QGIS-Erweiterungen / -Plugins
+
+**Autor:in**: Codrina
+
+## Pädagogische Einführung
+
+In diesem Modul werden einige der interessantesten und hoffentlich nützlichen Erweiterungen vorgestellt, die von der internationalen QGIS-Gemeinschaft entwickelt und für jedermann zur Verfügung gestellt wurden. Wir werden dabei den Begriff Plugin und Erweiterung austauschbar benutzen - Die deutsche QGIS-Oberfläche nutzt hauptsächlich den Begriff Erweiterungen, da viele der Erweiterungen aber nicht lokalisiert sind, tauchen sie häufig auch unter dem internationalen Namen - Plugins - auf.
+Am Ende des Moduls sollten Sie wissen:
+
+- Wie man ein neues Plugin sucht und installiert
+- Wie man zwischen den verschiedenen Plugin-Repositories wechselt
+- Wie man eine Plugin-Dokumentation liest und worauf man achten muss.
+
+## Erforderliche Tools und Ressourcen
+
+- Dieses Modul wurde mit [QGIS Version 3.16.1 - Hannover](https://qgis.org/en/site/forusers/download.html) erstellt.
+
+## Voraussetzungen:
+
+- Grundkenntnisse in der Bedienung eines Computers
+- Ein solides Verständnis aller Module, da die Plugins, die wir vorstellen werden, sich auf verschiedene Begriffe/Elemente beziehen, die Sie im Laufe dieses Curriculums kennengelernt haben, wie z.B. Vektoren, Raster, Attributtabellen und viele andere.
+
+## Hauptinhalt
+
+### Teil 1: Einführung in den Plugin-Gedanken
+
+Einer der vielen Vorteile der Open-Source-Gemeinschaft - sowohl für Entwickler:innen als auch für Anwender:innen - ist die unglaubliche Geschwindigkeit, mit der Entwicklungen und Verbesserungen stattfinden, die Art und Weise, wie neue Ideen aufkommen und dann in die Praxis umgesetzt werden.
+
+Wie Sie in Modul 1 gesehen haben, ist QGIS mit einer "Plugin"-Architektur konzipiert, die es erlaubt, es durch Hinzufügen externer Plugins leicht an die eigenen Bedürfnisse anzupassen. In QGIS Unterscheidet man zwischen **Kern-** und **externen Plugins**. Die Kern-Plugins - wie der Name schon sagt - bilden die Hauptstruktur, sie werden vom QGIS-Entwicklungsteam gewartet und sind immer in der Installation enthalten. Beispiele sind die wie z.B. das Processing-Kern-Plugin, die Zonale Statistik oder der Plugin-Manager. Im Laufe der Zeit sind verschiedene externe Plugins aufgrund ihrer Relevanz in Richtung des Kerns gewandert.
+
+Natürlich kann man angesichts der Open-Source-Prinzipien, gepaart mit den großartigen und sehr detaillierten Dokumentationen, die zur Verfügung stehen, und den vielen Kommunikationskanälen und speziellen Veranstaltungen lernen, wie man ein Plugin baut, das den eigenen Anforderungen entspricht. Und das ist ein **externes Plugin**. Auf der dedizierten [Webseite](https://plugins.qgis.org/) finden Sie die gesamte notwendige Dokumentation. Die meisten externen Plugins sind in Python geschrieben, aber sie können auch in C++ geschrieben werden.
+
+In dieser ersten Phase werden wir uns mit der Einrichtung von QGIS-Plugins beschäftigen - wie man nach einem Plugin sucht, um eine bestimmte Anforderung zu lösen, die man vielleicht hat, wie man dessen Dokumentation interpretiert und wie man dem Entwicklungsteam meldet, wenn man auf ein Problem gestoßen ist.
+
+### Die Erweiterungsverwaltung
+
+QGIS bietet ein Kern-Plugin, mit dem externe Plugins verwaltet, installiert, aktualisiert und deinstalliert werden können. Die Funktionalität ist intuitiv und bietet vollen Zugriff auf das offizielle öffentliche Plugin-Repository.
+
+Es muss betont werden, dass die externen Plugins - seien sie offiziell oder experimentell - die Arbeit einzelner Entwickler:innen oder Organisationen sind und die QGIS-Organisation keine Verantwortung für sie übernimmt. Davon abgesehen gibt es einige Regeln, die Entwickler:innen, die ihre Arbeit über das offizielle Repository zur Verfügung stellen wollen, einhalten müssen, sowie eine Reihe von Empfehlungen für eine schnelle Akzeptanz. Zu den Anforderungen gehören Elemente wie eine kompatible Lizenz, minimale Dokumentation, klare Identifizierung von Abhängigkeiten und andere. Zu den Empfehlungen gehört die Überprüfung, ob das Plugin keine bestehende Funktionalität dupliziert, eine gute Struktur des Quellcode-Repositorys, Kompatibilität mit allen Plattformen (Windows, Linux, macOS) und viele andere.
+
+Experimentelle Plugins - die im Plugin-Manager als solche gekennzeichnet sind - sind Plugins, die sich in einem frühen Entwicklungsstadium befinden, also nicht für den operativen Einsatz geeignet sind. Sie gelten als "Proof of Concept"-Tests und es wird nicht empfohlen, sie zu installieren, es sei denn, man möchte sie zu Testzwecken verwenden.
+
+Um die experimentellen Plugins zu sehen, muss dies Funktionalität explizit eingeschaltet werden. Dies können Sie tun, indem Sie in den Einstellungen des Plugin-Managers die Option `Auch experimentelle Erweiterungen anzeigen` auswählen (Abbildung 10.2a). Es gibt auch die Möglichkeit, die veralteten Plugins aufzulisten. Diese werden nicht empfohlen, da sie nicht mehr gepflegt werden.
+
+Die beiden Typen werden im Plugin-Manager gut unterschieden (siehe Abbildungen 10.1 und 10.2b).

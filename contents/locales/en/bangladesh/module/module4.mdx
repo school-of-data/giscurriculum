@@ -1,0 +1,89 @@
+---
+slug: Bangladesh
+title: Bangladesh
+language: English
+description: Gentle Introduction to GIS concepts
+date: ""
+author: Ben Hur
+prev: "/en/bangladesh/module/module3"
+next: "/en/bangladesh/module/module5"
+mods:
+  - Gentle Introduction to GIS concepts[/en/bangladesh/module/module0]
+  - Introduction to QGIS[/en/bangladesh/module/module1]
+  - Layers in QGIS[/en/bangladesh/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/en/bangladesh/module/module3]
+  - Layer Styling and Symbology[/en/bangladesh/module/module4]
+  - Map Design and Creation[/en/bangladesh/module/module5]
+  - Layer Attributes[/en/bangladesh/module/module6]
+  - Layer Creation and Editing[/en/bangladesh/module/module7]
+  - Vector Processing and Analysis[/en/bangladesh/module/module8]
+  - Raster Processing and Analysis[/en/bangladesh/module/module9]
+  - QGIS Plugins[/en/bangladesh/module/module10]
+outlines:
+  - Pedagogical Introduction [pedagogical-introduction]
+  - Main content [main-content]
+---
+
+# Module 4 - Styling Layers
+
+**Author**: Ketty, Ben Hur
+
+## Pedagogical Introduction
+
+This module is designed to teach you how to change the visual appearance of a map by selecting appropriate symbols, map colors and apply appropriate effects. At the end of the module, you should know concepts like map symbology and map styles. In addition, you’ll learn the following skills;
+
+- styling layers
+- basic raster and vector symbology and how to apply them to a layer
+- blending modes and draw effects
+- using expressions to run a spatial operation
+
+## Required tools and resources
+
+- Working computer
+- Internet connection
+- QGIS 3.16 or later
+- Rajshahi administrative boundary layer (inside [module4.gpkg](data/module4.gpkg))
+- Rajshahi clinics (inside [module4.gpkg](data/module4.gpkg))
+- [BGD_Rajshahi High Resolution Settlement Layer](data/HRSL_BGD_Rajshahi_Population.tif)
+
+## Prerequisites
+
+- Basic knowledge of operating a computer
+- Fair understanding of all previous modules
+
+## Additional resources
+
+- QGIS Symbology - [https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html](https://docs.qgis.org/3.16/en/docs/training_manual/basic_map/symbology.html)
+- Style Sharing Repository - [https://www.gislounge.com/qgis-style-sharing-repository/](https://www.gislounge.com/qgis-style-sharing-repository/)
+- Styles - [https://plugins.qgis.org/styles/](https://plugins.qgis.org/styles/)
+- Style Hub - [https://style-hub.github.io/](https://style-hub.github.io/)
+- Hillshade in QGIS -[https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
+- Mapping Icebergs in QGIS - [https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html](https://bnhr.xyz/2019/02/08/mapping-icebergs-in-qgis.html)
+
+## Thematic introduction
+
+Let’s start with an example:
+
+Let’s imagine you’re in a new city, perhaps as a tourist, for leisure or for business. The city has a range of must see/visit places which include museums, cafes, beach fronts, monuments, cultural shops and markets. You are then handed a paper city map which shows you the point locations of all the must see places in that city. The tourist points are all marked as red dots. In your view, would this map ease your tour of the new city? I wouldn’t expect it to.
+
+That’s why it’s always important to make a “Map showing different symbols and colors”. What you see in your map after applying styling concepts is a dynamic visual representation of the data you’re working with.
+
+### Important Panels, Tabs and Render types
+
+#### **Layer Styling Panel**
+
+This panel is somehow a shortcut to some of the features of the layer properties dialog. It indeed offers you a quick and handy way to define the rendering and the behavior of a layer, and to visualize its effects without opening the layer properties dialog.
+
+Besides avoiding you dealing with the modal and blocking dialog of the layer properties, it also avoids you cluttering the screen with features dialogs given that it embeds most of them (color selector, effects properties, rule edit, label substitution...): e.g., clicking color buttons inside the layer style panel causes the color selector dialog to be opened inside the layer style panel itself rather than as a separate dialog.
+
+From a drop-down list of current layers in the layer panel, select an item and:
+
+- set its symbology, transparency, and histogram in the case of a raster layer. These options are the same available in Raster Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_raster/raster_properties.html#raster-properties-dialog)).
+  - Access the Raster Properties Dialogue by Double Clicking the Raster Layer->General
+- set its symbology, and labels. These options are the same available in The Vector Properties Dialog ([https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog](https://docs.qgis.org/3.16/en/docs/user_manual/working_with_vector/vector_properties.html#vector-properties-dialog)).
+  - Access the Vector Properties Dialogue by Double Clicking the Vector Layer->General
+- follow the whole history of changes you applied to the layer style in the current project; you can therefore cancel or restore to any state by selecting it in the list and Click Apply.
+
+Another powerful feature of this panel is the Live update checkbox. Tick it and your changes are automatically rendered in the map canvas as you go on. You no longer need to Click the Apply button.
+
+To activate the panel, Click View->Panels, then tick Layer styling.

@@ -1,0 +1,101 @@
+---
+slug: Germany
+title: Germany
+language: German
+description: Sanfte Einführung in GIS-Konzepte
+date: ""
+author: Ben Hur
+prev: "/de/germany/module/module7"
+next: "/de/germany/module/module9"
+mods:
+  - Gentle Introduction to GIS concepts[/de/germany/module/module0]
+  - Introduction to QGIS[/de/germany/module/module1]
+  - Layers in QGIS[/de/germany/module/module2]
+  - Introduction to OpenStreetMap and the High Resolution Settlement Layer (HRSL)[/de/germany/module/module3]
+  - Layer Styling and Symbology[/de/germany/module/module4]
+  - Map Design and Creation[/de/germany/module/module5]
+  - Layer Attributes[/de/germany/module/module6]
+  - Layer Creation and Editing[/de/germany/module/module7]
+  - Vector Processing and Analysis[/de/germany/module/module8]
+  - Raster Processing and Analysis[/de/germany/module/module9]
+  - QGIS Plugins[/de/germany/module/module10]
+---
+
+# **Modul 8 - Vektorverarbeitung und -analyse**
+
+**Autor:in**: Codrina Ilie
+
+## Pädagogische Einführung
+
+Dieses Modul konzentriert sich auf einen bestimmten Typ von geographischen Daten: Vektor-Geodaten.
+
+Am Ende dieses Moduls sollten Sie ein grundlegendes Verständnis für die folgenden Konzepte haben:
+
+- Vektordatenmodell
+- Metadaten
+- Vektorverarbeitung
+- Geodatenanalyse
+- Geostatistik
+- Topologie
+- Geoverarbeitung
+
+Außerdem erwerben Sie die folgenden Fähigkeiten:
+
+- Qualitätskontrolle von geometrischen Vektordatensätzen mit Algorithmen zur Überprüfung der Vektordatentopologie und Durchführung grundlegender automatischer Korrekturen
+- Arbeiten mit Algorithmen zur Identifizierung von Fehlern in der Attributtabelle
+- Vektordatenverarbeitung - Ausführen einfacher Geoverarbeitungsalgorithmen zur Beantwortung möglicher Anforderungen, z. B. wie viele öffentliche Gebäude gibt es in meiner Verwaltungsregion?
+- Vektordatenverarbeitung - Verwendung von Geostatistik-Algorithmen zum Auffüllen fehlender Daten.
+
+## Erforderliche Werkzeuge und Ressourcen
+
+- Dieses Modul wurde mit [QGIS Version 3.16.1 - Hannover](https://qgis.org/de/site/forusers/download.html) erstellt.
+- Die folgenden Datensätzen aus dem Geopackage Modul-8.gpkg:
+  - Gebäude (Polygone) - buildings
+  - Landnutzung (Polygone) - landuse
+  - Administrative Grenze von Mittelsachsen (Polygone) - Mittelsachsen
+  - Gotteshäuser (Punkte) - pofw
+  - Points of Interest (Punkte) - pois
+  - Straßen (Linien) - roads
+  - Waserwege (Linien) - waterways
+- Das verwendete Koordinatenreferenzsystem ist das ETRS89/UTM Zone 33N, EPSG 25833. Da es sich um ein projiziertes Koordinatensystem handelt, ermöglicht es geometrische Berechnungen.
+
+## Voraussetzungen
+
+- Grundkenntnisse in der Bedienung eines Computers
+- Ein solides Verständnis der Module 0, 1 und 2 und 6. Modul 0 führt in den Begriff des Vektordatenmodells ein, das im Mittelpunkt dieses aktuellen Abschnitts steht. Ein vorheriges Verständnis der Module 1, 2 und 6 ermöglicht es Ihnen, sich ausschließlich auf die neuen Begriffe und QGIS-Funktionalitäten zu konzentrieren, die in diesem neuen Abschnitt eingeführt werden, ohne dass Sie sich fragen müssen, wie Sie einen neuen Layer in Ihr Projekt laden können oder wie Sie mit der Attributtabelle Ihres Datensatzes arbeiten.
+
+Im Rahmen dieses Moduls lernen Sie, wie Sie effizient mit vektorgeografischen Datensätzen arbeiten können, um neue Informationen zu extrahieren. Dazu gehört ein vertieftes Verständnis dafür, was Vektordaten sind, welche Qualitätsstandards sie erfüllen müssen, damit sie wirklich brauchbar sind, was die häufigsten Operationen sind, die mit Vektordaten durchgeführt werden (Geoprocessing, Geostatistik).
+
+## Zusätzliche Ressourcen:
+
+- QGIS: Arbeiten mit Vektordaten [https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/functions_list.html](https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/functions_list.html)
+- [What is geoprocessing?](http://www.geo.hunter.cuny.edu/~jochen/gtech361/lectures/lecture12/concepts/01%20What%20is%20geoprocessing.htm)
+- [Encyclopedia of GIS, 2017 Edition, Editors: Shashi Shekhar, Hui Xiong, Xun Zhou](https://link.springer.com/referencework/10.1007/978-3-319-17885-1)
+- [Metadata And Catalogue Services](https://www.geo-train.eu/modules/metadata/pdf/Metadata.pdf), Autorin Mariana Belgiu, UNIGIS Salzburg
+- [Grundlagen der Metadaten (englischsprachig)](https://www.fgdc.gov/resources/factsheets/documents/GeospatialMetadata-July2011.pdf)
+
+## Thematische Einführung
+
+Lassen Sie uns mit einem Beispiel beginnen: Sie sind gerade mit der Bahn in Chemnitz angekommenund wollen sich jetzt mit dem Fahrrad weiter auf den Weg nach Frankenberg machen. Sie wissen weder, wo der Bahnhof in Bezug auf die Stadt liegt, noch, wo sich ihr Ziel befindet, also öffnen Sie als erstes einen Stadtplan, um sich in dieser neuen Stadt zu orientieren. Sie nehmen Ihr Telefon heraus, öffnen eine Karten-App und wählen den Startpunkt - den Bahnhof - und den Endpunkt - Frankenberg - und fragen dann nach der Route mit dem Fahrrad. In Sekundenschnelle bietet Ihnen die Routing-App die beste Lösung an, um von Punkt A zu Punkt B zu gelangen, und zeigt Ihnen diese an, wie in Abbildung 8.1 zu sehen.
+
+![Von Punkt A nach B mit Openstreetmap](media/osm-routing.png "Von Punkt A nach B mit Openstreetmap")
+
+Abbildung 8.1 - Mit Openstreetmap von Punkt A nach B
+
+## Aufschlüsselung der Konzepte
+
+Routing ist ein klassisches Beispiel für die Verwendung von Vektordaten und lässt sich in mehrere Konzepte aufschlüsseln, die wir im Folgenden definieren werden.
+
+Die verwendeten Daten sind räumlich - sie haben eine definierte Position auf der Erde, ihre Attribute sind ebenfalls gut identifiziert. So repräsentiert ein Punkt mit Längen- und Breitengrad und dem Attribut "name=Chemitz Hauptbahnhof" - den Startpunkt A und ein Punkt mit einem anderen Paar von Längen- und Breitengrad und dem Attribut "name=Frankenberg/Sachsen" den Punk B. Straßen werden durch Linien repräsentiert, die aus Knoten und Verbindungen bestehen (dargestellt durch blaue kleine Kreise in Abbildung 8.2), mit Attributen wie Name, Richtung, Geschwindigkeitsbegrenzung usw.
+
+![Vektorlinien, die Straßen und die zugehörige Attributtabelle darstellen](media/fig82.png "Vektorlinien, die Straßen und die zugehörige Attributtabelle darstellen")
+
+Abbildung 8.2 - Vektorlinien, die Straßen darstellen, und die zugehörige Attributtabelle
+
+Straßen stellen ein Netzwerkmodell dar, das im Grunde eine Sammlung von topologisch miteinander verbundenen Punkt- und Linienmerkmalen ist. Die Ergebnisse des Algorithmus, der die Route von Punkt A zu Punkt berechnet, hängen in hohem Maße von der Qualität der Vektoren ab. Sowohl in der Geometrie als auch in den Attributen - wenn eine Straße eine Einbahnstraße ist, muss das angegeben werden, damit das Routing Sie nicht in die falsche Richtung führt.
+
+### Das Vektordatenmodell
+
+Wie in Modul 0 vorgestellt, gibt es 2 Datenmodelle, die in einem Geographischen Informationssystem - GIS - verwendet werden: Raster und Vektor. Geodaten enthalten immer eine **Raumkomponente**, die den Ort oder die räumliche Verteilung des betreffenden Phänomens angibt, und eine **Sachkomponente**, die dessen Eigenschaften beschreibt. Die Entscheidung, ob für eine bestimmte Situation das Raster- oder das Vektordatenmodell verwendet wird, hängt von der Quelle der Daten sowie vom Verwendungszweck ab.
+
+Das Vektordatenmodell wird zur Darstellung von Flächen, Linien und Punkten verwendet (Abbildung 8.3).
