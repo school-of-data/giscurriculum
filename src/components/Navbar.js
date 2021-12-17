@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Grid, Input, Menu, MenuHeader, Image } from "semantic-ui-react";
 import { useRouter } from "next/router";
+import { useMediaQuery } from "react-responsive";
 
 const Navbar = () => {
   // const [activeItem, setActiveItem] = useState("home");
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
   const router = useRouter();
   // const [selectedlang, setSelectedlang] = useState(router.query.locale ? router.query.locale : 'en')
 
@@ -60,7 +62,7 @@ const Navbar = () => {
         <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)}/>
       </Menu.Item>
       <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer'}}>
-        <h3 onClick={() => router.push(`/${router.query.locale}`)}> Open GIS Curriculum</h3>
+      <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isMobile ? '0.9em' : '2em'}`}}> Open GIS Curriculum</h2>
       </Menu.Item>
     </Menu>
   );
