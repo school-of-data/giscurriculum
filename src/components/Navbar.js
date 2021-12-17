@@ -70,6 +70,7 @@ const Navbar = () => {
         width={180}
         height={40}
         onClick={() => router.push(`/${router.query.locale}`)}
+        style={{ cursor: "pointer" }}
       />
       {/* <h1
         style={{
