@@ -55,10 +55,28 @@ const Navbar = () => {
   // );
 
   return (
-    <Menu style={{ height: '5rem', padding: '0.5rem', color: 'white', background: '#00B1F6' }}>
-      <h1 style={{ fontWeight: 900, fontSize: '2.5em', marginLeft: '15rem', cursor: 'pointer' }} onClick={() => router.push(`/${router.query.locale}`)}>Open GIS Curriculum</h1>
+    <Menu
+      style={{
+        height: "4rem",
+        padding: "0.4rem",
+        color: "white",
+        background: "#00B1F6",
+        borderRadius: "0px",
+      }}
+    >
+      <h1
+        style={{
+          fontWeight: 900,
+          fontSize: "2.5em",
+          marginLeft: "15rem",
+          cursor: "pointer",
+        }}
+        onClick={() => router.push(`/${router.query.locale}`)}
+      >
+        Open GIS Curriculum
+      </h1>
     </Menu>
-  )
+  );
 };
 
 export default Navbar;
