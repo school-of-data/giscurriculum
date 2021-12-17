@@ -20,7 +20,8 @@ export default function Homepage({ source }) {
                 border: "0.5px solid #D3D3D3",
                 padding: "1.5rem",
                 borderRadius: "0.15rem",
-                height: "80vh",
+                minHeight: "80vh",
+                height: '100%'
               }}
             >
               <h3 style={{ textAlign: "justified" }}>
@@ -62,7 +63,8 @@ export default function Homepage({ source }) {
                 padding: "1.5rem",
                 textAlign: "center",
                 borderRadius: "0.15rem",
-                height: "80vh",
+                minHeight: "80vh",
+                height: '100%'
               }}
             >
               <h3>Localisations available:</h3>
@@ -141,7 +143,8 @@ export default function Homepage({ source }) {
                 padding: "1.5rem",
                 textAlign: "center",
                 borderRadius: "0.15rem",
-                height: "80vh",
+                minHeight: "80vh",
+                height: '100%'
               }}
             >
               <h3>Projects showcase:</h3>

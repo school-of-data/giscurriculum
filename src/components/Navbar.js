@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Menu, MenuHeader } from "semantic-ui-react";
+import { Grid, Input, Menu, MenuHeader, Image } from "semantic-ui-react";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
@@ -55,34 +55,13 @@ const Navbar = () => {
   // );
 
   return (
-    <Menu
-      style={{
-        height: "4rem",
-        padding: "0.5rem 2rem",
-        color: "white",
-        background: "#00B1F6",
-        borderRadius: "0px",
-      }}
-    >
-      <img
-        src={`https://i.imgur.com/lXrEJZj.png`}
-        alt="School of Data"
-        width={180}
-        height={40}
-        onClick={() => router.push(`/${router.query.locale}`)}
-        style={{ cursor: "pointer" }}
-      />
-      {/* <h1
-        style={{
-          fontWeight: 900,
-          fontSize: "2.5em",
-          marginLeft: "15rem",
-          cursor: "pointer",
-        }}
-        onClick={() => router.push(`/${router.query.locale}`)}
-      >
-        Open GIS Curriculum
-      </h1> */}
+    <Menu fixed="top" style={{ background: "#00B1F6", margin: '0px' }}>
+      <Menu.Item style={{ border: '0px',  cursor: 'pointer'}}>
+        <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)}/>
+      </Menu.Item>
+      <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer'}}>
+        <h3 onClick={() => router.push(`/${router.query.locale}`)}> Open GIS Curriculum</h3>
+      </Menu.Item>
     </Menu>
   );
 };
