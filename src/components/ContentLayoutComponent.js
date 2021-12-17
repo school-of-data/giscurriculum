@@ -121,7 +121,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                 <Button content="OK" onClick={() => setOpen(false)} positive />
                             </Modal.Actions>
                         </Modal>
-                        <h4>LANGUAGE:</h4>
+                        <h4 style={{ padding: '0.25rem' }}>LANGUAGE:</h4>
                         <Dropdown
                             placeholder="Change Locale"
                             fluid
@@ -130,8 +130,9 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                             value={currentLanguage}
                             options={languageOptions}
                             onChange={handleLangChange}
+                            style={{ margin: '0.2rem' }}
                         />
-                        <p style={{ padding: "0.25rem" }}>
+                        <p style={{ padding: "0.35rem" }}>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                             enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -140,7 +141,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                             nulla pariatur. Excepteur sint occaecat cupidatat non proident,
                             sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
-                        <h4>REGION:</h4>
+                        <h4 style={{ padding: '0.25rem' }}>REGION:</h4>
                         <Dropdown
                             placeholder="Change Locale"
                             fluid
@@ -148,16 +149,15 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                             defaultValue={router.query.country}
                             options={countryOptions}
                             onChange={handleCountryChange}
+                            style={{ margin: '0.2rem' }}
                         />
                         <br />
                         <hr />
-                        <h4>
-                            Content Page
-                        </h4>
+                        <h4 style={{ padding: '0.25rem' }}>Content Page</h4>
                         {mods &&
                             mods.map((m, i) => {
                                 return (
-                                    <p key={i} style={{ padding: '0.25rem' }}>
+                                    <p key={i} style={{ padding: "0rem 0.25rem" }}>
                                         <Link href={m.match(/\[(.*?)\]/)[1]} passHref key={i}>
                                             <a style={{ cursor: "pointer" }}>
                                                 Module&nbsp;{i}:&nbsp;
@@ -182,16 +182,27 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                 <Grid.Column width={10} style={{ margin: 0, padding: 0 }}>
                     <Container
                         textAlign="justified"
-                        style={{ margin: "2rem 1rem", padding: "0.5rem" }}
+                        style={{
+                            padding: "2rem 1rem 0rem 1rem",
+                            height: "80vh",
+                            overflowY: "auto",
+                        }}
                     >
                         <MDXRemote {...source} />
-                        <Grid style={{ marginTop: "4rem" }}>
+                    </Container>
+                    <Container textAlign="justified" style={{ padding: "1rem" }}>
+                        <Grid style={{ marginTop: "1rem" }}>
                             <Grid.Row>
                                 <Grid.Column width={2}>
                                     {prev !== "" ? (
                                         <>
                                             <Link href={prev} passHref>
-                                                <Button icon labelPosition="left" size="large" style={{ color: '#2A71FF', background: '#EBF1FF' }}>
+                                                <Button
+                                                    icon
+                                                    labelPosition="left"
+                                                    size="large"
+                                                    style={{ color: "#2A71FF", background: "#EBF1FF" }}
+                                                >
                                                     Prev
                                                     <Icon name="angle left" />
                                                 </Button>
@@ -204,7 +215,12 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                     {next ? (
                                         <>
                                             <Link href={next} passHref>
-                                                <Button icon labelPosition="right" size="large" style={{ color: '#2A71FF', background: '#EBF1FF' }}>
+                                                <Button
+                                                    icon
+                                                    labelPosition="right"
+                                                    size="large"
+                                                    style={{ color: "#2A71FF", background: "#EBF1FF" }}
+                                                >
                                                     Next
                                                     <Icon name="angle right" />
                                                 </Button>
@@ -216,14 +232,25 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                         </Grid>
                     </Container>
                 </Grid.Column>
-                <Grid.Column width={3}>
-                    <Container
-                        textAlign="justified"
-                        style={{ margin: "2rem 1rem", padding: "0.5rem" }}>
+                <Grid.Column
+                    width={3}
+                    style={{
+                        borderLeft: "0.15px solid #EFEFEF",
+                        height: "80vh",
+                        margin: "1rem 0rem",
+                    }}
+                >
+                    <Container textAlign="justified" style={{ padding: "2rem 1rem" }}>
                         {outlines ? (
                             <>
                                 <h1>Outlines</h1>
-                                <a href="#main-content">Main Content</a>
+                                {outlines.map((v, i) => (
+                                    <h4 key={i}>
+                                        <a href={`#${v.toLowerCase().replace(" ", "-")}`}>
+                                            {v}
+                                        </a>
+                                    </h4>
+                                ))}
                             </>
                         ) : null}
                     </Container>

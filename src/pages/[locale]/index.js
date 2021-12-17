@@ -17,7 +17,7 @@ export default function Homepage({ source }) {
           <Grid.Column style={{ padding: "0rem 4rem" }}>
             <Container
               style={{
-                border: "0.5px solid gray",
+                border: "0.5px solid #D3D3D3",
                 padding: "1.5rem",
                 borderRadius: "0.15rem",
               }}
@@ -64,7 +64,7 @@ export default function Homepage({ source }) {
           <Grid.Column style={{ padding: "0rem 4rem" }}>
             <Container
               style={{
-                border: "0.5px solid gray",
+                border: "0.5px solid #D3D3D3",
                 padding: "0.5rem",
                 textAlign: "center",
                 borderRadius: "0.15rem",
@@ -73,7 +73,7 @@ export default function Homepage({ source }) {
               <h3>Localisations available:</h3>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -84,7 +84,7 @@ export default function Homepage({ source }) {
               </div>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -95,7 +95,7 @@ export default function Homepage({ source }) {
               </div>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -106,7 +106,7 @@ export default function Homepage({ source }) {
               </div>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -117,7 +117,7 @@ export default function Homepage({ source }) {
               </div>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -128,7 +128,7 @@ export default function Homepage({ source }) {
               </div>
               <div
                 style={{
-                  border: "0.25px solid gray",
+                  border: "0.25px solid #D3D3D3",
                   padding: "0.5rem",
                   margin: "1rem 3rem",
                 }}
@@ -142,7 +142,7 @@ export default function Homepage({ source }) {
           <Grid.Column style={{ padding: "0rem 4rem" }}>
             <Container
               style={{
-                border: "0.5px solid gray",
+                border: "0.5px solid #D3D3D3",
                 padding: "0.5rem",
                 textAlign: "center",
                 borderRadius: "0.15rem",
