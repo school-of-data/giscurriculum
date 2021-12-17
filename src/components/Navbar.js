@@ -58,13 +58,20 @@ const Navbar = () => {
     <Menu
       style={{
         height: "4rem",
-        padding: "0.4rem",
+        padding: "0.5rem 2rem",
         color: "white",
         background: "#00B1F6",
         borderRadius: "0px",
       }}
     >
-      <h1
+      <img
+        src={`https://i.imgur.com/lXrEJZj.png`}
+        alt="School of Data"
+        width={180}
+        height={40}
+        onClick={() => router.push(`/${router.query.locale}`)}
+      />
+      {/* <h1
         style={{
           fontWeight: 900,
           fontSize: "2.5em",
@@ -74,7 +81,7 @@ const Navbar = () => {
         onClick={() => router.push(`/${router.query.locale}`)}
       >
         Open GIS Curriculum
-      </h1>
+      </h1> */}
     </Menu>
   );
 };
