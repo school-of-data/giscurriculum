@@ -6,3 +6,12 @@ div.item {
   border: "0px" !important;
   border-style: none !important;
 }
+.ui.menu {
+  border-bottom: 0 none !important;
+  box-shadow: none !important;
+}
+
+.pushable > * {
+  border-bottom: 0 none !important;
+  box-shadow: none !important;
+}
