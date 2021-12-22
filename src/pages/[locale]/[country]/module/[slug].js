@@ -1,14 +1,27 @@
+import { useState, useEffect } from 'react'
 import { getPaths } from "@lib/geModuleStatic";
 import { getFiles, getCountryLocaleModuleFile } from "@src/lib/mdx";
 import LayoutComponent from "@src/components/LayoutComponent";
-import ContentLayoutComponent from "@src/components/ContentLayoutComponent";
+import MobileLayoutContent from '@src/components/MobileLayoutContent';
+import DesktopLayoutContent from '@src/components/DesktopLayoutContent';
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import i18nConfig from "../../../../../next-i18next.config";
 
 export default function Homepage({ source, frontMatter }) {
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 960px)');
+    const listener = () => setIsDesktop(media.matches);
+    listener();
+    window.addEventListener('resize', listener);
+
+    return () => window.removeEventListener('resize', listener);
+  }, [isDesktop]);
   return (
     <LayoutComponent>
-      <ContentLayoutComponent source={source} frontMatter={frontMatter} />
+      {
+        isDesktop ? <DesktopLayoutContent source={source} frontMatter={frontMatter} /> : <MobileLayoutContent source={source} frontMatter={frontMatter} />
+      }
     </LayoutComponent>
   );
 }

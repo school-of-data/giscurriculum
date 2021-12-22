@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { getStaticPaths, makeStaticProps } from "@lib/getStatic";
 import getSlug from "@lib/getSlug";
 import { useTranslation } from "next-i18next";
-import { useMediaQuery } from "react-responsive";
 import {
   Button,
   Container,
@@ -17,11 +16,20 @@ import Link from "next/link";
 
 export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
   const router = useRouter();
   const [currentLanguage, setCurrentLanguage] = useState(
     router.query.locale ? router.query.locale : "en"
   );
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+      const media = window.matchMedia('(min-width: 960px)');
+      const listener = () => setIsDesktop(media.matches);
+      listener();
+      window.addEventListener('resize', listener);
+
+      return () => window.removeEventListener('resize', listener);
+  }, [isDesktop]);
+
   const languageOptions = [
     { key: "en", value: "en", text: "English" },
     { key: "es", value: "es", text: "Spanish" },
@@ -69,12 +77,12 @@ export default function Homepage({ source }) {
   return (
     <LayoutComponent>
       <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
-      <Grid stackable columns={`${isTabletOrMobile ? "one" : "three"}`}>
+      <Grid stackable columns={`${isDesktop ? "three" : "one"}`}>
         <Grid.Row>
           <Grid.Column
             style={{
               padding: "0rem 4rem",
-              marginBottom: `${isTabletOrMobile ? "2rem" : "0rem"}`,
+              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
             }}
           >
             <Container
@@ -117,7 +125,7 @@ export default function Homepage({ source }) {
           <Grid.Column
             style={{
               padding: "0rem 4rem",
-              marginBottom: `${isTabletOrMobile ? "2rem" : "0rem"}`,
+              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
             }}
           >
             <Container
@@ -195,7 +203,7 @@ export default function Homepage({ source }) {
           <Grid.Column
             style={{
               padding: "0rem 4rem",
-              marginBottom: `${isTabletOrMobile ? "2rem" : "0rem"}`,
+              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
             }}
           >
             <Container
