@@ -1,18 +1,10 @@
-import React, { useState, useEffect } from "react";
 import { Grid, Input, Menu, MenuHeader, Image } from "semantic-ui-react";
+import useSizeQuery from "@src/hooks/useSizeQuery";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
   // const [activeItem, setActiveItem] = useState("home");
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 960px)');
-    const listener = () => setIsDesktop(media.matches);
-    listener();
-    window.addEventListener('resize', listener);
-
-    return () => window.removeEventListener('resize', listener);
-  }, [isDesktop]);
+  const { isDesktop } = useSizeQuery()
   const router = useRouter();
   // const [selectedlang, setSelectedlang] = useState(router.query.locale ? router.query.locale : 'en')
 
