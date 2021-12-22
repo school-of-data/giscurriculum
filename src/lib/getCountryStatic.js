@@ -23,7 +23,7 @@ export const getStaticPaths = async () => ({
   ],
 });
 
-export function makeStaticProps(slug, ns = ["common"]) {
+export function makeStaticProps(slug, ns = ["countrylevel"]) {
   return async function getStaticProps(ctx) {
     return {
       props: {

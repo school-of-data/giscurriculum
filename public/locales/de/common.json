@@ -1,5 +1,6 @@
 {
-  "description": "Der Mond ist eine karge, felsige Welt ohne Luft und Wasser. Es hat eine dunkle Lavaebene auf seiner Oberfläche. Der Mond ist voller Krater. Es hat kein eigenes Licht. Es bekommt sein Licht von der Sonne. Das Moo verändert ständig seine Form, während es sich um die Erde bewegt. Es dreht sich in 27,3 Tagen um seine Achse Sterne wurden nach Edwin Aldrin benannt, die am 21. Juli 1969 als erste ihren Fuß auf den Mond setzten. Sie erreichten den Mond mit ihrem Raumschiff Apollo II.",
-  "welcome_to": "Willkommen zu ",
-  "change_locale": "German"
+  "welcome_to": "Willkommen auf der Open GIS-Curriculum-Website der School of Data",
+  "welcome_sub_description": "So können Sie die auf dieser Website verfügbaren Lernmaterialien verwenden:",
+  "localization_available": "Verfügbare Lokalisierungen:",
+  "projects_showcase": "Projektpräsentation:"
 }

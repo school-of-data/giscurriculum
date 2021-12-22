@@ -58,11 +58,11 @@ const Navbar = () => {
 
   return (
     <Menu fixed="top" style={{ background: "#00B1F6", margin: '0px' }}>
-      <Menu.Item style={{ border: '0px',  cursor: 'pointer'}}>
-        <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)}/>
+      <Menu.Item style={{ border: '0px', cursor: 'pointer' }}>
+        <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)} />
       </Menu.Item>
-      <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer'}}>
-      <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isMobile ? '0.9em' : '2em'}`}}> Open GIS Curriculum</h2>
+      <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer' }}>
+        <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isMobile ? '0.9em' : '2em'}` }}> Open GIS Curriculum</h2>
       </Menu.Item>
     </Menu>
   );
