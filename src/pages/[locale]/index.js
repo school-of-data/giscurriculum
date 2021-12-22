@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { getStaticPaths, makeStaticProps } from "@lib/getStatic";
 import getSlug from "@lib/getSlug";
 import { useTranslation } from "next-i18next";
@@ -11,6 +11,7 @@ import {
 } from "semantic-ui-react";
 import { MDXRemote } from "next-mdx-remote";
 import LayoutComponent from "@src/components/LayoutComponent";
+import useSizeQuery from "@src/hooks/useSizeQuery";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -20,15 +21,7 @@ export default function Homepage({ source }) {
   const [currentLanguage, setCurrentLanguage] = useState(
     router.query.locale ? router.query.locale : "en"
   );
-  const [isDesktop, setIsDesktop] = useState(false);
-  useEffect(() => {
-      const media = window.matchMedia('(min-width: 960px)');
-      const listener = () => setIsDesktop(media.matches);
-      listener();
-      window.addEventListener('resize', listener);
-
-      return () => window.removeEventListener('resize', listener);
-  }, [isDesktop]);
+  const { isDesktop } = useSizeQuery()
 
   const languageOptions = [
     { key: "en", value: "en", text: "English" },
