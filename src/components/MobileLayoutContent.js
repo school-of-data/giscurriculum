@@ -17,7 +17,6 @@ import { MDXRemote } from "next-mdx-remote";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import { useMediaQuery } from "react-responsive";
 import localematcher from "@src/config/matchLocale";
 import ctytolocale from "@src/config/ctytoLocale";
 import nameCodes from "@src/config/nameCodes";
@@ -47,8 +46,6 @@ const MobileLayoutContent = ({ source, frontMatter }) => {
     { key: "es", value: "es", text: "Spanish" },
     { key: "de", value: "de", text: "German" },
   ];
-  // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
-  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
 
   useEffect(() => {
     setCountryOptions(

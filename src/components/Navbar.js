@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Grid, Input, Menu, MenuHeader, Image } from "semantic-ui-react";
 import { useRouter } from "next/router";
-import { useMediaQuery } from "react-responsive";
 
 const Navbar = () => {
   // const [activeItem, setActiveItem] = useState("home");
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const [isDesktop, setIsDesktop] = useState(false);
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 960px)');
+    const listener = () => setIsDesktop(media.matches);
+    listener();
+    window.addEventListener('resize', listener);
+
+    return () => window.removeEventListener('resize', listener);
+  }, [isDesktop]);
   const router = useRouter();
   // const [selectedlang, setSelectedlang] = useState(router.query.locale ? router.query.locale : 'en')
 
@@ -62,7 +69,7 @@ const Navbar = () => {
         <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)} />
       </Menu.Item>
       <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer' }}>
-        <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isMobile ? '0.9em' : '2em'}` }}> Open GIS Curriculum</h2>
+        <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isDesktop ? '2em' : '0.9em'}` }}> Open GIS Curriculum</h2>
       </Menu.Item>
     </Menu>
   );
