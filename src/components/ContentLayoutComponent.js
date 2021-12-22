@@ -16,6 +16,7 @@ import {
 import { MDXRemote } from "next-mdx-remote";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 import { useMediaQuery } from "react-responsive";
 import localematcher from "@src/config/matchLocale";
 import ctytolocale from "@src/config/ctytoLocale";
@@ -24,6 +25,7 @@ import { toCapitalize } from "@src/lib/utils";
 
 const ContentLayoutComponent = ({ source, frontMatter }) => {
   const { mods, outlines, prev, next } = frontMatter;
+  const { t, i18n } = useTranslation("countrylevel");
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const segmentRef = useRef();
@@ -45,7 +47,8 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
     { key: "es", value: "es", text: "Spanish" },
     { key: "de", value: "de", text: "German" },
   ];
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isTabletOrMobile = useMediaQuery({ maxWidth: 1224 });
 
   useEffect(() => {
     setCountryOptions(
@@ -128,7 +131,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
           </Container>
         </Modal.Content>
       </Modal>
-      {isMobile ? (
+      {isTabletOrMobile ? (
         <>
           <div>
             <Sidebar.Pushable as={Segment}>
@@ -144,7 +147,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
               >
                 <Menu.Item>&nbsp;</Menu.Item>
                 <Menu.Item style={{ textAlign: "left" }}>
-                  <h4>LANGUAGE:</h4>
+                  <h4>{t("language")}</h4>
                   <Dropdown
                     placeholder="Change Locale"
                     fluid
@@ -156,7 +159,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                   <br />
                 </Menu.Item>
                 <Menu.Item style={{ textAlign: "left" }}>
-                  <h4>REGION:</h4>
+                  <h4>{t("region")}</h4>
                   <Dropdown
                     placeholder="Change Locale"
                     fluid
@@ -176,7 +179,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                       )
                     }
                   >
-                    <a>Content Page</a>
+                    <a>{t("content_page")}</a>
                   </h4>
                   {mods &&
                     mods.map((m, i) => {
@@ -195,9 +198,9 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
               </Sidebar>
               <Sidebar.Pusher dimmed={visible}>
                 <Segment basic>
-                  <div style={{ margin: "0rem" }}>
+                  <div style={{ margin: "0rem", padding: "0.15rem" }}>
                     <Button onClick={() => setVisible(!visible)}>
-                      Content Menu
+                      {t("content_menu")}
                     </Button>
                     <MDXRemote {...source} />
                     <Grid style={{ marginTop: "1rem" }}>
@@ -215,7 +218,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                     background: "#EBF1FF",
                                   }}
                                 >
-                                  Prev
+                                  {t("back")}
                                   <Icon name="angle left" />
                                 </Button>
                               </Link>
@@ -236,7 +239,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                     background: "#EBF1FF",
                                   }}
                                 >
-                                  Next
+                                  {t("next")}
                                   <Icon name="angle right" />
                                 </Button>
                               </Link>
@@ -261,7 +264,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
           <Grid>
             <Grid.Row style={{ margin: "0px", padding: "0px" }}>
               <Grid.Column
-                width={isMobile ? 1 : 3}
+                width={isTabletOrMobile ? 1 : 3}
                 style={{
                   background: "#E8EFF2",
                   color: "black",
@@ -269,7 +272,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                 }}
               >
                 <Container>
-                  <h4 style={{ padding: "0.25rem" }}>LANGUAGE:</h4>
+                  <h4 style={{ padding: "0.25rem" }}>{t("language")}</h4>
                   <Dropdown
                     placeholder="Change Locale"
                     fluid
@@ -279,6 +282,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                     onChange={handleLangChange}
                     style={{ margin: "0.2rem" }}
                   />
+                  <br />
                   <p style={{ padding: "0.35rem" }}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -289,7 +293,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                     occaecat cupidatat non proident, sunt in culpa qui officia
                     deserunt mollit anim id est laborum.
                   </p>
-                  <h4 style={{ padding: "0.25rem" }}>REGION:</h4>
+                  <h4 style={{ padding: "0.25rem" }}>{t("region")}</h4>
                   <Dropdown
                     placeholder="Change Locale"
                     fluid
@@ -301,7 +305,8 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                   />
                   <br />
                   <hr />
-                  <h4
+                  <br />
+                  <h3
                     style={{ padding: "0.25rem", cursor: "pointer" }}
                     onClick={() =>
                       router.push(
@@ -309,12 +314,12 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                       )
                     }
                   >
-                    <a>Content Page</a>
-                  </h4>
+                    <a>{t("content_page")}</a>
+                  </h3>
                   {mods &&
                     mods.map((m, i) => {
                       return (
-                        <p key={i} style={{ padding: "0rem 0.25rem" }}>
+                        <p key={i} style={{ padding: "0rem 0.35rem" }}>
                           <Link href={m.match(/\[(.*?)\]/)[1]} passHref key={i}>
                             <a style={{ cursor: "pointer" }}>
                               Module&nbsp;{i}:&nbsp;
@@ -324,16 +329,19 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                         </p>
                       );
                     })}
-                  <Grid>
-                    {/* <Grid.Row>
-                            <Grid.Column width={6}>
-                                <Icon name="book" />
-                            </Grid.Column>
-                            <Grid.Column width={6}>
-                                <Icon name="book" />
-                            </Grid.Column>
-                        </Grid.Row> */}
-                  </Grid>
+
+                  {/* <Grid style={{ height: '2%'}}>
+                    <Grid.Row>
+                      <Grid.Column width={6}>
+                        &nbsp;
+                        <Icon name="book" />
+                      </Grid.Column>
+                      <Grid.Column width={6}>
+                        &nbsp;
+                        <Icon name="book" />
+                      </Grid.Column>
+                    </Grid.Row>
+                  </Grid> */}
                 </Container>
               </Grid.Column>
               <Grid.Column width={10} style={{ margin: 0, padding: 0 }}>
@@ -359,7 +367,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                   background: "#EBF1FF",
                                 }}
                               >
-                                Prev
+                                {t("back")}
                                 <Icon name="angle left" />
                               </Button>
                             </Link>
@@ -380,7 +388,7 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                                   background: "#EBF1FF",
                                 }}
                               >
-                                Next
+                                {t("next")}
                                 <Icon name="angle right" />
                               </Button>
                             </Link>
@@ -410,10 +418,15 @@ const ContentLayoutComponent = ({ source, frontMatter }) => {
                 >
                   {outlines ? (
                     <>
-                      <h1>Outlines</h1>
+                      <h1>{t("outlines")}</h1>
                       {outlines.map((v, i) => (
                         <h4 key={i}>
-                          <a href={`#${v.toLowerCase().replace(" ", "-")}`}>
+                          <a
+                            href={`#${v
+                              .toLowerCase()
+                              .replace(/ /g, "-")
+                              .replace(/[^\wÄäÖöÜü-]+/g, "")}`}
+                          >
                             {v}
                           </a>
                         </h4>

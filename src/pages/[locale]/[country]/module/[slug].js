@@ -2,6 +2,7 @@ import { getPaths } from "@lib/geModuleStatic";
 import { getFiles, getCountryLocaleModuleFile } from "@src/lib/mdx";
 import LayoutComponent from "@src/components/LayoutComponent";
 import ContentLayoutComponent from "@src/components/ContentLayoutComponent";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import i18nConfig from "../../../../../next-i18next.config";
 
 export default function Homepage({ source, frontMatter }) {
@@ -115,13 +116,17 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps(ctx) {
+export async function getStaticProps(ctx, ns = ["countrylevel"]) {
   return {
     props: {
       ...(await getCountryLocaleModuleFile(
         ctx?.params?.locale,
         ctx?.params?.country,
         ctx?.params?.slug
+      )),
+      ...(await serverSideTranslations(
+        ctx?.params?.locale,
+        ns /*i18nextConfig*/
       )),
     },
   };
