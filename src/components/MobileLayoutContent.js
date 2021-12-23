@@ -1,134 +1,35 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import {
   Button,
   Container,
   Grid,
   Dropdown,
   Icon,
-  Modal,
   Segment,
   Sidebar,
   Menu,
-  MenuItems,
-  Header,
-  Divider,
 } from "semantic-ui-react";
 import { MDXRemote } from "next-mdx-remote";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
-import localematcher from "@src/config/matchLocale";
-import ctytolocale from "@src/config/ctytoLocale";
-import nameCodes from "@src/config/nameCodes";
-import { toCapitalize } from "@src/lib/utils";
 
-const MobileLayoutContent = ({ source, frontMatter }) => {
+const MobileLayoutContent = ({
+  source,
+  frontMatter,
+  currentLanguage,
+  countryOptions,
+  handleCountryChange,
+  languageOptions,
+  handleLangChange,
+}) => {
   const { mods, outlines, prev, next } = frontMatter;
-  const { t, i18n } = useTranslation("countrylevel");
+  const { t } = useTranslation("countrylevel");
   const router = useRouter();
-  const [open, setOpen] = useState(false);
-  const segmentRef = useRef();
   const [visible, setVisible] = useState(false);
-  const [currentLanguage, setCurrentLanguage] = useState(
-    router.query.locale ? router.query.locale : "en"
-  );
-  const [selectedLang, setSelectedlang] = useState("en");
-  const [availableCountries, setAvailableCountries] = useState([]);
-  const [countryOptions, setCountryOptions] = useState([
-    { key: "bangladesh", value: "bangladesh", flag: "bd", text: "Bangladesh" },
-    { key: "germany", value: "germany", flag: "de", text: "Germany" },
-  ]);
-  const [providedLanguageOptions, setProvidedLanguageOptions] = useState([
-    { key: "en", value: "en", text: "English" },
-  ]);
-  const languageOptions = [
-    { key: "en", value: "en", text: "English" },
-    { key: "es", value: "es", text: "Spanish" },
-    { key: "de", value: "de", text: "German" },
-  ];
 
-  useEffect(() => {
-    setCountryOptions(
-      localematcher[currentLanguage].map((cty) => ({
-        key: cty,
-        value: cty,
-        text: toCapitalize(cty),
-      }))
-    );
-  }, [currentLanguage]);
-
-  const handleLangChange = (event, data) => {
-    if (ctytolocale[router.query.country].includes(data.value)) {
-      let orgPath = router.asPath;
-      let currentPath = orgPath.replace(
-        `/${router.query.locale}`,
-        `/${data.value}`
-      );
-      setCurrentLanguage(data.value);
-      router.push(currentPath);
-    }
-    if (!ctytolocale[router.query.country].includes(data.value)) {
-      setSelectedlang(data.value);
-      setAvailableCountries(localematcher[data.value]);
-
-      //   setProvidedLanguageOptions(
-      //     ctytolocale[router.query.country].map((lng) => ({
-      //       key: lng,
-      //       value: lng,
-      //       text: nameCodes[lng],
-      //     }))
-      //   );
-      setOpen(true);
-    }
-  };
-  const handleCountryChange = (event, data) => {
-    let orgPath = router.asPath;
-    let currentPath = orgPath.replace(
-      `/${router.query.country}`,
-      `/${data.value}`
-    );
-    router.push(currentPath);
-  };
-
-  // console.log("loc", router.query.locale);
   return (
     <>
-      <Modal
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
-        open={open}
-        dimmer={"inverted"}
-      >
-        <Modal.Header>
-          Modules available in {nameCodes[selectedLang]}
-        </Modal.Header>
-        <Modal.Content>
-          <Container
-            style={{
-              padding: "1.5rem",
-              textAlign: "center",
-            }}
-          >
-            {availableCountries.map((acty, i) => {
-              return (
-                <div
-                  style={{
-                    border: "0.25px solid #D3D3D3",
-                    padding: "0.5rem",
-                    margin: "1rem 3rem",
-                  }}
-                  key={i}
-                >
-                  <Link href={`/${selectedLang}/${acty}`} passHref>
-                    <h5 style={{ cursor: "pointer" }}>{toCapitalize(acty)}</h5>
-                  </Link>
-                </div>
-              );
-            })}
-          </Container>
-        </Modal.Content>
-      </Modal>
-
       <Sidebar.Pushable as={Segment}>
         <Sidebar
           as={Menu}

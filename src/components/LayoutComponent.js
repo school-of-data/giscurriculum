@@ -1,4 +1,3 @@
-import { Container, Divider } from 'semantic-ui-react'
 import Navbar from './Navbar';
 import Footer from './Footer';
 
