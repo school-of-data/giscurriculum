@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { getStaticPaths, makeStaticProps } from "@lib/getStatic";
-import getSlug from "@lib/getSlug";
+import { getStaticPaths, makeStaticProps } from "@src/lib/getStatic";
+import getSlug from "@src/lib/getSlug";
 import { useTranslation } from "next-i18next";
 import {
   Button,
@@ -21,7 +21,7 @@ export default function Homepage({ source }) {
   const [currentLanguage, setCurrentLanguage] = useState(
     router.query.locale ? router.query.locale : "en"
   );
-  const { isDesktop } = useSizeQuery()
+  const { isDesktop } = useSizeQuery();
 
   const languageOptions = [
     { key: "en", value: "en", text: "English" },
