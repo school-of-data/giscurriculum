@@ -5,7 +5,7 @@ export default function LayoutComponent(props) {
   return (
     <>
       <Navbar />
-      <div style={{ margin: '0.2rem', marginTop: '4rem', padding: '0.2rem' }}>
+      <div style={{marginTop: '5rem' }}>
         {props.children}
       </div>
       <Footer />

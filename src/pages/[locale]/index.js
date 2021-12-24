@@ -69,6 +69,13 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
+      <div fluid className="imgdiv" style={{ margin: `${isDesktop ? "0rem" : "1vh 0rem"}` }}>
+        <img src="bg.jpg" />
+        <div className="overlay" style={{ top: "10vh", marginLeft: '0px', padding: '0px' }}>
+          <p style={{ fontSize: `${isDesktop ? "2em" : "1em"}`, marginLeft: `${isDesktop ? "2.5rem" : "0.5rem"}` }}> Open Knowledge Events</p>
+          <p style={{ fontSize: `${isDesktop ? "1.5em" : "0.85em"}`, marginLeft: `${isDesktop ? "2.5rem" : "0.5rem"}` }}> Upcoming and Past training events from Open Knowledge activities and programmes. </p>
+        </div>
+      </div>
       <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
       <Grid stackable columns={`${isDesktop ? "three" : "one"}`}>
         <Grid.Row>
@@ -165,24 +172,20 @@ export default function Homepage({ source }) {
                       border: "0.25px solid #D3D3D3",
                       padding: "0.5rem",
                       margin: "1rem 1.5rem",
-                      color: `${
-                        currentLanguage === val.lng ? "black" : "#808088"
-                      }`,
-                      fontWeight: `${
-                        currentLanguage === val.lng ? "bold" : "normal"
-                      }`,
+                      color: `${currentLanguage === val.lng ? "black" : "#808088"
+                        }`,
+                      fontWeight: `${currentLanguage === val.lng ? "bold" : "normal"
+                        }`,
                     }}
                     key={i}
                   >
                     <Link href={`/${val.lng}/${val.countrykey}`} passHref>
                       <h5
                         style={{
-                          cursor: `${
-                            currentLanguage === val.lng ? "pointer" : "default"
-                          }`,
-                          pointerEvents: `${
-                            currentLanguage === val.lng ? "auto" : "none"
-                          }`,
+                          cursor: `${currentLanguage === val.lng ? "pointer" : "default"
+                            }`,
+                          pointerEvents: `${currentLanguage === val.lng ? "auto" : "none"
+                            }`,
                         }}
                       >
                         {val.country} (in {val.language})
