@@ -1,59 +1,67 @@
-import React from "react";
 import {
   Container,
+  Divider,
+  Dropdown,
   Grid,
-  Icon,
   Header,
   Image,
   List,
+  Menu,
   Segment,
 } from "semantic-ui-react";
+import useSizeQuery from "@src/hooks/useSizeQuery";
 
 const Footer = () => {
+  const { isDesktop } = useSizeQuery()
   return (
     <Segment
       inverted
+      vertical
       style={{
-        margin: "2.5em 0em 0em 0em",
-        padding: "1.5em 0em",
-        backgroundColor: "#333333",
+        margin: "5em 0em 0em",
+        padding: "5em 0em",
+        background: "#DDE3EA",
       }}
     >
-      <Container textAlign="center">
-        <Grid inverted>
-          <Grid.Column width={4} style={{ textAlign: "left" }}>
-            <h4> Follow us</h4>
-            <Grid.Column>
-              <a href="" target="_blank" className="socialicon">
-                <Icon name="facebook" />
-              </a>
-              <a href="" target="_blank" className="socialicon">
-                <Icon name="twitter" />
-              </a>
-              <a href="" target="_blank" className="socialicon">
-                <Icon name="linkedin" />
-              </a>
-            </Grid.Column>
+      <Container fluid textAlign="center">
+        <Grid divided inverted stackable>
+          <Grid.Column width={6}>
+            <Image
+              centered
+              size="medium"
+              src="https://i.imgur.com/WjH95wR.png"
+            />
           </Grid.Column>
-          <Grid.Column width={8} style={{ textAlign: "left" }}>
-            <List link inverted>
-              <List.Item>
-                <Image
-                  centered
-                  size="small"
-                  src="https://i.imgur.com/lXrEJZj.png"
-                />
+          <Grid.Column width={6}>
+            <Header inverted as="h4" content="" />
+            <List horizontal link size="large">
+              <List.Item as="a" href="#">
+                Privacy Policy
               </List.Item>
-              <List.Item>
-                <a href="https://schoolofdata.org/" target="_blank">
-                  School of data
-                </a>
+              <List.Item as="a" href="#">
+                IP Policy
               </List.Item>
-              {/* <List.Item><h4 style={{ color: '#f5f7f8' }}>Donors</h4></List.Item>
-                        <List.Item><p style={{ color: '#f5f7f8' }}>Mention of Donors.</p></List.Item> */}
+              <List.Item as="a" href="#">
+                Cookie Policy
+              </List.Item>
+              <List.Item as="a" href="#">
+                Term of Use
+              </List.Item>
+              <List.Item as="a" href="#">
+                Jobs
+              </List.Item>
+              <List.Item as="a" href="#">
+                Contact
+              </List.Item>
             </List>
           </Grid.Column>
         </Grid>
+        <Divider inverted section style={{ margin: "0px 18rem" }} />
+        <div fluid style={{ textAlign: "left", margin: `${isDesktop ? "1rem 18rem" : "0.25rem 1rem "}`, fontSize: '1.2em', color: 'black' }}>
+          <p><b>Source code</b> available under the MIT license.</p>
+          <p>Content on this site, made by <b>Open Knowledge Foundation</b>, is licensed under a <b>Creative Commons Attribution 4.0 International License.</b></p>
+          <p>Refer to our <b>attribution page</b> for attributions of other work on the site.</p>
+        </div>
       </Container>
     </Segment>
   );

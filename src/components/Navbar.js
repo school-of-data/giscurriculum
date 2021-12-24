@@ -1,69 +1,61 @@
-import { Grid, Input, Menu, MenuHeader, Image } from "semantic-ui-react";
+import { Container, Menu, Image } from "semantic-ui-react";
 import useSizeQuery from "@src/hooks/useSizeQuery";
 import { useRouter } from "next/router";
 
 const Navbar = () => {
-  // const [activeItem, setActiveItem] = useState("home");
   const { isDesktop } = useSizeQuery()
   const router = useRouter();
-  // const [selectedlang, setSelectedlang] = useState(router.query.locale ? router.query.locale : 'en')
-
-  // const handleItemClick = (e, { name }) => {
-  //   setActiveItem(name);
-  //   router.push(`/`);
-  // };
-
-  // const countryOptions = [
-  //     { key: 'en', value: 'en', flag: 'gb eng', text: 'English' },
-  //     { key: 'de', value: 'de', flag: 'de', text: 'German' },
-  // ];
-
-  // const handleChange = (event, data) => {
-  //     router.push(`/${data.value}`)
-  //     setSelectedlang(data.value)
-  // }
-
-  // console.log('LOCALE', router.query.locale)
-
-  // return (
-  //   <Menu secondary>
-  //     <Menu.Item
-  //       name="home"
-  //       active={activeItem === "home"}
-  //       onClick={handleItemClick}
-  //     />
-  //     <Menu.Item
-  //       name="assets"
-  //       active={activeItem === "assets"}
-  //       onClick={handleItemClick}
-  //     />
-  //     <Menu.Menu position="right">
-  //       <Menu.Item>
-  //         <Input icon="search" placeholder="Search..." />
-  //       </Menu.Item>
-  //       {/* <Menu.Item>
-  //                   <Dropdown
-  //                       placeholder='Change Locale'
-  //                       fluid
-  //                       selection
-  //                       defaultValue={selectedlang}
-  //                       options={countryOptions}
-  //                       onChange={handleChange}
-  //                   />
-  //               </Menu.Item> */}
-  //     </Menu.Menu>
-  //   </Menu>
-  // );
-
   return (
-    <Menu fixed="top" style={{ background: "#00B1F6", margin: '0px' }}>
-      <Menu.Item style={{ border: '0px', cursor: 'pointer' }}>
-        <Image src="https://i.imgur.com/lXrEJZj.png" size='small' wrapped onClick={() => router.push(`/${router.query.locale}`)} />
-      </Menu.Item>
-      <Menu.Item style={{ border: '0px', color: 'white', cursor: 'pointer' }}>
-        <h2 onClick={() => router.push(`/${router.query.locale}`)} style={{ fontSize: `${isDesktop ? '2em' : '0.9em'}` }}> Open GIS Curriculum</h2>
-      </Menu.Item>
-    </Menu>
+    <>
+      <Menu
+        fixed="top"
+        size="large"
+        style={{ background: "#22B7F8", margin: "0px" }}
+      >
+        <Container fluid>
+          <Menu.Item
+            style={{
+              margin: `${isDesktop ? "0rem 2rem" : "0rem"}`,
+              border: "0px",
+              cursor: "pointer",
+            }}
+          >
+            <Image
+              src="https://i.imgur.com/4CAWd5p.png"
+              size="small"
+              wrapped
+              onClick={() => router.push(`/${router.query.locale}`)}
+            />
+          </Menu.Item>
+          <Menu.Item
+            position="right"
+            style={{
+              padding: "0.25rem",
+              marginRight: `${isDesktop ? "4rem" : "1.25rem"}`,
+            }}
+          >
+            <span
+              style={{
+                margin: `${isDesktop ? "0rem 1.25rem" : "0rem 0.15rem"}`,
+                fontSize: `${isDesktop ? "1.15em" : "0.85em"}`,
+                cursor: "pointer"
+              }}
+            >
+              All training events
+            </span>
+            <span
+              style={{
+                margin: `${isDesktop ? "0rem 1.25rem" : "0rem 0.15rem"}`,
+                fontSize: `${isDesktop ? "1.15em" : "0.85em"}`,
+                cursor: "pointer"
+              }}
+            >
+              Series
+            </span>
+          </Menu.Item>
+        </Container>
+      </Menu>
+    </>
   );
 };
 
