@@ -69,7 +69,7 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
-      <div fluid className="imgdiv" style={{ margin: `${isDesktop ? "0rem" : "1vh 0rem"}` }}>
+      <div className="imgdiv" style={{ margin: `${isDesktop ? "0rem" : "1vh 0rem"}` }}>
         <img src="bg.jpg" />
         <div className="overlay" style={{ top: "10vh", marginLeft: '0px', padding: '0px' }}>
           <p style={{ fontSize: `${isDesktop ? "2em" : "1em"}`, marginLeft: `${isDesktop ? "2.5rem" : "0.5rem"}` }}> Open Knowledge Events</p>

@@ -4,7 +4,6 @@ import { serialize } from "next-mdx-remote/serialize";
 import mdxPrism from "mdx-prism";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import matter from 'gray-matter';
 
 import i18nextConfig from '../../next-i18next.config';
@@ -28,7 +27,7 @@ export async function getLocaleFile(locale, slug) {
 }
 
 export async function getCountryLocaleFile(locale, country, slug) {
-  const fPath = join(process.cwd(), 'contents', 'locales', locale, country,`${slug}.mdx`);
+  const fPath = join(process.cwd(), 'contents', 'locales', locale, country, `${slug}.mdx`);
   let isInRequestedLanguage = true;
   try {
     await accessSync(fPath, constants.R_OK);
