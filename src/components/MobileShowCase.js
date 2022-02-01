@@ -66,7 +66,7 @@ const MobileShowCase = ({ filters, showcaseData, filteredRows, getOptions, filte
                                     console.log("row", row);
                                     return (
                                         <Grid style={{
-                                            margin: "0.2rem", padding: "0.25rem",
+                                            margin: "2rem 0.2rem", padding: "0.25rem",
                                             border: "solid #65ABEA 1px",
                                             borderRadius: "0.25rem"
                                         }}>

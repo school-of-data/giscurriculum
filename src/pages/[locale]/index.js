@@ -52,12 +52,14 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
-      <Container fluid style={{ background: "#65ABEA", color: "white", padding: `${isDesktop ? "1rem 0rem 1rem 1rem" : "0rem !important"}`, margin: `${isDesktop ? "0rem !important" : "0rem !important"}` }}>
+      <Container fluid style={{ background: "#22B7F8", color: "white", padding: `${isDesktop ? "4rem" : "0rem !important"}`, margin: `${isDesktop ? "0rem !important" : "0rem !important"}` }}>
         <Header
-          as="h2"
+          as="h1"
           style={{
-            paddingTop: `${isDesktop ? "4rem" : "2rem"}`,
+            padding: `${isDesktop ? "2rem 0rem" : "2rem"}`,
             color: "white",
+            fontSize: `${isDesktop ? "3rem" : "2rem"}`,
+            fontWeight: '400'
           }}
         >
           Open Geodata Training Curriculum
@@ -100,7 +102,7 @@ export default function Homepage({ source }) {
                 padding: "1.5rem",
                 textAlign: "left",
                 borderRadius: "0.15rem",
-                minHeight: "80vh",
+                minHeight: `${isDesktop ? "80vh" : "auto"}`,
                 height: "100%",
               }}
             >
@@ -110,7 +112,7 @@ export default function Homepage({ source }) {
                   margin: "1rem 1rem",
                 }}
               >
-                <h3>Select Language</h3>
+                <h3 className="blue-title">Select Language</h3>
                 <p>Select the language of the homepage</p>
                 <Dropdown
                   placeholder="Select Language"
@@ -123,7 +125,7 @@ export default function Homepage({ source }) {
                 <br />
                 <br />
                 <br />
-                <h3>Select curriculum localization</h3>
+                <h3 className="blue-title">Select curriculum localization</h3>
                 <p>Select the curriculum you want to view</p>
                 <Dropdown
                   placeholder="Select Localization"
@@ -152,15 +154,16 @@ export default function Homepage({ source }) {
                 height: "100%",
               }}
             >
+              <h3 className="blue-title">Project Showcase</h3>
               <div
                 style={{
                   padding: "0.5rem",
                   margin: "1rem 1rem",
                   height: "70vh",
-                  overflowY: "scroll"
+                  overflowY: "scroll",
+                  overflowX: "hidden"
                 }}
               >
-                <h3>Project Showcase</h3>
                 <br />
                 <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
                   {[1, 2, 3, 4, 5].map((v, i) => {
@@ -168,8 +171,6 @@ export default function Homepage({ source }) {
                       <Grid.Row style={{
                         height: "20rem",
                         width: "100%",
-                        backgroundColor: "#D3D3D3",
-                        marginBottom: "1.5rem",
                         cursor: "pointer",
                       }}
                         key={i}>
@@ -177,16 +178,7 @@ export default function Homepage({ source }) {
                         </Grid.Column>
                         <Grid.Column>
                           <h3>TITLE</h3>
-                          <Grid columns='equal'>
-                            <Grid.Column>
-                              <p>Country</p>
-                            </Grid.Column>
-                            {isDesktop && (<Grid.Column width={6}>
-                            </Grid.Column>)}
-                            <Grid.Column>
-                              <p>Language</p>
-                            </Grid.Column>
-                          </Grid>
+                          <p>Country, Language</p>
                           <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                           </p>
@@ -252,6 +244,7 @@ export default function Homepage({ source }) {
           </Grid.Column> */}
         </Grid.Row>
       </Grid>
+      <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
     </LayoutComponent>
   );
 }
