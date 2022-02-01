@@ -33,25 +33,36 @@ const ShowCasePage = () => {
     };
     const filterSelectHandler = (cat) => (e,data) => {
         const selectedOptions = data.value
-        let indicesToSet = [];
+        let indicesToSet = [...defaultIndices];
         const newFilteredOptions = ({...filteredOptions, [cat]: selectedOptions});
         const newFilteredOptionsKeys = Object.keys(newFilteredOptions);
 
         // Loop through each filter category
-        // for (let k = 0; k < newFilteredOptionsKeys.length; k++) {
+        for (let k = 0; k < newFilteredOptionsKeys.length; k++) {
+        const currentCat = newFilteredOptionsKeys[k];
+        const currentFilterSelectedOptions = newFilteredOptions[newFilteredOptionsKeys[k]];
+        let currentCatFilteredIndices = [];
 
-        // const currentFilterSelectedOptions = newFilteredOptions[newFilteredOptionsKeys[k]];
+            // Loop through each option selected for this filter's categories
 
-        // Loop through each option selected for this filter's categories
-        for (let i = 0; i < selectedOptions.length; i++) {
-            let currentFilterElementIndices = filters[cat][selectedOptions[i]];
-
-            for (let j = 0; j < currentFilterElementIndices.length; j++) {
-                if (!indicesToSet.includes(currentFilterElementIndices[j]))
-                    indicesToSet.push(currentFilterElementIndices[j])
+            if (currentFilterSelectedOptions.length > 0) {
+                for (let i = 0; i < currentFilterSelectedOptions.length; i++) {
+                    let currentFilterElementIndices = filters[currentCat][currentFilterSelectedOptions[i]];
+    
+                    for (let j = 0; j < currentFilterElementIndices.length; j++) {
+                        if (!currentCatFilteredIndices.includes(currentFilterElementIndices[j]))
+                        currentCatFilteredIndices.push(currentFilterElementIndices[j])
+                    }
+                }
+            } else {
+                currentCatFilteredIndices = [...defaultIndices];
             }
+
+            indicesToSet = indicesToSet.filter(function(n) {
+                return currentCatFilteredIndices.indexOf(n) !== -1;
+            })
+            
         }
-        // }
         
 
         setFilteredOptions(newFilteredOptions);
