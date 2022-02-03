@@ -7,7 +7,7 @@ const DesktopShowCase = ({ filters, showcaseData, filteredRows, getOptions, filt
     return (
         <Grid>
             <Grid.Row style={{ height: "100%", paddingTop: "2rem" }}>
-                <Grid.Column width={4} style={{ backgroundColor: "#65ABEA" }}>
+                <Grid.Column width={4} style={{ backgroundColor: "#E8EFF2" }}>
                     {Object.keys(filters).map((filterCat) => {
                         return (
                             <Grid.Row style={{ margin: "0px", padding: "0px" }}>
@@ -43,7 +43,7 @@ const DesktopShowCase = ({ filters, showcaseData, filteredRows, getOptions, filt
                             console.log("row", row);
                             return (
                                 <Grid style={{
-                                    margin: "0.25rem 1rem 0.25rem 1rem", padding: "0.25rem",
+                                    margin: "2rem 1rem", padding: "0.25rem",
                                     border: "solid #65ABEA 1px",
                                     borderRadius: "0.25rem",
                                     width: "95%",
