@@ -18,14 +18,23 @@ import { useTranslation } from "next-i18next";
 const MobileShowCase = ({
   filters,
   showcaseData,
+  filterSelectHandler,
   filteredRows,
   getOptions,
-  filterSelectHandler,
   getLangname,
+  filteredOptions,
+  setFilteredOptions,
+  tagSelectHandler,
+  resetFilters,
 }) => {
   const { t } = useTranslation("countrylevel");
   const router = useRouter();
   const [visible, setVisible] = useState(false);
+
+  const handleTag = (cat, val) => {
+    let prevVals = filteredOptions?.[cat] ? filteredOptions?.[cat] : []
+    tagSelectHandler(cat, [...prevVals, val.trim()])
+  }
 
   return (
     <>
@@ -53,6 +62,7 @@ const MobileShowCase = ({
                   clearable
                   options={getOptions(filterCat)}
                   onChange={filterSelectHandler(filterCat)}
+                  value={filteredOptions?.[filterCat] ? filteredOptions?.[filterCat] : []}
                   style={{ margin: "0.2rem" }}
                 />
                 <br />
@@ -100,7 +110,7 @@ const MobileShowCase = ({
                           <p>{row.project_summary}</p>
                           <h4>Tools</h4>
                           <div style={{ display: "flex", direction: "row" }}>
-                            {row.tools.split(",").map((tool) => (
+                            {row.tools.split(",").map((tool, i) => (
                               <span
                                 style={{
                                   backgroundColor: "#EEEEEE",
@@ -109,13 +119,15 @@ const MobileShowCase = ({
                                   borderRadius: "0.15rem",
                                   cursor: "pointer",
                                 }}
+                                onClick={() => handleTag("tools", tool)}
+                                key={i}
                               >
                                 {tool}
                               </span>
                             ))}
                           </div>
                           <h4>Themes and Keywords</h4>
-                          {row.themes_keywords.split(",").map((tool) => (
+                          {row.themes_keywords.split(",").map((tk, i) => (
                             <span
                               style={{
                                 backgroundColor: "#EEEEEE",
@@ -124,12 +136,14 @@ const MobileShowCase = ({
                                 borderRadius: "0.15rem",
                                 cursor: "pointer",
                               }}
+                              onClick={() => handleTag("themes_keywords", tk)}
+                              key={i}
                             >
-                              {tool}
+                              {tk}
                             </span>
                           ))}
                           <h4>Algorithms</h4>
-                          {row.algorithms.split(",").map((tool) => (
+                          {row.algorithms.split(",").map((alg, i) => (
                             <span
                               style={{
                                 backgroundColor: "#EEEEEE",
@@ -138,8 +152,10 @@ const MobileShowCase = ({
                                 borderRadius: "0.15rem",
                                 cursor: "pointer",
                               }}
+                              onClick={() => handleTag("algorithms", alg)}
+                              key={i}
                             >
-                              {tool}
+                              {alg}
                             </span>
                           ))}
                           <h4>Datasets</h4>

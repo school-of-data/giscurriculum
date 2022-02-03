@@ -145,6 +145,9 @@ const ShowCasePage = () => {
           getOptions={getOptions}
           filterSelectHandler={filterSelectHandler}
           getLangname={getLangname}
+          filteredOptions={filteredOptions}
+          setFilteredOptions={setFilteredOptions}
+          tagSelectHandler={tagSelectHandler}
           resetFilters={resetFilters}
         />
       )}
