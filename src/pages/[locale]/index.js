@@ -4,6 +4,7 @@ import getSlug from "@src/lib/getSlug";
 import { useTranslation } from "next-i18next";
 import {
   Button,
+  Header,
   Container,
   Grid,
   Placeholder,
@@ -21,6 +22,7 @@ export default function Homepage({ source }) {
   const [currentLanguage, setCurrentLanguage] = useState(
     router.query.locale ? router.query.locale : "en"
   );
+  const [currentMod, setCurrentMod] = useState("en/bangladesh")
   const { isDesktop } = useSizeQuery();
 
   const languageOptions = [
@@ -28,34 +30,15 @@ export default function Homepage({ source }) {
     { key: "es", value: "es", text: "Spanish" },
     { key: "de", value: "de", text: "German" },
   ];
-  const availableMods = [
-    {
-      country: "Bangladesh",
-      countrykey: "bangladesh",
-      language: "English",
-      lng: "en",
-    },
-    { country: "Ghana", countrykey: "ghana", language: "English", lng: "en" },
-    {
-      country: "Nigeria",
-      countrykey: "nigeria",
-      language: "English",
-      lng: "en",
-    },
-    {
-      country: "Germany",
-      countrykey: "germany",
-      language: "German",
-      lng: "de",
-    },
-    {
-      country: "Argentina",
-      countrykey: "argentina",
-      language: "Spanish",
-      lng: "es",
-    },
-    { country: "Mexico", countrykey: "mexico", language: "Spanish", lng: "es" },
-  ];
+
+  const availableOptions = [
+    { key: "en/bangladesh", value: "en/bangladesh", text: "Bangladesh (in English)" },
+    { key: "en/ghana", value: "en/ghana", text: "Ghana (in English)" },
+    { key: "en/nigeria", value: "en/nigeria", text: "Nigeria (in English)" },
+    { key: "de/germany", value: "de/germany", text: "Germany (in German)" },
+    { key: "es/argentina", value: "es/argentina", text: "Argentina (in Spanish)" },
+    { key: "es/mexico", value: "es/mexico", text: "Mexico (in Spanish)" }
+  ]
 
   const handleLangChange = (event, data) => {
     let orgPath = router.asPath;
@@ -69,15 +52,43 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
-      <div className="imgdiv" style={{ margin: `${isDesktop ? "0rem" : "1vh 0rem"}` }}>
-        <img src="bg.jpg" />
-        <div className="overlay" style={{ top: "10vh", marginLeft: '0px', padding: '0px' }}>
-          <p style={{ fontSize: `${isDesktop ? "2em" : "1em"}`, marginLeft: `${isDesktop ? "2.5rem" : "0.5rem"}` }}> Open Knowledge Events</p>
-          <p style={{ fontSize: `${isDesktop ? "1.5em" : "0.85em"}`, marginLeft: `${isDesktop ? "2.5rem" : "0.5rem"}` }}> Upcoming and Past training events from Open Knowledge activities and programmes. </p>
-        </div>
-      </div>
+      <Container fluid style={{ background: "#22B7F8", color: "white", padding: `${isDesktop ? "4rem" : "0rem !important"}`, margin: `${isDesktop ? "0rem !important" : "0rem !important"}` }}>
+        <Header
+          as="h1"
+          style={{
+            padding: `${isDesktop ? "2rem 0rem" : "2rem"}`,
+            color: "white",
+            fontSize: `${isDesktop ? "3rem" : "2rem"}`,
+            fontWeight: '400'
+          }}
+        >
+          Open Geodata Training Curriculum
+        </Header>
+        <p>
+          Data for Good at Meta has partnered with the Open Knowledge Foundation
+          to design, develop, and deliver a training focused on how governments
+          and nonprofits around the world can utilise free and open geospatial
+          data and geospatial software.
+        </p>
+        <p>
+          This website contains a training curriculum built around the powerful
+          free and open source GIS, QGIS, for learning how to utilize free and
+          open geospatial data such as OpenStreetMap (OSM) and Meta's High
+          Resolution Settlement Layer (HRSL).
+        </p>
+        <p>
+          The curriculum is localized for 16 countries and available in 7
+          languages (Amharic, Arabic, English, German, Portuguese, Spanish, and
+          Vietnamese). You can select the langugae and country localization
+          below.
+        </p>
+        <p style={{ paddingBottom: "2rem" }}>
+          You can also find sample projects made by those trained using the
+          curriculum in the Showcase Page.
+        </p>
+      </Container>
       <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
-      <Grid stackable columns={`${isDesktop ? "three" : "one"}`}>
+      <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
         <Grid.Row>
           <Grid.Column
             style={{
@@ -89,111 +100,42 @@ export default function Homepage({ source }) {
               style={{
                 border: "0.5px solid #D3D3D3",
                 padding: "1.5rem",
+                textAlign: "left",
                 borderRadius: "0.15rem",
-                minHeight: "80vh",
+                minHeight: `${isDesktop ? "80vh" : "auto"}`,
                 height: "100%",
               }}
             >
-              <h3 style={{ textAlign: "justified" }}>{t("welcome_to")}</h3>
-              <h5 style={{ textAlign: "justified" }}>
-                {t("welcome_sub_description")}
-              </h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Hendrerit gravida rutrum quisque non tellus orci. Curabitur
-                gravida arcu ac tortor dignissim. Euismod elementum nisi quis
-                eleifend quam adipiscing vitae. Vulputate mi sit amet mauris.
-                Non odio euismod lacinia at quis risus. Porta nibh venenatis
-                cras sed felis. Consequat interdum varius sit amet mattis
-                vulputate enim nulla aliquet. Libero volutpat sed cras ornare
-                arcu dui vivamus arcu felis. Pretium quam vulputate dignissim
-                suspendisse in est ante in nibh.
-                <br />
-                <br /> A diam maecenas sed enim. Ut placerat orci nulla
-                pellentesque dignissim enim. Morbi tristique senectus et netus
-                et malesuada fames ac. Posuere sollicitudin aliquam ultrices
-                sagittis orci a scelerisque purus. Odio tempor orci dapibus
-                ultrices. Neque sodales ut etiam sit amet nisl. Sit amet
-                porttitor eget dolor. Consequat ac felis donec et. In cursus
-                turpis massa tincidunt dui ut. Sodales ut eu sem integer vitae
-                justo eget. Fermentum et sollicitudin ac orci phasellus. Id
-                cursus metus aliquam eleifend mi in nulla posuere sollicitudin.
-              </p>
-            </Container>
-          </Grid.Column>
-          <Grid.Column
-            style={{
-              padding: "0rem 4rem",
-              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-            }}
-          >
-            <Container
-              style={{
-                border: "0.5px solid #D3D3D3",
-                padding: "1.5rem",
-                textAlign: "center",
-                borderRadius: "0.15rem",
-                minHeight: "80vh",
-                height: "100%",
-              }}
-            >
-              <h3>{t("localization_available")}</h3>
               <div
                 style={{
                   padding: "0.5rem",
                   margin: "1rem 1rem",
                 }}
               >
+                <h3 className="blue-title">Select Language</h3>
+                <p>Select the language of the homepage</p>
                 <Dropdown
-                  placeholder="Change Locale"
+                  placeholder="Select Language"
                   fluid
                   selection
                   defaultValue={currentLanguage}
                   options={languageOptions}
                   onChange={handleLangChange}
                 />
-                <p style={{ textAlign: "left", margin: "0.2rem" }}>
-                  A diam maecenas sed enim. Ut placerat orci nulla pellentesque
-                  dignissim enim. Morbi tristique senectus et netus et malesuada
-                  fames ac. Posuere sollicitudin aliquam ultrices sagittis orci
-                  a scelerisque purus. Odio tempor orci dapibus ultrices. Neque
-                  sodales ut etiam sit amet nisl. Sit amet porttitor eget dolor.
-                  Consequat ac felis donec et. In cursus turpis massa tincidunt
-                  dui ut. Sodales ut eu sem integer vitae justo eget. Fermentum
-                  et sollicitudin ac orci phasellus. Id cursus metus aliquam
-                  eleifend mi in nulla posuere sollicitudin.
-                </p>
+                <br />
+                <br />
+                <br />
+                <h3 className="blue-title">Select curriculum localization</h3>
+                <p>Select the curriculum you want to view</p>
+                <Dropdown
+                  placeholder="Select Localization"
+                  fluid
+                  selection
+                  defaultValue={currentMod}
+                  options={availableOptions}
+                  onChange={handleLangChange}
+                />
               </div>
-              {availableMods.map((val, i) => {
-                return (
-                  <div
-                    style={{
-                      border: "0.25px solid #D3D3D3",
-                      padding: "0.5rem",
-                      margin: "1rem 1.5rem",
-                      color: `${currentLanguage === val.lng ? "black" : "#808088"
-                        }`,
-                      fontWeight: `${currentLanguage === val.lng ? "bold" : "normal"
-                        }`,
-                    }}
-                    key={i}
-                  >
-                    <Link href={`/${val.lng}/${val.countrykey}`} passHref>
-                      <h5
-                        style={{
-                          cursor: `${currentLanguage === val.lng ? "pointer" : "default"
-                            }`,
-                          pointerEvents: `${currentLanguage === val.lng ? "auto" : "none"
-                            }`,
-                        }}
-                      >
-                        {val.country} (in {val.language})
-                      </h5>
-                    </Link>
-                  </div>
-                );
-              })}
             </Container>
           </Grid.Column>
           <Grid.Column
@@ -206,7 +148,63 @@ export default function Homepage({ source }) {
               style={{
                 border: "0.5px solid #D3D3D3",
                 padding: "1.5rem",
-                textAlign: "center",
+                textAlign: "left",
+                borderRadius: "0.15rem",
+                minHeight: "80vh",
+                height: "100%",
+              }}
+            >
+              <h3 className="blue-title">Project Showcase</h3>
+              <div
+                style={{
+                  padding: "0.5rem",
+                  margin: "1rem 1rem",
+                  height: "70vh",
+                  overflowY: "scroll",
+                  overflowX: "hidden"
+                }}
+              >
+                <br />
+                <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
+                  {[1, 2, 3, 4, 5].map((v, i) => {
+                    return (
+                      <Grid.Row style={{
+                        height: "20rem",
+                        width: "100%",
+                        cursor: "pointer",
+                      }}
+                        key={i}>
+                        <Grid.Column>
+                        </Grid.Column>
+                        <Grid.Column>
+                          <h3>TITLE</h3>
+                          <p>Country, Language</p>
+                          <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                          </p>
+                          <Button content='READ MORE' primary onClick={() =>
+                            router.push(`/${router.query.locale}/showcase`)
+                          } />
+                        </Grid.Column>
+                      </Grid.Row>
+                    )
+                  })}
+
+                </Grid>
+              </div>
+            </Container>
+          </Grid.Column>
+          {/* <Grid.Column
+            style={{
+              padding: "0rem 4rem",
+              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
+            }}
+          >
+            <Container
+              style={{
+                border: "0.5px solid #D3D3D3",
+                padding: "1.5rem",
+                textAlign: "left",
                 borderRadius: "0.15rem",
                 minHeight: "80vh",
                 height: "100%",
@@ -243,9 +241,10 @@ export default function Homepage({ source }) {
                 })}
               </div>
             </Container>
-          </Grid.Column>
+          </Grid.Column> */}
         </Grid.Row>
       </Grid>
+      <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
     </LayoutComponent>
   );
 }

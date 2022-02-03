@@ -18,23 +18,22 @@ const Footer = () => {
       inverted
       vertical
       style={{
-        margin: "5em 0em 0em",
         padding: "5em 0em",
-        background: "#DDE3EA",
+        background: "#f6f6f6",
+        color: "#fff"
       }}
     >
       <Container fluid textAlign="center">
-        <Grid divided inverted stackable>
+        <Grid centered divided inverted stackable>
           <Grid.Column width={6}>
             <Image
-              centered
-              size="medium"
-              src="https://i.imgur.com/WjH95wR.png"
+              size="small"
+              src="/colored_logo.svg"
             />
           </Grid.Column>
-          <Grid.Column width={6}>
+          <Grid.Column width={6} style={{ textAlign: 'right' }}>
             <Header inverted as="h4" content="" />
-            <List horizontal link size="large">
+            <List horizontal link size="small" style={{ marginTop: '0px' }}>
               <List.Item as="a" href="#">
                 Privacy Policy
               </List.Item>
@@ -56,8 +55,8 @@ const Footer = () => {
             </List>
           </Grid.Column>
         </Grid>
-        <Divider inverted section style={{ margin: "0px 18rem" }} />
-        <div fluid style={{ textAlign: "left", margin: `${isDesktop ? "1rem 18rem" : "0.25rem 1rem "}`, fontSize: '1.2em', color: 'black' }}>
+        <Divider inverted section style={{ margin: "1rem 12rem" }} />
+        <div fluid style={{ textAlign: "left", margin: `${isDesktop ? "1rem 12rem" : "0.25rem 1rem "}`, fontSize: '1rem', color: 'black' }}>
           <p><b>Source code</b> available under the MIT license.</p>
           <p>Content on this site, made by <b>Open Knowledge Foundation</b>, is licensed under a <b>Creative Commons Attribution 4.0 International License.</b></p>
           <p>Refer to our <b>attribution page</b> for attributions of other work on the site.</p>

@@ -74,7 +74,7 @@ const DesktopLayoutContent = ({
             style={{
               background: "#E8EFF2",
               color: "black",
-              padding: "2.5rem",
+              padding: "4rem 2.5rem",
             }}
           >
             <Container>
@@ -151,7 +151,7 @@ const DesktopLayoutContent = ({
             <Container
               textAlign="justified"
               style={{
-                padding: "2rem 1rem 0rem 1rem",
+                padding: "4rem 2.5rem",
               }}
             >
               <MDXRemote {...source} />
