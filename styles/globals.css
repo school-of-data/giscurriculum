@@ -1,3 +1,6 @@
+body {
+  font-family: OpenSans,sans-serif;
+}
 body ::-webkit-scrollbar {
   width: 0px;
 }
@@ -28,6 +31,7 @@ div.item {
   box-shadow: none !important;
   outline: none !important;
 }
+
 .imgdiv img {
   width: 100%;
   position: relative;
@@ -40,4 +44,14 @@ div.item {
 
 .ui.large.horizontal.list .list>.item, .ui.large.horizontal.list>.item {
   color: black;
+}
+
+.blue-title {
+  font-size:  1.5rem;
+  color:  #22B7F8;
+  font-weight: 300;
+}
+
+.ui.primary.button {
+  background:  #22B7F8;
 }
