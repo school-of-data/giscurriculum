@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 body {
-  font-family: OpenSans,sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 body ::-webkit-scrollbar {
   width: 0px;
@@ -54,4 +56,30 @@ div.item {
 
 .ui.primary.button {
   background:  #22B7F8;
+}
+
+.hero-session {
+  background: #22B7F8; 
+  color: #fff;
+  padding: 4rem;
+}
+
+.big-title {
+  padding:  2rem 0rem;
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.hero-session .big-title {
+  color:  #fff;
+}
+
+@media (max-width: 425px) {
+  .hero-session {
+    padding: 0.5rem;
+  }
+
+  .big-title {
+    font-size: 2rem;
+  }
 }

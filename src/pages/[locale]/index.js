@@ -15,6 +15,7 @@ import LayoutComponent from "@src/components/LayoutComponent";
 import useSizeQuery from "@src/hooks/useSizeQuery";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import HeroSession from "@src/components/HeroSession";
 
 export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
@@ -52,199 +53,109 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
-      <Container fluid style={{ background: "#22B7F8", color: "white", padding: `${isDesktop ? "4rem" : "0rem !important"}`, margin: `${isDesktop ? "0rem !important" : "0rem !important"}` }}>
-        <Header
-          as="h1"
-          style={{
-            padding: `${isDesktop ? "2rem 0rem" : "2rem"}`,
-            color: "white",
-            fontSize: `${isDesktop ? "3rem" : "2rem"}`,
-            fontWeight: '400'
-          }}
-        >
-          Open Geodata Training Curriculum
-        </Header>
-        <p>
-          Data for Good at Meta has partnered with the Open Knowledge Foundation
-          to design, develop, and deliver a training focused on how governments
-          and nonprofits around the world can utilise free and open geospatial
-          data and geospatial software.
-        </p>
-        <p>
-          This website contains a training curriculum built around the powerful
-          free and open source GIS, QGIS, for learning how to utilize free and
-          open geospatial data such as OpenStreetMap (OSM) and Meta's High
-          Resolution Settlement Layer (HRSL).
-        </p>
-        <p>
-          The curriculum is localized for 16 countries and available in 7
-          languages (Amharic, Arabic, English, German, Portuguese, Spanish, and
-          Vietnamese). You can select the langugae and country localization
-          below.
-        </p>
-        <p style={{ paddingBottom: "2rem" }}>
-          You can also find sample projects made by those trained using the
-          curriculum in the Showcase Page.
-        </p>
-      </Container>
-      <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
-      <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
-        <Grid.Row>
-          <Grid.Column
-            style={{
-              padding: "0rem 4rem",
-              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-            }}
-          >
-            <Container
+      <HeroSession/>
+      <Container>
+        <Grid stackable>
+          <Grid.Row columns={`${isDesktop ? "two" : "one"}`}>
+            <Grid.Column
               style={{
-                border: "0.5px solid #D3D3D3",
-                padding: "1.5rem",
-                textAlign: "left",
-                borderRadius: "0.15rem",
-                minHeight: `${isDesktop ? "80vh" : "auto"}`,
-                height: "100%",
+                padding: "0rem 4rem",
+                marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
               }}
             >
-              <div
-                style={{
-                  padding: "0.5rem",
-                  margin: "1rem 1rem",
-                }}
-              >
-                <h3 className="blue-title">Select Language</h3>
-                <p>Select the language of the homepage</p>
-                <Dropdown
-                  placeholder="Select Language"
-                  fluid
-                  selection
-                  defaultValue={currentLanguage}
-                  options={languageOptions}
-                  onChange={handleLangChange}
-                />
-                <br />
-                <br />
-                <br />
-                <h3 className="blue-title">Select curriculum localization</h3>
-                <p>Select the curriculum you want to view</p>
-                <Dropdown
-                  placeholder="Select Localization"
-                  fluid
-                  selection
-                  defaultValue={currentMod}
-                  options={availableOptions}
-                  onChange={handleLangChange}
-                />
-              </div>
-            </Container>
-          </Grid.Column>
-          <Grid.Column
-            style={{
-              padding: "0rem 4rem",
-              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-            }}
-          >
-            <Container
+              <h3 className="blue-title">Select Language</h3>
+              <p>Select the language of the homepage</p>
+              <Dropdown
+                placeholder="Select Language"
+                fluid
+                selection
+                defaultValue={currentLanguage}
+                options={languageOptions}
+                onChange={handleLangChange}
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <h3 className="blue-title">Select curriculum localization</h3>
+              <p>Select the curriculum you want to view</p>
+              <Dropdown
+                placeholder="Select Localization"
+                fluid
+                selection
+                defaultValue={currentMod}
+                options={availableOptions}
+                onChange={handleLangChange}
+              />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+        <h3 className="blue-title">Project Showcase</h3>
+        <Grid stackable>
+          <Grid.Row columns={`${isDesktop ? "three" : "one"}`}>
+            {[1, 2, 3, 4, 5].map((v, i) => {
+              return (
+                <Grid.Column>
+                  <h3>TITLE</h3>
+                  <p>Country, Language</p>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                  <Button content='READ MORE' primary onClick={() =>
+                    router.push(`/${router.query.locale}/showcase`)
+                  } />
+                </Grid.Column>
+              )
+            })}
+          </Grid.Row> 
+            {/* <Grid.Column
               style={{
-                border: "0.5px solid #D3D3D3",
-                padding: "1.5rem",
-                textAlign: "left",
-                borderRadius: "0.15rem",
-                minHeight: "80vh",
-                height: "100%",
+                padding: "0rem 4rem",
+                marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
               }}
             >
-              <h3 className="blue-title">Project Showcase</h3>
-              <div
+              <Container
                 style={{
-                  padding: "0.5rem",
-                  margin: "1rem 1rem",
-                  height: "70vh",
-                  overflowY: "scroll",
-                  overflowX: "hidden"
+                  border: "0.5px solid #D3D3D3",
+                  padding: "1.5rem",
+                  textAlign: "left",
+                  borderRadius: "0.15rem",
+                  minHeight: "80vh",
+                  height: "100%",
                 }}
               >
-                <br />
-                <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
-                  {[1, 2, 3, 4, 5].map((v, i) => {
+                <h3>{t("projects_showcase")}</h3>
+
+                <div
+                  style={{
+                    height: "70vh",
+                    overflowY: "scroll",
+                    padding: "1rem",
+                    textAlign: "center",
+                  }}
+                >
+                  {[1, 2, 3, 4].map((v, i) => {
                     return (
-                      <Grid.Row style={{
-                        height: "20rem",
-                        width: "100%",
-                        cursor: "pointer",
-                      }}
-                        key={i}>
-                        <Grid.Column>
-                        </Grid.Column>
-                        <Grid.Column>
-                          <h3>TITLE</h3>
-                          <p>Country, Language</p>
-                          <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                          </p>
-                          <Button content='READ MORE' primary onClick={() =>
-                            router.push(`/${router.query.locale}/showcase`)
-                          } />
-                        </Grid.Column>
-                      </Grid.Row>
-                    )
+                      <div
+                        style={{
+                          height: "20rem",
+                          width: "100%",
+                          backgroundColor: "#D3D3D3",
+                          marginBottom: "1.5rem",
+                          cursor: "pointer",
+                        }}
+                        key={i + v}
+                        onClick={() =>
+                          router.push(`/${router.query.locale}/showcase`)
+                        }
+                      >
+                        &nbsp;
+                      </div>
+                    );
                   })}
-
-                </Grid>
-              </div>
-            </Container>
-          </Grid.Column>
-          {/* <Grid.Column
-            style={{
-              padding: "0rem 4rem",
-              marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-            }}
-          >
-            <Container
-              style={{
-                border: "0.5px solid #D3D3D3",
-                padding: "1.5rem",
-                textAlign: "left",
-                borderRadius: "0.15rem",
-                minHeight: "80vh",
-                height: "100%",
-              }}
-            >
-              <h3>{t("projects_showcase")}</h3>
-
-              <div
-                style={{
-                  height: "70vh",
-                  overflowY: "scroll",
-                  padding: "1rem",
-                  textAlign: "center",
-                }}
-              >
-                {[1, 2, 3, 4].map((v, i) => {
-                  return (
-                    <div
-                      style={{
-                        height: "20rem",
-                        width: "100%",
-                        backgroundColor: "#D3D3D3",
-                        marginBottom: "1.5rem",
-                        cursor: "pointer",
-                      }}
-                      key={i + v}
-                      onClick={() =>
-                        router.push(`/${router.query.locale}/showcase`)
-                      }
-                    >
-                      &nbsp;
-                    </div>
-                  );
-                })}
-              </div>
-            </Container>
-          </Grid.Column> */}
-        </Grid.Row>
-      </Grid>
-      <div style={{ margin: "1.5rem 0rem" }}>&nbsp;</div>
+                </div>
+              </Container>
+            </Grid.Column> */}
+        </Grid>
+      </Container>
     </LayoutComponent>
   );
 }
