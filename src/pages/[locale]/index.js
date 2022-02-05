@@ -13,6 +13,7 @@ import {
 import { MDXRemote } from "next-mdx-remote";
 import LayoutComponent from "@src/components/LayoutComponent";
 import useSizeQuery from "@src/hooks/useSizeQuery";
+import showcaseData from "@src/data/showcasedata.json";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import HeroSession from "@src/components/HeroSession";
@@ -23,7 +24,7 @@ export default function Homepage({ source }) {
   const [currentLanguage, setCurrentLanguage] = useState(
     router.query.locale ? router.query.locale : "en"
   );
-  const [currentMod, setCurrentMod] = useState("en/bangladesh")
+  const [currentMod, setCurrentMod] = useState("en/bangladesh");
   const { isDesktop } = useSizeQuery();
 
   const languageOptions = [
@@ -33,13 +34,21 @@ export default function Homepage({ source }) {
   ];
 
   const availableOptions = [
-    { key: "en/bangladesh", value: "en/bangladesh", text: "Bangladesh (in English)" },
+    {
+      key: "en/bangladesh",
+      value: "en/bangladesh",
+      text: "Bangladesh (in English)",
+    },
     { key: "en/ghana", value: "en/ghana", text: "Ghana (in English)" },
     { key: "en/nigeria", value: "en/nigeria", text: "Nigeria (in English)" },
     { key: "de/germany", value: "de/germany", text: "Germany (in German)" },
-    { key: "es/argentina", value: "es/argentina", text: "Argentina (in Spanish)" },
-    { key: "es/mexico", value: "es/mexico", text: "Mexico (in Spanish)" }
-  ]
+    {
+      key: "es/argentina",
+      value: "es/argentina",
+      text: "Argentina (in Spanish)",
+    },
+    { key: "es/mexico", value: "es/mexico", text: "Mexico (in Spanish)" },
+  ];
 
   const handleLangChange = (event, data) => {
     let orgPath = router.asPath;
@@ -89,71 +98,27 @@ export default function Homepage({ source }) {
           </Grid.Row>
         </Grid>
         <h3 className="blue-title">Project Showcase</h3>
-        <Grid stackable>
-          <Grid.Row columns={`${isDesktop ? "three" : "one"}`}>
-            {[1, 2, 3, 4, 5].map((v, i) => {
-              return (
-                <Grid.Column>
-                  <h3>TITLE</h3>
-                  <p>Country, Language</p>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-                  <Button content='READ MORE' primary onClick={() =>
-                    router.push(`/${router.query.locale}/showcase`)
-                  } />
-                </Grid.Column>
-              )
-            })}
-          </Grid.Row> 
-            {/* <Grid.Column
-              style={{
-                padding: "0rem 4rem",
-                marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-              }}
-            >
-              <Container
-                style={{
-                  border: "0.5px solid #D3D3D3",
-                  padding: "1.5rem",
-                  textAlign: "left",
-                  borderRadius: "0.15rem",
-                  minHeight: "80vh",
-                  height: "100%",
-                }}
-              >
-                <h3>{t("projects_showcase")}</h3>
-
-                <div
-                  style={{
-                    height: "70vh",
-                    overflowY: "scroll",
-                    padding: "1rem",
-                    textAlign: "center",
-                  }}
-                >
-                  {[1, 2, 3, 4].map((v, i) => {
-                    return (
-                      <div
-                        style={{
-                          height: "20rem",
-                          width: "100%",
-                          backgroundColor: "#D3D3D3",
-                          marginBottom: "1.5rem",
-                          cursor: "pointer",
-                        }}
-                        key={i + v}
-                        onClick={() =>
-                          router.push(`/${router.query.locale}/showcase`)
-                        }
-                      >
-                        &nbsp;
-                      </div>
-                    );
-                  })}
-                </div>
-              </Container>
-            </Grid.Column> */}
+        <Grid stackable columns={`${isDesktop ? "three" : "one"}`}>
+          {showcaseData.map((v, i) => {
+            return (
+              <Grid.Column>
+                <h3>{v.title}</h3>
+                <p>
+                  {v.country}, {v.language}
+                </p>
+                {/* <p>
+                 {v.project_summary}
+                </p> */}
+                <Button
+                  content="READ MORE"
+                  primary
+                  onClick={() =>
+                    router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)
+                  }
+                />
+              </Grid.Column>
+            );
+          })}
         </Grid>
       </Container>
     </LayoutComponent>
