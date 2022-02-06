@@ -71,46 +71,36 @@ const DesktopLayoutContent = ({
         <Grid.Row style={{ margin: "0px", padding: "0px" }}>
           <Grid.Column
             width={3}
+            className="sidebar"
             style={{
-              background: "#E8EFF2",
               color: "black",
               padding: "4rem 2.5rem",
             }}
           >
             <Container>
-              <h4 style={{ padding: "0.25rem" }}>{t("language")}</h4>
-              <Dropdown
-                placeholder="Change Locale"
-                fluid
-                selection
-                defaultValue={currentLanguage}
-                options={languageOptions}
-                onChange={handleLangChange}
-                style={{ margin: "0.2rem" }}
-              />
-              <br />
-              <p style={{ padding: "0.35rem" }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-              <h4 style={{ padding: "0.25rem" }}>{t("region")}</h4>
-              <Dropdown
-                placeholder="Change Locale"
-                fluid
-                selection
-                defaultValue={router.query.country}
-                options={countryOptions}
-                onChange={handleCountryChange}
-                style={{ margin: "0.2rem" }}
-              />
-              <br />
-              <hr />
-              <br />
+              <div className="divider-border">
+                <h4 style={{ padding: "0.25rem" }}>{t("language")}</h4>
+                <Dropdown
+                  placeholder="Change Locale"
+                  fluid
+                  selection
+                  defaultValue={currentLanguage}
+                  options={languageOptions}
+                  onChange={handleLangChange}
+                  style={{ margin: "0.2rem" }}
+                />
+                <br />
+                <h4 style={{ padding: "0.25rem" }}>{t("region")}</h4>
+                <Dropdown
+                  placeholder="Change Locale"
+                  fluid
+                  selection
+                  defaultValue={router.query.country}
+                  options={countryOptions}
+                  onChange={handleCountryChange}
+                  style={{ margin: "0.2rem" }}
+                />
+              </div>
               <h3
                 style={{ padding: "0.25rem", cursor: "pointer" }}
                 onClick={() =>
@@ -166,8 +156,8 @@ const DesktopLayoutContent = ({
                             labelPosition="left"
                             size="large"
                             style={{
-                              color: "#2A71FF",
-                              background: "#EBF1FF",
+                              color: "#fff",
+                              background: "#22B7F8",
                             }}
                           >
                             {t("back")}
@@ -178,7 +168,7 @@ const DesktopLayoutContent = ({
                     ) : null}
                   </Grid.Column>
                   <Grid.Column width={10}>&nbsp;</Grid.Column>
-                  <Grid.Column width={2} style={{ textAlign: "right" }}>
+                  <Grid.Column width={4} style={{ textAlign: "right" }}>
                     {next ? (
                       <>
                         <Link href={next} passHref>
@@ -187,8 +177,8 @@ const DesktopLayoutContent = ({
                             labelPosition="right"
                             size="large"
                             style={{
-                              color: "#2A71FF",
-                              background: "#EBF1FF",
+                              color: "#fff",
+                              background: "#22B7F8",
                             }}
                           >
                             {t("next")}
@@ -210,7 +200,7 @@ const DesktopLayoutContent = ({
           <Grid.Column
             width={3}
             style={{
-              borderLeft: "0.15px solid #EFEFEF",
+              borderLeft: "1px dotted #bbb",
               height: "80vh",
               margin: "1rem 0rem",
             }}

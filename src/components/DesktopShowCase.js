@@ -21,8 +21,8 @@ const DesktopShowCase = ({
   }
   return (
     <Grid>
-      <Grid.Row style={{ height: "100%", paddingTop: "2rem" }}>
-        <Grid.Column width={4} style={{ backgroundColor: "#E8EFF2" }}>
+      <Grid.Row style={{ height: "100%" }}>
+        <Grid.Column className="sidebar" width={3}>
           {Object.keys(filters).map((filterCat) => {
             return (
               <Grid.Row style={{ margin: "0px", padding: "0px" }}>
@@ -33,7 +33,12 @@ const DesktopShowCase = ({
                   }}
                 >
                   <Container>
-                    <h4 style={{ padding: "0.25rem" }}>{t(filterCat)}</h4>
+                    <h4 style={{ padding: "0.25rem", textTransform: "capitalize" }}>
+                    {/*t(`${filterCat}`)*/}
+                    {filterCat
+                        .replace("_", " ")
+                    }
+                    </h4>
                     <Dropdown
                       placeholder={"Change " + filterCat}
                       fluid
@@ -51,21 +56,19 @@ const DesktopShowCase = ({
               </Grid.Row>
             );
           })}
-          <button onClick={() => resetFilters()}>Clear All filters</button>
+          <Grid.Row style={{ padding: "2rem" }}>
+            <Grid.Column align="center">
+              <a href="#" onClick={() => resetFilters()}>Clear All filters</a>
+            </Grid.Column>
+          </Grid.Row>
         </Grid.Column>
-        <Grid.Column width={12}>
+        <Grid.Column width={13}>
           {showcaseData
             .filter((row, i) => filteredRows.includes(i))
             .map((row) => {
               return (
                 <Grid
-                  style={{
-                    margin: "2rem 1rem",
-                    padding: "0.25rem",
-                    border: "solid #65ABEA 1px",
-                    borderRadius: "0.25rem",
-                    width: "95%",
-                  }}
+                  className="showcase-box"
                   id={row.title
                     .toLowerCase()
                     .replace(/ /g, "-")
@@ -73,19 +76,23 @@ const DesktopShowCase = ({
                 >
                   <Grid.Row>
                     <Grid.Column width={4}>
-                      <Image src={row.image} alt={row.title} />
+                      {/*<Image src={row.image} alt={row.title} />*/}
+                      <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
                       <h4>
-                        Country: <span>{row.country}</span>
+                        Country 
                       </h4>
+                      <p>{row.country}</p>
                       <h4>
-                        Language: <span>{getLangname[row.language]}</span>
+                        Language 
                       </h4>
+                      <p>{getLangname[row.language]}</p>
                       <h4>
-                        Authors: <span>{row.authors}</span>
+                        Authors
                       </h4>
+                      <p>{row.authors}</p>
                     </Grid.Column>
-                    <Grid.Column width={10}>
-                      <h3>{row.title}</h3>
+                    <Grid.Column width={12}>
+                      <h3 className="blue-title">{row.title}</h3>
                       <h4>Project Summary</h4>
                       <p>{row.project_summary}</p>
                       <h4>Tools</h4>
@@ -144,7 +151,7 @@ const DesktopShowCase = ({
                   </Grid.Row>
                   <Grid.Row>
                     <Grid.Column width={12}></Grid.Column>
-                    <Grid.Column width={4}>
+                    <Grid.Column width={4} align="right">
                       <a href={row.readmore} target="_blank">
                         <Button primary>Read full report</Button>
                       </a>

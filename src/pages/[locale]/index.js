@@ -9,6 +9,7 @@ import {
   Grid,
   Placeholder,
   Dropdown,
+  Image
 } from "semantic-ui-react";
 import { MDXRemote } from "next-mdx-remote";
 import LayoutComponent from "@src/components/LayoutComponent";
@@ -22,9 +23,9 @@ export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
   const router = useRouter();
   const [currentLanguage, setCurrentLanguage] = useState(
-    router.query.locale ? router.query.locale : "en"
+    router.query.locale ? router.query.locale : ""
   );
-  const [currentMod, setCurrentMod] = useState("en/bangladesh");
+  const [currentMod, setCurrentMod] = useState("");
   const { isDesktop } = useSizeQuery();
 
   const languageOptions = [
@@ -64,14 +65,9 @@ export default function Homepage({ source }) {
     <LayoutComponent>
       <HeroSession/>
       <Container>
-        <Grid stackable>
+        <Grid stackable className="home-session divider-border">
           <Grid.Row columns={`${isDesktop ? "two" : "one"}`}>
-            <Grid.Column
-              style={{
-                padding: "0rem 4rem",
-                marginBottom: `${isDesktop ? "0rem" : "2rem"}`,
-              }}
-            >
+            <Grid.Column style={{ paddingLeft: "0px" }}>
               <h3 className="blue-title">Select Language</h3>
               <p>Select the language of the homepage</p>
               <Dropdown
@@ -83,7 +79,7 @@ export default function Homepage({ source }) {
                 onChange={handleLangChange}
               />
             </Grid.Column>
-            <Grid.Column>
+            <Grid.Column style={{ paddingRight: "0px" }}>
               <h3 className="blue-title">Select curriculum localization</h3>
               <p>Select the curriculum you want to view</p>
               <Dropdown
@@ -97,29 +93,48 @@ export default function Homepage({ source }) {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-        <h3 className="blue-title">Project Showcase</h3>
-        <Grid stackable columns={`${isDesktop ? "three" : "one"}`}>
-          {showcaseData.map((v, i) => {
-            return (
-              <Grid.Column>
-                <h3>{v.title}</h3>
-                <p>
-                  {v.country}, {v.language}
-                </p>
-                {/* <p>
-                 {v.project_summary}
-                </p> */}
-                <Button
-                  content="READ MORE"
-                  primary
-                  onClick={() =>
-                    router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)
-                  }
-                />
-              </Grid.Column>
-            );
-          })}
-        </Grid>
+        <div className="home-session">
+          <h3 className="blue-title">Project Showcase</h3>
+          <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
+            {showcaseData.map((v, i) => {
+              return (
+                <Grid.Column>
+                  <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
+                    <Grid.Column>
+                      <Image src="https://dummyimage.com/300x200" width="100%"/>
+                    </Grid.Column>
+                    <Grid.Column>
+                      <h3>{v.title}</h3>
+                      <p>
+                        {v.country}, {v.language}
+                      </p>
+                      {/* <p>
+                       {v.project_summary}
+                      </p> */}
+                      <Button
+                        content="READ MORE"
+                        primary
+                        onClick={() =>
+                          router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)
+                        }
+                      />
+                    </Grid.Column>
+                  </Grid>
+                </Grid.Column>
+              );
+            })}
+          </Grid>
+          <div className="view-all-toolbar">
+            <Button 
+              as="a"
+              onClick={() =>
+                router.push(`/${router.query.locale}/showcase`)
+              }
+              >
+                View all Project Showcase
+              </Button>
+          </div>
+        </div>
       </Container>
     </LayoutComponent>
   );

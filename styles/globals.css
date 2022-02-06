@@ -7,6 +7,10 @@ body ::-webkit-scrollbar {
   width: 0px;
 }
 
+a {
+  color: #22B7F8;
+}
+
 div.item {
   border: "0px" !important;
   border-style: none !important;
@@ -72,6 +76,31 @@ div.item {
 
 .hero-session .big-title {
   color:  #fff;
+}
+
+.home-session {
+  margin:  3rem 0rem !important;
+}
+
+.divider-border {
+  border-bottom: 1px dotted #bbb;
+  padding-bottom: 2rem !important;
+}
+
+.view-all-toolbar {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.showcase-box {
+  padding: 2rem 1rem !important;
+  padding: 0.25rem;
+  border-bottom: 1px dotted #bbb;
+}
+
+.sidebar {
+  border-right: 1px dotted #bbb;
 }
 
 @media (max-width: 425px) {
