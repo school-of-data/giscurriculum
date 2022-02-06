@@ -98,14 +98,8 @@ const DesktopShowCase = ({
                       <h4>Tools</h4>
                       <div style={{ display: "flex", direction: "row" }}>
                         {row.tools.split(",").map((tool, i) => (
-                          <span
-                            style={{
-                              backgroundColor: "#EEEEEE",
-                              padding: "0.25rem",
-                              marginLeft: "0.25rem",
-                              borderRadius: "0.15rem",
-                              cursor: "pointer",
-                            }}
+                          <span 
+                            className="tags"
                             onClick={() => handleTag("tools", tool)}
                             key={i}
                           >
@@ -116,13 +110,7 @@ const DesktopShowCase = ({
                       <h4>Themes and Keywords</h4>
                       {row.themes_keywords.split(",").map((tk, i) => (
                         <span
-                          style={{
-                            backgroundColor: "#EEEEEE",
-                            padding: "0.25rem",
-                            marginLeft: "0.25rem",
-                            borderRadius: "0.15rem",
-                            cursor: "pointer",
-                          }}
+                          className="tags"
                           onClick={() => handleTag("themes_keywords", tk)}
                           key={i}
                         >
@@ -130,15 +118,9 @@ const DesktopShowCase = ({
                         </span>
                       ))}
                       <h4>Algorithms</h4>
-                      {row.algorithms.split(",").map((alg, i) => (
+                      { row.algorithms.split(",").map((alg, i) => (
                         <span
-                          style={{
-                            backgroundColor: "#EEEEEE",
-                            padding: "0.25rem",
-                            marginLeft: "0.25rem",
-                            borderRadius: "0.15rem",
-                            cursor: "pointer",
-                          }}
+                          className="tags"
                           onClick={() => handleTag("algorithms", alg)}
                           key={i}
                         >

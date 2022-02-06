@@ -103,6 +103,51 @@ div.item {
   border-right: 1px dotted #bbb;
 }
 
+.mod-menu {
+  list-style: none;
+  padding-left:  0px;
+}
+
+.mod-menu li {
+  margin-bottom: 1rem;
+}
+
+.content-sidebar a, .outlines-menu a {
+  display: block;
+  position: relative;
+  padding: 0.5em 0;
+  overflow: hidden;
+}
+
+.content-sidebar a:after, .outlines-menu a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #22B7F8;
+  opacity: 1;
+  transition: opacity 300ms, transform 300ms;
+  transform: translate3d(-100%, 0, 0);
+}
+
+.content-sidebar a:hover::after,
+.content-sidebar a:focus::after,
+.outlines-menu a:hover::after,
+.outlines-menu a:focus::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.tags {
+  background-color: #22B7F8;
+  padding: 0.2rem 0.4rem;
+  margin-left: 0.3rem;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
 @media (max-width: 425px) {
   .hero-session {
     padding: 0.5rem;
