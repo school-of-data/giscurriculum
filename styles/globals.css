@@ -149,6 +149,16 @@ div.item {
   color: #fff;
 }
 
+.license svg {
+  margin-right: 3px;
+  position: relative;
+  top: 3px;
+}
+
+.footer-link {
+  text-align: right;
+}
+
 @media (max-width: 425px) {
   .hero-session {
     padding: 0.5rem;
@@ -157,4 +167,14 @@ div.item {
   .big-title {
     font-size: 2rem;
   }
+
+  .footer-link {
+    text-align: left;
+  }
+
+  .view-all-toolbar {
+    padding: 1rem;
+    justify-content: start;
+  }
+
 }
