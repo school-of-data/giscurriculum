@@ -75,7 +75,8 @@ div.item {
 }
 
 .hero-session .big-title {
-  color:  #fff;
+  color:  #fff !important;
+  font-weight: 300 !important;
 }
 
 .home-session {
