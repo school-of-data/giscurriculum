@@ -23,15 +23,15 @@ const Footer = () => {
         color: "#fff"
       }}
     >
-      <Container fluid textAlign="center">
-        <Grid centered divided inverted stackable>
-          <Grid.Column width={6}>
+      <Container textAlign="center">
+        <Grid columns={2} centered divided inverted stackable >
+          <Grid.Column>
             <Image
               size="small"
               src="/colored_logo.svg"
             />
           </Grid.Column>
-          <Grid.Column width={6} style={{ textAlign: 'right' }}>
+          <Grid.Column style={{ textAlign: 'right' }}>
             <Header inverted as="h4" content="" />
             <List horizontal link size="small" style={{ marginTop: '0px' }}>
               <List.Item as="a" href="#">
@@ -55,8 +55,8 @@ const Footer = () => {
             </List>
           </Grid.Column>
         </Grid>
-        <Divider inverted section style={{ margin: "1rem 12rem" }} />
-        <div fluid style={{ textAlign: "left", margin: `${isDesktop ? "1rem 12rem" : "0.25rem 1rem "}`, fontSize: '1rem', color: 'black' }}>
+        <Divider inverted section />
+        <div fluid style={{ textAlign: "left", fontSize: '1rem', color: 'black' }}>
           <p><b>Source code</b> available under the MIT license.</p>
           <p>Content on this site, made by <b>Open Knowledge Foundation</b>, is licensed under a <b>Creative Commons Attribution 4.0 International License.</b></p>
           <p>Refer to our <b>attribution page</b> for attributions of other work on the site.</p>

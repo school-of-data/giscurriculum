@@ -94,31 +94,28 @@ const MobileShowCase = ({
                     >
                       <Grid.Row>
                         <Grid.Column width={16}>
-                          <Image src={row.image} alt={row.title} />
+                          <h3 className="blue-title">{row.title}</h3>
+                          <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
+                          {/*<Image src={row.image} alt={row.title} />*/}
                           <h4>
-                            Country: <span>{row.country}</span>
+                            Country
                           </h4>
+                          <p>{row.country}</p>
                           <h4>
-                            Language: <span>{getLangname[row.language]}</span>
+                            Language
                           </h4>
+                          <p>{getLangname[row.language]}</p>
                           <h4>
-                            Authors: <span>{row.authors}</span>
+                            Authors
                           </h4>
-
-                          <h3>{row.title}</h3>
+                          <p>{row.authors}</p>
                           <h4>Project Summary</h4>
                           <p>{row.project_summary}</p>
                           <h4>Tools</h4>
                           <div style={{ display: "flex", direction: "row" }}>
                             {row.tools.split(",").map((tool, i) => (
                               <span
-                                style={{
-                                  backgroundColor: "#EEEEEE",
-                                  padding: "0.25rem",
-                                  marginLeft: "0.25rem",
-                                  borderRadius: "0.15rem",
-                                  cursor: "pointer",
-                                }}
+                                className="tags"
                                 onClick={() => handleTag("tools", tool)}
                                 key={i}
                               >
@@ -129,13 +126,7 @@ const MobileShowCase = ({
                           <h4>Themes and Keywords</h4>
                           {row.themes_keywords.split(",").map((tk, i) => (
                             <span
-                              style={{
-                                backgroundColor: "#EEEEEE",
-                                padding: "0.25rem",
-                                marginLeft: "0.25rem",
-                                borderRadius: "0.15rem",
-                                cursor: "pointer",
-                              }}
+                              className="tags"
                               onClick={() => handleTag("themes_keywords", tk)}
                               key={i}
                             >
@@ -145,13 +136,7 @@ const MobileShowCase = ({
                           <h4>Algorithms</h4>
                           {row.algorithms.split(",").map((alg, i) => (
                             <span
-                              style={{
-                                backgroundColor: "#EEEEEE",
-                                padding: "0.25rem",
-                                marginLeft: "0.25rem",
-                                borderRadius: "0.15rem",
-                                cursor: "pointer",
-                              }}
+                              className="tags"
                               onClick={() => handleTag("algorithms", alg)}
                               key={i}
                             >

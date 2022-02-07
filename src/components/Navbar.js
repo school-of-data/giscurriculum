@@ -14,14 +14,15 @@ const Navbar = () => {
       >
         <Container fluid>
           <Menu.Item
+            as="a"
+            href="/"
             style={{
-              margin: `${isDesktop ? "0rem 2rem" : "0rem"}`,
               border: "0px",
               cursor: "pointer",
             }}
           >
             <Image
-              src="https://i.imgur.com/4CAWd5p.png"
+              src="/colored_logo.svg"
               size="small"
               wrapped
               onClick={() => router.push(`/${router.query.locale}`)}
