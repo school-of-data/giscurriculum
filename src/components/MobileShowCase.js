@@ -74,7 +74,7 @@ const MobileShowCase = ({
           <Segment basic>
             <div style={{ margin: "0rem", padding: "0.2rem" }}>
               <Button onClick={() => setVisible(!visible)}>
-                {t("content_menu")}
+                {t("filters")}
               </Button>
               {showcaseData
                 .filter((row, i) => filteredRows.includes(i))

@@ -5,5 +5,11 @@
   "back": "Zurück",
   "content_page": "Inhaltsseite",
   "outlines": "Umrisse",
-  "content_menu": "Inhaltsmenü"
+  "content_menu": "Inhaltsmenü",
+  "filters": "Filters",
+  "country" : "Country",
+  "language" : "Language",
+  "themes_keywords" : "Theme Keywords",
+  "algorithms" : "Algorithms",
+  "tools" : "Tools"
 }
