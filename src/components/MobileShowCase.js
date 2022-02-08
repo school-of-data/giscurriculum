@@ -27,7 +27,7 @@ const MobileShowCase = ({
   tagSelectHandler,
   resetFilters,
 }) => {
-  const { t } = useTranslation("countrylevel");
+  const { t } = useTranslation("common");
   const router = useRouter();
   const [visible, setVisible] = useState(false);
 
@@ -98,20 +98,20 @@ const MobileShowCase = ({
                           <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
                           {/*<Image src={row.image} alt={row.title} />*/}
                           <h4>
-                            Country
+                            {t("country")}
                           </h4>
                           <p>{row.country}</p>
                           <h4>
-                            Language
+                            {t("language")}
                           </h4>
                           <p>{getLangname[row.language]}</p>
                           <h4>
-                            Authors
+                            {t("author")}
                           </h4>
                           <p>{row.authors}</p>
-                          <h4>Project Summary</h4>
+                          <h4>{t("project_summary")}</h4>
                           <p>{row.project_summary}</p>
-                          <h4>Tools</h4>
+                          <h4>{t("tools")}</h4>
                           <div style={{ display: "flex", direction: "row" }}>
                             {row.tools.split(",").map((tool, i) => (
                               <span
@@ -123,7 +123,7 @@ const MobileShowCase = ({
                               </span>
                             ))}
                           </div>
-                          <h4>Themes and Keywords</h4>
+                          <h4>{t("themes_keywords")}</h4>
                           {row.themes_keywords.split(",").map((tk, i) => (
                             <span
                               className="tags"
@@ -133,7 +133,7 @@ const MobileShowCase = ({
                               {tk}
                             </span>
                           ))}
-                          <h4>Algorithms</h4>
+                          <h4>{t("algorithms")}</h4>
                           {row.algorithms.split(",").map((alg, i) => (
                             <span
                               className="tags"
@@ -143,14 +143,14 @@ const MobileShowCase = ({
                               {alg}
                             </span>
                           ))}
-                          <h4>Datasets</h4>
+                          <h4>{t("datasets")}</h4>
                           <p>{row.datasets}</p>
                         </Grid.Column>
                       </Grid.Row>
                       <Grid.Row>
                         <Grid.Column width={12}>
                           <a href={row.readmore} target="_blank">
-                            <Button primary>Read full report</Button>
+                            <Button primary>{t('read_full_report')}</Button>
                           </a>
                         </Grid.Column>
                       </Grid.Row>

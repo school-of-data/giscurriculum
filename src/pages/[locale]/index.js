@@ -68,10 +68,10 @@ export default function Homepage({ source }) {
         <Grid stackable className="home-session divider-border">
           <Grid.Row columns={`${isDesktop ? "two" : "one"}`}>
             <Grid.Column style={{ paddingLeft: "0px" }}>
-              <h3 className="blue-title">Select Language</h3>
-              <p>Select the language of the homepage</p>
+              <h3 className="blue-title">{t("select_language")}</h3>
+              <p>{t("select_lang_homepage")}</p>
               <Dropdown
-                placeholder="Select Language"
+                placeholder={t("select_language")}
                 fluid
                 selection
                 defaultValue={currentLanguage}
@@ -80,10 +80,10 @@ export default function Homepage({ source }) {
               />
             </Grid.Column>
             <Grid.Column style={{ paddingRight: "0px" }}>
-              <h3 className="blue-title">Select curriculum localization</h3>
-              <p>Select the curriculum you want to view</p>
+              <h3 className="blue-title">{t("select_curriculum")}</h3>
+              <p>{t("select_curriculum_view")}</p>
               <Dropdown
-                placeholder="Select Localization"
+                placeholder={t("select_localization")}
                 fluid
                 selection
                 defaultValue={currentMod}
@@ -99,7 +99,7 @@ export default function Homepage({ source }) {
             {showcaseData.map((v, i) => {
               return (
                 <Grid.Column>
-                  <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
+                  <Grid stackable columns={`${isDesktop ? "two" : "one"}`} key={i}>
                     <Grid.Column>
                       <Image src="https://dummyimage.com/300x200" width="100%"/>
                     </Grid.Column>
@@ -112,7 +112,7 @@ export default function Homepage({ source }) {
                        {v.project_summary}
                       </p> */}
                       <Button
-                        content="READ MORE"
+                        content={t("read_more")}
                         primary
                         onClick={() =>
                           router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)
@@ -131,7 +131,7 @@ export default function Homepage({ source }) {
                 router.push(`/${router.query.locale}/showcase`)
               }
               >
-                View all Project Showcase
+                {t("view_all_showcase")}
               </Button>
           </div>
         </div>

@@ -13,7 +13,8 @@ const DesktopShowCase = ({
   tagSelectHandler,
   resetFilters,
 }) => {
-  const { t } = useTranslation("countrylevel");
+
+  const { t } = useTranslation("common");
 
   const handleTag = (cat, val) => {
     let prevVals = filteredOptions?.[cat] ? filteredOptions?.[cat] : []
@@ -34,9 +35,9 @@ const DesktopShowCase = ({
                 >
                   <Container>
                     <h4 style={{ padding: "0.25rem", textTransform: "capitalize" }}>
-                    {/*t(`${filterCat}`)*/}
-                    {filterCat
-                        .replace("_", " ")
+                    {t(`${filterCat}`)}
+                    {/*filterCat
+                        .replace("_", " ")*/
                     }
                     </h4>
                     <Dropdown
@@ -58,7 +59,7 @@ const DesktopShowCase = ({
           })}
           <Grid.Row style={{ padding: "2rem" }}>
             <Grid.Column align="center">
-              <a href="#" onClick={() => resetFilters()}>Clear All filters</a>
+              <a href="#" onClick={() => resetFilters()}>{t("clear_all_filters")}</a>
             </Grid.Column>
           </Grid.Row>
         </Grid.Column>
@@ -79,23 +80,23 @@ const DesktopShowCase = ({
                       {/*<Image src={row.image} alt={row.title} />*/}
                       <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
                       <h4>
-                        Country 
+                        {t("country")}
                       </h4>
                       <p>{row.country}</p>
                       <h4>
-                        Language 
+                        {t("language")}
                       </h4>
                       <p>{getLangname[row.language]}</p>
                       <h4>
-                        Authors
+                        {t("author")}
                       </h4>
                       <p>{row.authors}</p>
                     </Grid.Column>
                     <Grid.Column width={12}>
                       <h3 className="blue-title">{row.title}</h3>
-                      <h4>Project Summary</h4>
+                      <h4>{t("project_summary")}</h4>
                       <p>{row.project_summary}</p>
-                      <h4>Tools</h4>
+                      <h4>{t('tools')}</h4>
                       <div style={{ display: "flex", direction: "row" }}>
                         {row.tools.split(",").map((tool, i) => (
                           <span 
@@ -107,7 +108,7 @@ const DesktopShowCase = ({
                           </span>
                         ))}
                       </div>
-                      <h4>Themes and Keywords</h4>
+                      <h4>{t("themes_keywords")}</h4>
                       {row.themes_keywords.split(",").map((tk, i) => (
                         <span
                           className="tags"
@@ -117,7 +118,7 @@ const DesktopShowCase = ({
                           {tk}
                         </span>
                       ))}
-                      <h4>Algorithms</h4>
+                      <h4>{t("algorithms")}</h4>
                       { row.algorithms.split(",").map((alg, i) => (
                         <span
                           className="tags"
@@ -127,7 +128,7 @@ const DesktopShowCase = ({
                           {alg}
                         </span>
                       ))}
-                      <h4>Datasets</h4>
+                      <h4>{t("datasets")}</h4>
                       <p>{row.datasets}</p>
                     </Grid.Column>
                   </Grid.Row>
@@ -135,7 +136,7 @@ const DesktopShowCase = ({
                     <Grid.Column width={12}></Grid.Column>
                     <Grid.Column width={4} align="right">
                       <a href={row.readmore} target="_blank">
-                        <Button primary>Read full report</Button>
+                        <Button primary>{t('read_full_report')}</Button>
                       </a>
                     </Grid.Column>
                   </Grid.Row>

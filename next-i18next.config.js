@@ -5,4 +5,5 @@ module.exports = {
     defaultCountry: 'bangladesh',
     countries: ['bangladesh', 'ghana', 'nigeria', 'germany', 'argentina', 'mexico']
   },
+  reloadOnPrerender: true
 }
