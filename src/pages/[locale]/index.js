@@ -51,6 +51,8 @@ export default function Homepage({ source }) {
     { key: "es/mexico", value: "es/mexico", text: "Mexico (in Spanish)" },
   ];
 
+  const homeShowcase = showcaseData.slice(0, 4);
+
   const handleLangChange = (event, data) => {
     let orgPath = router.asPath;
     let currentPath = orgPath.replace(
@@ -96,7 +98,7 @@ export default function Homepage({ source }) {
         <div className="home-session">
           <h3 className="blue-title">Project Showcase</h3>
           <Grid stackable columns={`${isDesktop ? "two" : "one"}`}>
-            {showcaseData.map((v, i) => {
+            {homeShowcase.map((v, i) => {
               return (
                 <Grid.Column>
                   <Grid stackable columns={`${isDesktop ? "two" : "one"}`} key={i}>
