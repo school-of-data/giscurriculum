@@ -2,6 +2,8 @@
   {
     "language": "en",
     "country": "bangladesh",
+    "d_language": "English",
+    "d_country": "Bangladesh",
     "modules": [
       "module0",
       "module1",
@@ -19,6 +21,8 @@
   {
     "language": "en",
     "country": "ghana",
+    "d_language": "English",
+    "d_country": "Ghana",
     "modules": [
       "module0",
       "module1",
@@ -36,6 +40,8 @@
   {
     "language": "en",
     "country": "nigeria",
+    "d_language": "English",
+    "d_country": "Nigeria",
     "modules": [
       "module0",
       "module1",
@@ -53,6 +59,8 @@
   {
     "language": "es",
     "country": "argentina",
+    "d_language": "Spanish",
+    "d_country": "Argentina",
     "modules": [
       "module0",
       "module1",
@@ -69,6 +77,8 @@
   {
     "language": "es",
     "country": "mexico",
+    "d_language": "Spanish",
+    "d_country": "Mexico",
     "modules": [
       "module0",
       "module1",
@@ -85,6 +95,8 @@
   {
     "language": "de",
     "country": "germany",
+    "d_language": "German",
+    "d_country": "Germany",
     "modules": [
       "module0",
       "module1",
