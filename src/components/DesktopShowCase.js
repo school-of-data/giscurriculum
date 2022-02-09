@@ -36,9 +36,6 @@ const DesktopShowCase = ({
                   <Container>
                     <h4 style={{ padding: "0.25rem", textTransform: "capitalize" }}>
                     {t(`${filterCat}`)}
-                    {/*filterCat
-                        .replace("_", " ")*/
-                    }
                     </h4>
                     <Dropdown
                       placeholder={"Change " + filterCat}
@@ -77,8 +74,7 @@ const DesktopShowCase = ({
                 >
                   <Grid.Row>
                     <Grid.Column width={4}>
-                      {/*<Image src={row.image} alt={row.title} />*/}
-                      <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
+                      <Image src={row.header_image} alt={row.title} width="100%"/>
                       <h4>
                         {t("country")}
                       </h4>

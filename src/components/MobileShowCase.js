@@ -95,8 +95,7 @@ const MobileShowCase = ({
                       <Grid.Row>
                         <Grid.Column width={16}>
                           <h3 className="blue-title">{row.title}</h3>
-                          <Image src="https://dummyimage.com/300x200" alt={row.title} width="100%" />
-                          {/*<Image src={row.image} alt={row.title} />*/}
+                          <Image src={row.header_image} alt={row.title} width="100%"/>
                           <h4>
                             {t("country")}
                           </h4>

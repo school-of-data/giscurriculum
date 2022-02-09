@@ -101,7 +101,7 @@ export default function Homepage({ source }) {
                 <Grid.Column>
                   <Grid stackable columns={`${isDesktop ? "two" : "one"}`} key={i}>
                     <Grid.Column>
-                      <Image src="https://dummyimage.com/300x200" width="100%"/>
+                      <Image src={v.header_image} alt={v.title} width="100%"/>
                     </Grid.Column>
                     <Grid.Column>
                       <h3>{v.title}</h3>
