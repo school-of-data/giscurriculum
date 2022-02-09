@@ -16,6 +16,7 @@ const DesktopShowCase = ({
 
   const { t } = useTranslation("common");
 
+
   const handleTag = (cat, val) => {
     let prevVals = filteredOptions?.[cat] ? filteredOptions?.[cat] : []
     tagSelectHandler(cat, [...prevVals, val.trim()])

@@ -1,8 +1,8 @@
 import LayoutComponent from "@src/components/LayoutComponent";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
-import { Container, Grid, Dropdown, Image, Button } from "semantic-ui-react";
+import { useState } from "react";
 import { useTranslation } from "next-i18next";
+import { getStaticPaths, makeStaticProps } from "@src/lib/getShowcaseStatic";
 import showcaseData from "@src/data/showcasedata.json";
 import { showcaseDataParse } from "@src/lib/showcaseHelper";
 import useSizeQuery from "@src/hooks/useSizeQuery";
@@ -16,7 +16,6 @@ const ShowCasePage = () => {
   const defaultIndices = [...Array(showcaseData.length).keys()];
   const [filteredRows, setFilteredRows] = useState(defaultIndices);
   const [filteredOptions, setFilteredOptions] = useState({});
-  const { t } = useTranslation("countrylevel");
   const router = useRouter();
 
   const [currentLanguage, setCurrentLanguage] = useState(
@@ -116,7 +115,6 @@ const ShowCasePage = () => {
     setFilteredRows(indicesToSet);
   };
 
-
   const resetFilters = () => {
     setFilteredRows(defaultIndices);
     setFilteredOptions({});
@@ -154,4 +152,8 @@ const ShowCasePage = () => {
     </LayoutComponent>
   );
 };
+
+const getStaticProps = makeStaticProps();
+export { getStaticPaths, getStaticProps };
+
 export default ShowCasePage;

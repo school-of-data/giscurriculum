@@ -12,40 +12,6 @@ export const getPaths = () =>
     )
     .flat();
 
-// export async function getStaticPaths() {
-//   const mods = await getFiles(
-//     `locales/${i18nConfig.i18n.defaultLocale}/${i18nConfig.i18n.defaultCountry}/module`
-//   );
-//   return {
-//     paths: mods
-//       .map((m) =>
-//         getPaths().map((lr) => ({
-//           params: {
-//             locale: lr.params["locale"],
-//             country: lr.params["country"],
-//             slug: m.replace(/\.mdx/, ""),
-//           },
-//         }))
-//       )
-//       .reduce((ret, curr) => {
-//         ret = ret.concat(curr);
-//         return ret;
-//       }, []),
-//     fallback: false,
-//   };
-// }
-
-// export const getStaticPaths = async () => ({
-//   fallback: false,
-//   paths: [
-//     { params: { locale: "en", country: "bangladesh", slug: "module0" } },
-//     { params: { locale: "en", country: "bangladesh", slug: "module1" } },
-//    .
-//    .
-//    .
-//   ],
-// });
-
 export const getInnerPaths = () =>
   localeConfig
     .map((v) =>
@@ -55,25 +21,28 @@ export const getInnerPaths = () =>
     )
     .flat();
 
-// export const getStaticPaths = async () => ({
-//   paths: await getInnerPaths(),
-//   fallback: false,
-// });
+export const getStaticPaths = async () => ({
+  paths: await getInnerPaths(),
+  fallback: false,
+});
 
-// export function makeStaticProps(slug, ns = ["countrylevel"]) {
-//   return async function getStaticProps(ctx) {
-//     return {
-//       props: {
-//         ...(await getCountryLocaleModuleFile(
-//           ctx?.params?.locale,
-//           ctx?.params?.country,
-//           slug
-//         )),
-//         ...(await serverSideTranslations(
-//           ctx?.params?.locale,
-//           ns /*i18nextConfig*/
-//         )),
-//       },
-//     };
-//   };
-// }
+
+export function makeStaticProps(ns = ["countrylevel"]) {
+  return async function getStaticProps(ctx) {
+    return {
+      props: {
+        ...(await getCountryLocaleModuleFile(
+          ctx?.params?.locale,
+          ctx?.params?.country,
+          ctx?.params?.slug
+        )),
+        ...(await serverSideTranslations(
+          ctx?.params?.locale,
+          ns /*i18nextConfig*/
+        )),
+      },
+    };
+  };
+}
+
+

@@ -11,13 +11,12 @@ import {
   Dropdown,
   Image
 } from "semantic-ui-react";
-import { MDXRemote } from "next-mdx-remote";
 import LayoutComponent from "@src/components/LayoutComponent";
 import useSizeQuery from "@src/hooks/useSizeQuery";
 import showcaseData from "@src/data/showcasedata.json";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import HeroSession from "@src/components/HeroSession";
+import {  getLanguageOptions, getAvailableCountries } from '@src/lib/utils'
 
 export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
@@ -28,28 +27,8 @@ export default function Homepage({ source }) {
   const [currentMod, setCurrentMod] = useState("");
   const { isDesktop } = useSizeQuery();
 
-  const languageOptions = [
-    { key: "en", value: "en", text: "English" },
-    { key: "es", value: "es", text: "Spanish" },
-    { key: "de", value: "de", text: "German" },
-  ];
-
-  const availableOptions = [
-    {
-      key: "en/bangladesh",
-      value: "en/bangladesh",
-      text: "Bangladesh (in English)",
-    },
-    { key: "en/ghana", value: "en/ghana", text: "Ghana (in English)" },
-    { key: "en/nigeria", value: "en/nigeria", text: "Nigeria (in English)" },
-    { key: "de/germany", value: "de/germany", text: "Germany (in German)" },
-    {
-      key: "es/argentina",
-      value: "es/argentina",
-      text: "Argentina (in Spanish)",
-    },
-    { key: "es/mexico", value: "es/mexico", text: "Mexico (in Spanish)" },
-  ];
+  const languageOptions = getLanguageOptions()
+  const availableOptions = getAvailableCountries()
 
   const homeShowcase = showcaseData.slice(0, 4);
 
@@ -65,7 +44,7 @@ export default function Homepage({ source }) {
 
   return (
     <LayoutComponent>
-      <HeroSession/>
+      <HeroSession />
       <Container>
         <Grid stackable className="home-session divider-border">
           <Grid.Row columns={`${isDesktop ? "two" : "one"}`}>
@@ -103,7 +82,7 @@ export default function Homepage({ source }) {
                 <Grid.Column>
                   <Grid stackable columns={`${isDesktop ? "two" : "one"}`} key={i}>
                     <Grid.Column>
-                      <Image src={v.header_image} alt={v.title} width="100%"/>
+                      <Image src={v.header_image} alt={v.title} width="100%" />
                     </Grid.Column>
                     <Grid.Column>
                       <h3>{v.title}</h3>
@@ -127,14 +106,14 @@ export default function Homepage({ source }) {
             })}
           </Grid>
           <div className="view-all-toolbar">
-            <Button 
+            <Button
               as="a"
               onClick={() =>
                 router.push(`/${router.query.locale}/showcase`)
               }
-              >
-                {t("view_all_showcase")}
-              </Button>
+            >
+              {t("view_all_showcase")}
+            </Button>
           </div>
         </div>
       </Container>
