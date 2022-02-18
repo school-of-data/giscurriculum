@@ -16,7 +16,7 @@ import useSizeQuery from "@src/hooks/useSizeQuery";
 import showcaseData from "@src/data/showcasedata.json";
 import { useRouter } from "next/router";
 import HeroSession from "@src/components/HeroSession";
-import {  getLanguageOptions, getAvailableCountries } from '@src/lib/utils'
+import {  getLanguageOptions, getAvailableCountries, withBasePath } from '@src/lib/utils'
 
 export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
@@ -82,7 +82,7 @@ export default function Homepage({ source }) {
                 <Grid.Column>
                   <Grid stackable columns={`${isDesktop ? "two" : "one"}`} key={i}>
                     <Grid.Column>
-                      <Image src={v.header_image} alt={v.title} width="100%" />
+                      <Image src={withBasePath(v.header_image)} alt={v.title} width="100%" />
                     </Grid.Column>
                     <Grid.Column>
                       <h3>{v.title}</h3>

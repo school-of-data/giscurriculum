@@ -17,3 +17,7 @@ export const getAvailableCountries = () => {
     localeConfig.map((loc) => avaCountries.push({ key: `${loc.language}/${loc.country}`, value: `${loc.language}/${loc.country}`, text: `${loc.d_country} ( in ${loc.d_language} )` }))
     return [...new Map(avaCountries.map((lg) => [lg["key"], lg])).values()];
 }
+
+export const withBasePath = (val) => {
+    return process.env.NEXT_PUBLIC_APP_ENV === 'production' ? `/bea/${val}` : `${val}`;
+};

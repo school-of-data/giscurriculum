@@ -1,3 +1,4 @@
+import { withBasePath } from "@src/lib/utils";
 import { useTranslation } from "next-i18next";
 import { Container, Grid, Dropdown, Image, Button } from "semantic-ui-react";
 
@@ -75,7 +76,7 @@ const DesktopShowCase = ({
                 >
                   <Grid.Row>
                     <Grid.Column width={4}>
-                      <Image src={row.header_image} alt={row.title} width="100%"/>
+                      <Image src={withBasePath(row.header_image)} alt={row.title} width="100%"/>
                       <h4>
                         {t("country")}
                       </h4>

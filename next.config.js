@@ -4,16 +4,7 @@ module.exports = {
     config.resolve.fallback = { fs: false, path: false };
     return config;
   },
-  // basePath: '/giscurriculum',
-  // assetPrefix: '/giscurriculum/',
+  basePath: process.env.NEXT_PUBLIC_APP_ENV === 'production' ? '/giscurriculum' : '',
+  assetPrefix: process.env.NEXT_PUBLIC_APP_ENV === 'production' ? '/giscurriculum/' : '',
   reactStrictMode: true,
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/en',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
 }

@@ -1,6 +1,7 @@
 import { Container, Menu, Image } from "semantic-ui-react";
 import useSizeQuery from "@src/hooks/useSizeQuery";
 import { useRouter } from "next/router";
+import { withBasePath } from '@src/lib/utils'
 
 const Navbar = () => {
   const { isDesktop } = useSizeQuery()
@@ -22,7 +23,7 @@ const Navbar = () => {
             }}
           >
             <Image
-              src="/colored_logo.svg"
+              src={withBasePath("/colored_logo.svg")}
               size="small"
               wrapped
               onClick={() => router.push(`/${router.query.locale}`)}
