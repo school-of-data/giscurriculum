@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getStaticPaths, makeStaticProps } from "@src/lib/getStatic";
+import Link from "next/link";
 import getSlug from "@src/lib/getSlug";
 import { useTranslation } from "next-i18next";
 import {
@@ -7,7 +8,6 @@ import {
   Header,
   Container,
   Grid,
-  Placeholder,
   Dropdown,
   Image
 } from "semantic-ui-react";
@@ -16,7 +16,7 @@ import useSizeQuery from "@src/hooks/useSizeQuery";
 import showcaseData from "@src/data/showcasedata.json";
 import { useRouter } from "next/router";
 import HeroSession from "@src/components/HeroSession";
-import {  getLanguageOptions, getAvailableCountries, withBasePath } from '@src/lib/utils'
+import { getLanguageOptions, getAvailableCountries, withBasePath } from '@src/lib/utils'
 
 export default function Homepage({ source }) {
   const { t, i18n } = useTranslation("common");
@@ -42,6 +42,13 @@ export default function Homepage({ source }) {
     router.push(currentPath);
   };
 
+  // const showType = () => {
+  //   if (isDesktop) return 'showcase#lg';
+  //   if (!isDesktop) return 'showcase#'
+  // }
+
+  // console.log("showType", showType());
+  // console.log("isDesktop", isDesktop);
   return (
     <LayoutComponent>
       <HeroSession />
@@ -92,12 +99,15 @@ export default function Homepage({ source }) {
                       {/* <p>
                        {v.project_summary}
                       </p> */}
+                      {/* <Link href={`/${router.query.locale}/${showType()}${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`}>
+                        <a><Button
+                          content={t("read_more")}
+                          primary /></a>
+                      </Link> */}
                       <Button
                         content={t("read_more")}
                         primary
-                        onClick={() =>
-                          router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)
-                        }
+                        onClick={() => router.push(`/${router.query.locale}/showcase#${v.title.toLowerCase().replace(/ /g, "-").replace(/[^\wÄäÖöÜü-]+/g, "")}`)}
                       />
                     </Grid.Column>
                   </Grid>

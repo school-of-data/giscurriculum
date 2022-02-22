@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+import { useRouter } from "next/router";
 import { withBasePath } from "@src/lib/utils";
 import { useTranslation } from "next-i18next";
 import { Container, Grid, Dropdown, Image, Button } from "semantic-ui-react";
@@ -16,12 +18,17 @@ const DesktopShowCase = ({
 }) => {
 
   const { t } = useTranslation("common");
-
+  const router = useRouter();
 
   const handleTag = (cat, val) => {
     let prevVals = filteredOptions?.[cat] ? filteredOptions?.[cat] : []
     tagSelectHandler(cat, [...prevVals, val.trim()])
   }
+
+  console.log("query", router.asPath )
+  useEffect(() =>{
+    router.push(router.asPath)
+  },[])
   return (
     <Grid>
       <Grid.Row style={{ height: "100%" }}>
@@ -37,7 +44,7 @@ const DesktopShowCase = ({
                 >
                   <Container>
                     <h4 style={{ padding: "0.25rem", textTransform: "capitalize" }}>
-                    {t(`${filterCat}`)}
+                      {t(`${filterCat}`)}
                     </h4>
                     <Dropdown
                       placeholder={"Change " + filterCat}
@@ -76,7 +83,7 @@ const DesktopShowCase = ({
                 >
                   <Grid.Row>
                     <Grid.Column width={4}>
-                      <Image src={withBasePath(row.header_image)} alt={row.title} width="100%"/>
+                      <Image src={withBasePath(row.header_image)} alt={row.title} width="100%" />
                       <h4>
                         {t("country")}
                       </h4>
@@ -97,7 +104,7 @@ const DesktopShowCase = ({
                       <h4>{t('tools')}</h4>
                       <div style={{ display: "flex", direction: "row" }}>
                         {row.tools.split(",").map((tool, i) => (
-                          <span 
+                          <span
                             className="tags"
                             onClick={() => handleTag("tools", tool)}
                             key={i}
@@ -117,7 +124,7 @@ const DesktopShowCase = ({
                         </span>
                       ))}
                       <h4>{t("algorithms")}</h4>
-                      { row.algorithms.split(",").map((alg, i) => (
+                      {row.algorithms.split(",").map((alg, i) => (
                         <span
                           className="tags"
                           onClick={() => handleTag("algorithms", alg)}
