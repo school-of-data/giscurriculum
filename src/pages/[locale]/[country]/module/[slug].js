@@ -111,30 +111,10 @@ export async function getStaticPaths() {
   const mods = await getFiles(
     `locales/${i18nConfig.i18n.defaultLocale}/${i18nConfig.i18n.defaultCountry}/module`
   );
-  let respPaths = mods
-    .map((m) =>
-      getPaths().map((lr) => ({
-        params: {
-          locale: lr.params["locale"],
-          country: lr.params["country"],
-          slug: m.replace(/\.mdx/, ""),
-        },
-      }))
-    )
-    .reduce((ret, curr) => {
-      ret = ret.concat(curr);
-      return ret;
-    }, []);
-
   return {
     paths: await getInnerPaths(),
     fallback: false,
   };
-
-  // return {
-  //   paths: respPaths,
-  //   fallback: false,
-  // };
 }
 
 export async function getStaticProps(ctx, ns = ["countrylevel"]) {

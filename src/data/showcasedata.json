@@ -1,7 +1,7 @@
 [
   {
     "title": "Tropical Cyclone Risk Assessment Model",
-    "header_image": "",
+    "header_image": "/showcase/ph-pdrf.png",
     "country": "Philippines",
     "language": "en",
     "authors": "Miguel Adrian Garcia, Gerson Hubert Aquino",
@@ -14,7 +14,7 @@
   },
   {
     "title": "Bataan Barangays Most Exposed to Flood",
-    "header_image": "",
+    "header_image": "/showcase/ph-upri.png",
     "country": "Philippines",
     "language": "en",
     "authors": "Patricia Anne Delmendo, Jericho Mendoza",
@@ -27,7 +27,7 @@
   },
   {
     "title": "Family farming",
-    "header_image": "",
+    "header_image": "/showcase/br-familyfarming.jpg",
     "country": "Brazil",
     "language": "en",
     "authors": "Agmerson Bruno, Marcus Boente",
@@ -40,7 +40,7 @@
   },
   {
     "title": "Rural Credit",
-    "header_image": "",
+    "header_image": "/showcase/br-ruralcredit.png",
     "country": "Brazil",
     "language": "en",
     "authors": "Eduardo Marcusso",
@@ -53,7 +53,7 @@
   },
   {
     "title": "Precipitation in Stung Treng province, Cambodia",
-    "header_image": "",
+    "header_image": "/showcase/mrc-cambodia.jpg",
     "country": "Cambodia",
     "language": "en",
     "authors": "Cambodia National Mekong Committee",
@@ -66,7 +66,7 @@
   },
   {
     "title": "Flood Risk Assessment Map of NamNgum Basin, Laos",
-    "header_image": "",
+    "header_image": "/showcase/mrc-laopdr.png",
     "country": "Lao PDR",
     "language": "en",
     "authors": "Malabou Baylatry, Soukphaphone Soodtharavong, Soutvilay Douangphachan, Oudomsak Bounmanivanh",
@@ -79,7 +79,7 @@
   },
   {
     "title": "Sirindhorn Dam Storage Capacity",
-    "header_image": "",
+    "header_image": "/showcase/mrc-thailand.jpg",
     "country": "Thailand",
     "language": "en",
     "authors": "Peraya Tantianuparp, Suluk Chaikhan",

@@ -9,7 +9,7 @@ import useSizeQuery from "@src/hooks/useSizeQuery";
 import ModalComponent from "@src/components/ModalComponent";
 import localematcher from "@src/config/matchLocale";
 import ctytolocale from "@src/config/ctytoLocale";
-import { toCapitalize } from "@src/lib/utils";
+import { toCapitalize, getLanguageOptions } from "@src/lib/utils";
 
 export default function Homepage({ source, frontMatter }) {
   const { isDesktop } = useSizeQuery();
@@ -21,16 +21,8 @@ export default function Homepage({ source, frontMatter }) {
   );
   const [selectedLang, setSelectedlang] = useState("en");
   const [availableCountries, setAvailableCountries] = useState([]);
-  const [countryOptions, setCountryOptions] = useState([
-    { key: "bangladesh", value: "bangladesh", flag: "bd", text: "Bangladesh" },
-    { key: "germany", value: "germany", flag: "de", text: "Germany" },
-  ]);
-  const languageOptions = [
-    { key: "en", value: "en", text: "English" },
-    { key: "es", value: "es", text: "Spanish" },
-    { key: "de", value: "de", text: "German" },
-  ];
-
+  const [countryOptions, setCountryOptions] = useState([]);
+  const languageOptions = getLanguageOptions()
   useEffect(() => {
     setCountryOptions(
       localematcher[currentLanguage].map((cty) => ({
@@ -65,7 +57,7 @@ export default function Homepage({ source, frontMatter }) {
     );
     router.push(currentPath);
   };
-
+  
   return (
     <LayoutComponent>
       <ModalComponent

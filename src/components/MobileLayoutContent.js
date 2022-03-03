@@ -108,8 +108,8 @@ const MobileLayoutContent = ({
                             labelPosition="left"
                             size="large"
                             style={{
-                              color: "#2A71FF",
-                              background: "#EBF1FF",
+                              color: "#fff",
+                              background: "#22B7F8",
                             }}
                           >
                             {t("back")}
@@ -129,8 +129,8 @@ const MobileLayoutContent = ({
                             labelPosition="right"
                             size="large"
                             style={{
-                              color: "#2A71FF",
-                              background: "#EBF1FF",
+                              color: "#fff",
+                              background: "#22B7F8",
                             }}
                           >
                             {t("next")}
