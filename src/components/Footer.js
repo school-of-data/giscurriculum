@@ -60,7 +60,7 @@ const Footer = () => {
         <Divider inverted section />
         <div style={{ textAlign: "left", fontSize: '1rem', color: 'black' }}>
           <p>
-            <a href="https://github.com/school-of-data/okf-events-a" title="Site source code">
+            <a href="https://github.com/school-of-data/giscurriculum" title="Site source code">
               <i class="fa fa-code fa-lg fa-fw"></i> Source code
             </a>
             &nbsp;available under the MIT license.
