@@ -80,7 +80,7 @@ const MobileLayoutContent = ({
               mods.map((m, i) => {
                 return (
                   <p key={i} style={{ padding: "0rem 0.12rem" }}>
-                    <Link href={withBasePath(m.match(/\[(.*?)\]/)[1])} passHref key={i}>
+                    <Link href={m.match(/\[(.*?)\]/)[1]} passHref key={i}>
                       <a style={{ cursor: "pointer" }}>
                         Module&nbsp;{i}:&nbsp;
                         {m.replace(/\s*(?:\[[^\]]*\]|\([^)]*\))\s*/g, "")}
