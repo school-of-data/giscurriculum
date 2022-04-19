@@ -13,6 +13,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { withBasePath } from "@src/lib/utils";
 
 const MobileLayoutContent = ({
   source,
@@ -79,7 +80,7 @@ const MobileLayoutContent = ({
               mods.map((m, i) => {
                 return (
                   <p key={i} style={{ padding: "0rem 0.12rem" }}>
-                    <Link href={m.match(/\[(.*?)\]/)[1]} passHref key={i}>
+                    <Link href={withBasePath(m.match(/\[(.*?)\]/)[1])} passHref key={i}>
                       <a style={{ cursor: "pointer" }}>
                         Module&nbsp;{i}:&nbsp;
                         {m.replace(/\s*(?:\[[^\]]*\]|\([^)]*\))\s*/g, "")}
