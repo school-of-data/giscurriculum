@@ -16,7 +16,8 @@ const Navbar = () => {
         <Container fluid>
           <Menu.Item
             as="a"
-            href={withBasePath("/")}
+            // href={withBasePath("/")}
+            href="https://okfn.org/"
             id="navbar-menu"
           >
             <Image
@@ -24,7 +25,7 @@ const Navbar = () => {
               size="small"
               wrapped
               // onClick={() => router.push(`/${router.query.locale}`)}
-              onClick={() => router.push(withBasePath(`/${router.query.locale}`))}
+              // onClick={() => router.push(withBasePath(`/${router.query.locale}`))}
             />
           </Menu.Item>
         </Container>
