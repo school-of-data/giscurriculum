@@ -16,17 +16,15 @@ const Navbar = () => {
         <Container fluid>
           <Menu.Item
             as="a"
-            href="/"
-            style={{
-              border: "0px",
-              cursor: "pointer",
-            }}
+            href={withBasePath("/")}
+            id="navbar-menu"
           >
             <Image
               src={withBasePath("/colored_logo.svg")}
               size="small"
               wrapped
-              onClick={() => router.push(`/${router.query.locale}`)}
+              // onClick={() => router.push(`/${router.query.locale}`)}
+              onClick={() => router.push(withBasePath(`/${router.query.locale}`))}
             />
           </Menu.Item>
         </Container>
