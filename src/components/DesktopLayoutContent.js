@@ -29,6 +29,7 @@ const DesktopLayoutContent = ({
   const { mods, outlines, prev, next } = frontMatter;
   const { t } = useTranslation("countrylevel");
   const router = useRouter();
+  
   return (
     <>
       <Modal
@@ -146,6 +147,7 @@ const DesktopLayoutContent = ({
                 padding: "4rem 2.5rem",
               }}
             >
+              {console.log("source", source)}
               <MDXRemote {...source} />
               <Grid style={{ marginTop: "1rem" }}>
                 <Grid.Row>
