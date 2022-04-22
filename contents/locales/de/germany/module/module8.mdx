@@ -85,8 +85,11 @@ Im Rahmen dieses Moduls lernen Sie, wie Sie effizient mit vektorgeografischen Da
 
 Lassen Sie uns mit einem Beispiel beginnen: Sie sind gerade mit der Bahn in Chemnitz angekommenund wollen sich jetzt mit dem Fahrrad weiter auf den Weg nach Frankenberg machen. Sie wissen weder, wo der Bahnhof in Bezug auf die Stadt liegt, noch, wo sich ihr Ziel befindet, also öffnen Sie als erstes einen Stadtplan, um sich in dieser neuen Stadt zu orientieren. Sie nehmen Ihr Telefon heraus, öffnen eine Karten-App und wählen den Startpunkt - den Bahnhof - und den Endpunkt - Frankenberg - und fragen dann nach der Route mit dem Fahrrad. In Sekundenschnelle bietet Ihnen die Routing-App die beste Lösung an, um von Punkt A zu Punkt B zu gelangen, und zeigt Ihnen diese an, wie in Abbildung 8.1 zu sehen.
 
-
-![Von Punkt A nach B mit Openstreetmap](/giscurriculum/images/de/module8/media/osm-routing.png "Von Punkt A nach B mit Openstreetmap")
+<img
+  src="/giscurriculum/images/de/module8/media/osm-routing.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Von Punkt A nach B mit Openstreetmap"
+/>
 
 Abbildung 8.1 - Mit Openstreetmap von Punkt A nach B
 
@@ -163,7 +166,11 @@ An dieser Stelle sollte Ihr QGIS-Kartenfenster wie in Abbildung 8.5 aussehen, na
 
 **TIP**: Verwenden Sie räumliche Indizes, um die Verarbeitungszeit zu beschleunigen und zu verbessern. Dies können Sie mit dem Algorithmus **Raumindex erzeugen** tun.
 
-![Geladene Vektordatensätze: Punkte, Linien und Polygone](/giscurriculum/images/de/module8/media/starting-workspace.png "Geladene Vektordatensätze: Punkte, Linien und Polygone")
+<img
+  src="/giscurriculum/images/de/module8/media/starting-workspace.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Geladene Vektordatensätze: Punkte, Linien und Polygone"
+/>
 
 Abbildung 8.5 - Geladene Vektordatensätze: Punkte, Linien und Polygone
 
@@ -199,7 +206,11 @@ So finden wir heraus, dass die Maßeinheit der Meter ist, daher werden die Läng
     * **Vektor ‣ Analyse ‣ Grundstatistik für Felder**
 
 
-![Grundstatistik für Felder](/giscurriculum/images/de/module8/media/fig87.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig87.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Grundstatistik für Felder"
+/>
 
 Abbildung 8.7 - Grundstatistik für Felder
 
@@ -302,7 +313,11 @@ Wir werden eine Reihe von Regeln für die Layer setzen, die wir in unser QGIS-Pr
 Die Konfiguration der Topologie ist einfach, da die Regeln, die auf Basis des ausgewählten Layers angewendet werden können, bereits in diese Funktionalität eingebettet sind, wie Abbildung 8.11 zeigt. 
 
 
-![Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers](/giscurriculum/images/de/module8/media/fig811.png "Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers")
+<img
+  src="/giscurriculum/images/de/module8/media/fig811.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Dropdown-Menü für Topologieregeln auf Basis des ausgewählten Layers"
+/>
 
 Abbildung 8.11 - Dropdown-Menü "Topologieregeln" basierend auf dem ausgewählten Layer.
 
@@ -313,7 +328,13 @@ Wählen Sie die Topologieregeln wie in Abbildung 8.12 dargestellt.
 
 Abbildung 8.12 - Einzustellende Topologieregeln 
 
-Klicken Sie auf das erste Symbol ![Alle prüfen Button](/giscurriculum/images/de/module8/media/fig813_btn.png "Alle prüfen Button") im Fenster des Topologieprüfers, um die Prüfung auszuführen, und warten Sie auf die Ergebnisse. Nach dem Ausführen der Topologieprüfung sollte Ihr Kartenfenster wie in Abbildung 8.13 aussehen. 
+Klicken Sie auf das erste Symbol 
+<img
+  src="/giscurriculum/images/de/module8/media/fig813_btn.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Alle prüfen Button"
+/>
+ im Fenster des Topologieprüfers, um die Prüfung auszuführen, und warten Sie auf die Ergebnisse. Nach dem Ausführen der Topologieprüfung sollte Ihr Kartenfenster wie in Abbildung 8.13 aussehen. 
 
 
 ![Topologieprüfungsergebnisse](/giscurriculum/images/de/module8/media/fig813.png "Topologieprüfungsergebnisse")
@@ -324,8 +345,12 @@ Im Topologie-Prüfungsfensters werden alle Fehler aufgelistet, die auf der Grund
 
 Der Prozess der Korrektur von Fehlern in einem Datensatz, sei es in Bezug auf die Geometrie (Duplikate, Lücken etc.) oder in Bezug auf die Attribute (fehlende Werte, Rechtschreibfehler etc.), wird als Bereinigung eines Datensatzes bezeichnet und ist meist ebenso mühsam wie notwendig. Obwohl es Funktionalitäten gibt, die einen halbautomatischen Bereinigungsprozess unterstützen, ist oft eine manuelle Korrektur notwendig. In Abbildung 8.14 haben wir zum Beispiel einen Fehler in unserem Points of Interests Layer eingezoomt, einen doppelten (sogar dreifachen) Punkt. Wie man sieht, gibt es drei Punkte, die ein Café darstellen, der Unterschied liegt in der Attributtabelle, in der einer als Café, einer als Bäckerei und einer als Gaststätte aufgeführt ist.
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig814.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Doppelter Punk im Points Of Interests Layer"
+/>
 
-![Doppelter Punk im Points Of Interests Layer](/giscurriculum/images/de/module8/media/fig814.png "Doppelter Punk im Points Of Interests Layer")
 
 Abbildung 8.14 - Doppelter Punk im Points Of Interests Layer
 
@@ -333,15 +358,22 @@ In diesem speziellen Fall wäre die Entscheidung des Anwenders höchstwahrschein
 
 Deshalb werden wir mit einer automatischen Entfernung der doppelten Punkte fortfahren. Dazu verwenden wir eine Kernfunktion von QGIS - **Doppelte Geometrien löschen** - zu finden in der Verarbeitungs-Toolbox. Ihr QGIS sollte wie in Abbildung 8.15 aussehen. 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig815.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Doppelte Geometrien im Layer Points of Interest löschen"
+/>
 
-![ Doppelte Geometrien im Layer Points of Interest löschen](/giscurriculum/images/de/module8/media/fig815.png)
 
 Abbildung 8.15 - Doppelte Geometrien im Layer Points of Interest löschen
 
 Nach der Ausführung des Algorithmus präsentiert das Funktionsfenster die Ergebnisse, es hat 127 doppelte Punkte identifiziert - genau wie der Topologie-Checker - und sie gelöscht, so dass der Layer pois mit **12138 Features** übrig bleibt. Benennen Sie diesen Layer in **pois-bereinigt** um. Beachten Sie, dass die Ausgabe ein Layer im Speicher ist, den Sie dauerhaft machen können, indem Sie ihn in einer Datei speichern.
 
-
-![Nach dem Löschen der Duplikate](/giscurriculum/images/de/module8/media/fig816.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig816.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Nach dem Löschen der Duplikate"
+/>
 
 Abbildung 8.16 - Nach dem Löschen der Duplikate
 
@@ -362,8 +394,12 @@ Führen Sie den Algorithmus aus.
 
 Das Ergebnis sollte wie in Abbildung 8.17b aussehen. 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig817_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer"
+/>
 
-![Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer](/giscurriculum/images/de/module8/media/fig817_b.png)
 
 Abbildung 8.17b - Ergebnisse der Topologieprüfung auf dem Gebäude-Vektor-Layer
 
@@ -377,7 +413,12 @@ Abbildung 8.18a - Entfernen von doppelten Geometrien auf dem Gebäude-Vektor-Lay
 
 ![Ausgabe nach dem Entfernen doppelter Geometrien auf dem Gebäude-Vektorlayer](/giscurriculum/images/de/module8/media/fig818_b.png)
 
-![Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektorlayer](/giscurriculum/images/de/module8/media/fig818_c.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig818_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektorlayer"
+/>
+
 
 Abbildung 8.18b - Ergebnisse des Entfernens doppelter Geometrien auf dem Gebäude-Vektor-Layer
 
@@ -398,8 +439,11 @@ Führen wir einen weiteren Algorithmus durch, um ein Gefühl dafür zu bekommen,
 
 Gehen Sie dazu auf **Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten** (Abbildung 8.19)
 
-
-![Eindeutige Werte in einem Vektor Layer auflisten Funktionalität](/giscurriculum/images/de/module8/media/fig819_a.png "Eindeutige Werte in einem Vektor Layer auflisten Funktionalität")
+<img
+  src="/giscurriculum/images/de/module8/media/fig819_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Eindeutige Werte in einem Vektor Layer auflisten Funktionalität"
+/>
 
 Abbildung 8.19a - Eindeutige Werte in einer Vektor-Layer-Funktionalität auflisten
 
@@ -425,7 +469,12 @@ Für eine weitergehende Analyse der Attribute unserer Layer verwenden wir das Pl
 
 Stellen Sie zunächst sicher, dass Sie die GroupStats-Erweiterung installiert und aktiviert haben. Um das GroupStats-Fenster zu öffnen, gehen Sie anschließend zu **Vektor ‣ GroupStats ‣ GroupStats**.
 
-![GroupStats plugin](/giscurriculum/images/de/module8/media/fig820_a.png "GroupStats plugin")
+<img
+  src="/giscurriculum/images/de/module8/media/fig820_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="GroupStats plugin"
+/>
+
 
 Abbildung 8.20a - GroupStats-Plugin
 
@@ -438,7 +487,12 @@ Abbildung 8.20b - GroupStats-Fenster
 
 Wie aus der zuvor durchgeführten Analyse hervorgeht, haben wir für den Layer Gebäude 113 verschiedene Gebäudetypen, aber wie viele sind es jeweils und wie groß ist die gesamte bebaute Fläche, die von jeder Kategorie eingenommen wird? Wie viel Fläche für Schulen, für Märkte, für Häuser? GroupStats kann uns helfen, diese Frage zu beantworten. Auf der rechten Seite des Fensters befindet sich das Bedienfeld, in dem wir auswählen, was wir berechnen wollen und wie die Daten angeordnet werden sollen. Folgen Sie per Drag&Drop der Anordnung in Abbildung 8.21 und drücken Sie dann auf "Calculate". 
 
-![GroupStats auf dem Gebäudelayer](/giscurriculum/images/de/module8/media/fig821.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig821.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="GroupStats auf dem Gebäudelayer"
+/>
+
 
 Abbildung 8.21 - GroupStats auf dem Gebäudelayer 
 
@@ -446,8 +500,12 @@ Wenn wir uns das Ergebnis ansehen, können wir wichtige Erkenntnisse über unser
 
 Eine weitere interessante Analyse kann auf dem Straßen-Vektor Layer durchgeführt werden. Abbildung 8.22 zeigt, wie man die Längen von Straßen, kategorisiert nach Straßentyp (Hauptstraße, Wohnstraße, Autobahn usw.) und zulässiger Höchstgeschwindigkeit, berechnen kann. 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig822.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="GroupStats auf dem Straßenlayer"
+/>
 
-![GroupStats auf dem Straßenlayer](/giscurriculum/images/de/module8/media/fig822.png)
 
 Abbildung 8.22 - GroupStats auf dem Straßenlayer 
 
@@ -483,13 +541,22 @@ Abbildung 8.23 - Einstellen der Parameter für einen 500 m Puffer um Gotteshäus
 
 Ein Detail des Ergebnisses der Geoverarbeitung ist in Abbildung 8.24 dargestellt: 
 
-![Ergebnis der Pufferberechnung](/giscurriculum/images/de/module8/media/fig824.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig824.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnis der Pufferberechnung"
+/>
+
 
 Abbildung 8.24 - Ergebnis der Pufferberechnung
 
 Um die Ausgangsfrage vollständig zu beantworten, müssen im nächsten Schritt die Flächen für alle Puffer berechnet und aufsummiert werden (siehe Teil 1, Schritt 4) - Abbildung 8.25. 
 
-![Fläche für den neu erhaltenen Layer, mit GroupStats berechnet](/giscurriculum/images/de/module8/media/fig825.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig825.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Fläche für den neu erhaltenen Layer, mit GroupStats berechnet"
+/>
 
 Abbildung 8.25 - Fläche für den neu erhaltenen Layer, mit GroupStats berechnet
 
@@ -499,7 +566,12 @@ Abbildung 8.25 - Fläche für den neu erhaltenen Layer, mit GroupStats berechnet
 
 Abbildung 8.26a - Auswahl der Flächennutzung fclass = industrial. 
 
-![Ausgewählte Industrieflächen](/giscurriculum/images/de/module8/media/fig826_b.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig826_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ausgewählte Industrieflächen"
+/>
+
 
 Abbildung 8.26b - Ausgewählte Industrieflächen 
 
@@ -511,7 +583,12 @@ Abbildung 8.27a - Ausführen des Zuschneiden-Algorithmus
 
 Nach der Ausführung des Algorithmus sollten Ihre Ergebnisse wie in Abbildung 8.27b aussehen. Die beschnittenen Gebäude sind grün eingefärbt (die Farbe kann bei Ihnen wie immer eine andere sein). Wie viele Industriegebäude bleiben über und wie groß ist deren Gesamtfläche? 
 
-![Ergebnis der Zuschneiden-Funktionalität](/giscurriculum/images/de/module8/media/fig827_b.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig827_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnis der Zuschneiden-Funktionalität"
+/>
+
 
 Abbildung 8.27b - Ergebnis der Zuschneiden-Funktionalität
 
@@ -524,8 +601,12 @@ Um die obige Frage zu beantworten, werden wir den Algorithmus nur für Punkte au
 
 Abbildung 8.28a - Filtern des POI-Layer nach Schulen
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig828_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Schulen im POI-Layer"
+/>
 
-![Schulen im POI-Layer](/giscurriculum/images/de/module8/media/fig828_b.png)
 
 Abbildung 8.28b - Schulen im POI-Layer
 
@@ -534,8 +615,12 @@ Abbildung 8.28b - Schulen im POI-Layer
 
 Abbildung 8.28c - Ausführen des Voronoi-Algorithmus
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig828_d.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnis des Voronoi-Algorithmus"
+/>
 
-![Ergebnis des Voronoi-Algorithmus](/giscurriculum/images/de/module8/media/fig828_d.png)
 
 Abbildung 8.28d - Ergebnis des Voronoi-Algorithmus
 
@@ -561,8 +646,12 @@ Abbildung 8.29a - Erstellen eines 10kmx10km-Vektorgitters
 
 Sie sollten ein Ergebnis wie in Abbildung 8.29b erhalten. 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig829_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="10X10km Vektorgitter"
+/>
 
-![10X10km Vektorgitter](/giscurriculum/images/de/module8/media/fig829_b.png "10X10km Vektorgitter")
 
 Abbildung 8.29b - 10X10km-Vektorgitter
 
@@ -573,8 +662,12 @@ Zur weiteren Beantwortung der Fragen in unserer Übung müssen wir Folgendes tun
 Grünflächen und bebaute Flächen sind Daten, die im Landnutzungs-Layer enthalten sind. Um genau zu wissen, was die "Grünflächen" sind, müssen wir sehen, welche Kategorien im Datensatz enthalten sind. Dazu führen wir den Algorithmus **Eindeutige Werte auflisten** auf das Attribut "fclass" aus und finden heraus, dass wir die folgenden Grünflächen vorfinden: 'recreation_ground', 'meadow', 'grass', 'nature_reserve', 'orchard', 'park', 'forest', 'farmland', 'vineyard', 'cemetery', 'scrub', 'heath'. Außerdem finden wir die folgenden bebauten Flächen: 'farmyard', 'residential', 'industrial', 'commercial', 'allotments', 'retail'.
 Abbildung 8.30b zeigt eine Visualisierung unserer Selektionen: 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig830_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Räumliche Verteilung der Grünflächen und bebauten Flächen"
+/>
 
-![Räumliche Verteilung der Grünflächen und bebauten Flächen](/giscurriculum/images/de/module8/media/fig830_b.png)
 
 Abbildung 8.30b - Räumliche Verteilung der Grünflächen und bebauten Flächen (zufällige Farben)
 
@@ -586,8 +679,12 @@ Der zweite Schritt zur Beantwortung der Anforderung besteht darin, zu ermitteln,
 Abbildung 8.31 -  Parameter für den Vereinugngen-Algorithmus
 
 Das Ergebnis sollte wie in Abbildung 8.32 aussehen.
+<img
+  src="/giscurriculum/images/de/module8/media/fig832.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ergebnis der Ausführung des Vereinigungen-Algorithmus"
+/>
 
-![Ergebnis der Ausführung des Vereinigungen-Algorithmus](/giscurriculum/images/de/module8/media/fig832.png")
 
 Abbildung 8.32 - Ergebnis der Ausführung des Vereinigungen-Algorithmus
 
@@ -606,23 +703,39 @@ Alternativ können Sie auch einen Filter anstelle einer Auswahl verwenden.
 
 Abbildung 8.34a - Auswählen der Grünflächen.
 
-
-![Ausgewählte Grünflächen](/giscurriculum/images/de/module8/media/fig834_b.png "Ausgewählte Grünflächen")
+<img
+  src="/giscurriculum/images/de/module8/media/fig834_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ausgewählte Grünflächen"
+/>
 
 Abbildung 8.34b - Ausgewählte Grünflächen.
+<img
+  src="/giscurriculum/images/de/module8/media/fig834_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Grün- und bebaute Flächen"
+/>
 
-
-![Grün- und bebaute Flächen](/giscurriculum/images/de/module8/media/fig834_c.png "Grün- und bebaute Flächen")
 
 Abbildung 8.34c - Grünflächen und bebaute Flächen.
 
 Berechnen Sie als nächstes die Fläche, die von jedem Merkmal der 2 Layer eingenommen wird. Gehen Sie in die Attributtabelle jedes Layers und fügen Sie dann die geometrische Spalte Fläche hinzu, indem Sie den Ausdruck `round($area,2) ` in den Feldrechner einfügen.  (siehe Modul 6 für Details, falls erforderlich). Das 10X10km-Gitter hat jedoch eine bekannte Anzahl von Gitterzellen, und zwar 56. Daher müssen wir die Flächen für alle Arten von Grünflächen (Wälder, Parks etc.) und bebauten Flächen (Gewerbe, Wohnen etc.) zusammenfassen und entsprechend zu allen 56 Gitterzellen verbinden. Dazu werden wir das Plugin **GroupStats** verwenden, um für jede grid_id alle Grünkategorien bzw. alle bebauten Kategorien zusammenzufassen. Für den Layer grünflächen-gitter stellen Sie die Parameter wie in Abbildung 8.34e ein. 
 
-![Berechnung der Fläche jedes Objekts](/giscurriculum/images/de/module8/media/fig834_d.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig834_d.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Berechnung der Fläche jedes Objekts"
+/>
+
 
 Abbildung 8.34d - Berechnung der Fläche jedes Objekts.
 
-![GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle](/giscurriculum/images/de/module8/media/fig834_e.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig834_e.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle"
+/>
+
 
 Abbildung 8.34e - GroupStat-Parameter zum Aufsummieren der Grünflächen pro jede 10X10km-Zelle
 
@@ -632,12 +745,20 @@ Führen Sie GroupStats für die bebaute Fläche auf die gleiche Weise aus und sp
 
 Als nächstes bringen wir die 2 mit GroupStat berechneten csv-Dateien in QGIS (**Layer ‣ Layer hinzufügen ‣ Getrennte Textdatei als Layer hinzufügen** - siehe mehr Details in Modul 2). 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig835_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Laden von grünflächen-gitter.csv"
+/>
 
-![Laden von grünflächen-gitter.csv](/giscurriculum/images/de/module8/media/fig835_a.png)
 
 Abbildung 8.35a - Laden von grünflächen-gitter.csv
 
-![Die grünflächen-gitter CSV Attributtabelle](/giscurriculum/images/de/module8/media/fig835_b.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig835_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Die grünflächen-gitter CSV Attributtabelle"
+/>
 
 Abbildung 8.35b - Die grünflächen-gitter CSV Attributtabelle
 
@@ -645,8 +766,12 @@ Als nächstes müssen wir die berechneten Flächen - grün und bebaut - mit jede
 
 Klicken Sie im Fenster **Verknüpfungen** auf die grüne Plus-Schaltfläche ![](/giscurriculum/images/de/module8/media/add_join_btn.png) und stellen Sie die Parameter wie in Abbildung 8.35, für Grünflächen, ein.
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig835_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen"
+/>
 
-![Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen](/giscurriculum/images/de/module8/media/fig835_c.png)
 
 Abbildung 8.35c - Einstellungen um über eine Verkünpfung der Felder grid_id und id die Grünflächngröße zu den Gitterzellen hinzuzufügen
 
@@ -654,11 +779,21 @@ Wiederholen Sie den Vorgang für bebaute Flächen.
 
 Die Ergebnisse der beiden Verknüpfungen sind in der Attributtabelle sichtbar, wie in Abbildung 8.36_b zu sehen ist. Wir haben die grid_id in beiden Joins beibehalten, um sicherzugehen, dass keine Fehler aufgetreten sind. Wir können visuell schnell überprüfen, ob die 3 Attributfelder: id, grünflächen_id und bebaute-flächen_id genau gleich sind. 
 
-![Verknüpfungseinstellungen ](/giscurriculum/images/de/module8/media/fig836_a.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig836_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Verknüpfungseinstellungen"
+/>
+
+
 
 Abbildung 8.36a - Verknüpfungseinstellungen
 
-![Flächen in der Gitter-Attributtabelle](/giscurriculum/images/de/module8/media/fig836_b.png")
+<img
+  src="/giscurriculum/images/de/module8/media/fig836_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Flächen in der Gitter-Attributtabelle"
+/>
 
 Abbildung 8.36b - Flächen in der Gitter-Attributtabelle 
 
@@ -675,23 +810,39 @@ END
 ```
 
 Das Endergebnis würde wie in Abbildung 8.37e aussehen. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig837_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Prozentsatz der grünen Fläche im 10km x 10km-Raster"
+/>
 
-![Prozentsatz der grünen Fläche im 10km x 10km-Raster](/giscurriculum/images/de/module8/media/fig837_a.png "Prozentsatz der grünen Fläche im 10km x 10km-Raster")
 
 Abbildung 8.37a - Prozentualer Anteil der Grünfläche im 10km x 10km-Raster
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig837_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Berechnung für das Verhältnis von Grün- und bebauter Fläche"
+/>
 
-![Berechnung für das Verhältnis von Grün- und bebauter Fläche](/giscurriculum/images/de/module8/media/fig837_c.png "Berechnung für das Verhältnis von Grün- und bebauter Fläche")
 
 Abbildung 8.37c - Berechnung für das Verhältnis von Grün- und bebauter Fläche
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig837_d.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Berechnetes Verhältnis von Grün- und bebauter Fläche"
+/>
 
-![Berechnetes Verhältnis von Grün- und bebauter Fläche](/giscurriculum/images/de/module8/media/fig837_d.png "Berechnetes Verhältnis von Grün- und bebauter Fläche")
 
 Abbildung 8.37d - Berechnetes Verhältnis von Grün- und bebauter Fläche
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig837_e.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster"
+/>
 
-![Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster](/giscurriculum/images/de/module8/media/fig837_e.png "Verhältnis von Grün- und bebauten Flächen im 10km x 10km Raster")
 
 Abbildung 8.37e - Verhältnis von Grünflächen und bebauten Flächen im 10km x 10km-Raster
 
@@ -705,19 +856,30 @@ Um diese Aufgabe zu erfüllen, bietet QGIS einen Algorithmus, der einen Polygon-
 - Linienanzahl Feldname - roads_anzahl
 
 Sie können einen temporären Layer erstellen oder ihn als Datei auf Ihrem Computer speichern. Sie können außerdem die Stilisierungsparameter aus Abbildung 8.38c übernehmen, um die gleiche Kartenansicht zu erhalten. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig838_a.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Parameter für 'Linienlängen summieren'"
+/>
 
 
-![Parameter für "Linienlängen summieren"](/giscurriculum/images/de/module8/media/fig838_a.png)
 
 Abbildung 8.38a - Parameter für "Linienlängen summieren"
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig838_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Straßenlänge- und anzahl pro Gitterzelle"
+/>
 
-![Straßenlänge- und anzahl pro Gitterzelle](/giscurriculum/images/de/module8/media/fig838_b.png)
 
 Abbildung 8.38b - Straßenlänge- und anzahl pro Gitterzelle
+<img
+  src="/giscurriculum/images/de/module8/media/fig838_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Räumliche Verteilung der Straßenkilometer"
+/>
 
-
-![Räumliche Verteilung der Straßenkilometer](/giscurriculum/images/de/module8/media/fig838_c.png)
 
 Abbildung 8.38c - Räumliche Verteilung der Straßenkilometer
 
@@ -728,24 +890,32 @@ Dieses Vorgehen können Sie nun analog für die Wasserwege wiederholen.
 Um die Gesamtzahl der öffentlichen Gebäude in der 10X10-Einheit zu zählen, verwenden wir pois-bereinigt. Zuerst führen wir **Vektor ‣ Analyse-Werkzeuge ‣ Eindeutige Werte auflisten..** aus und entscheiden, welche Gebäude wir als öffentlich betrachten. Wir wählen aus unserem Vektorpunkt-Daten-Layer (pois) die folgenden Merkmale aus: `"fclass" in ('optician','college','swimming_pool','arts_centre','library','school','courthouse','university','sports_centre','museum','fire_station','kindergarten','post_office','community_centre','nursing_home','biergarten','town_hall','dentist','observation_tower','tourist_info','hospital','theatre','doctors','public_building','police')`. Wenn Sie möchten, können Sie natürlich auch eine andere Auswahl wählen. Wählen sie die gezeigt Auswahl sollten, insgesamt 3442 markiert werden. 
 
 
-![](/giscurriculum/images/de/module8/media/fig840_a.png "Auswählen von öffentlichen POIs")
-
 Abbildung 8.40a - Auswählen von öffentlichen POIs
+<img
+  src="/giscurriculum/images/de/module8/media/fig840_b.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Ausgewählte öffentliche POIS"
+/>
 
-
-![Ausgewählte öffentliche POIS](/giscurriculum/images/de/module8/media/fig840_b.png "Ausgewählte öffentliche POIS")
 
 Abbildung 8.40b - Ausgewählte öffentliche POIS
 
 Um unsere Anfrage zu beantworten, verwenden wir den Algorithmus **Vektor ‣ Analyse-Werkzeuge ‣ Punkte in Polygon zählen**. Dieser Algorithmus nimmt einen Punkte-Layer und einen Polygon-Layer und zählt die Anzahl der Punkte aus dem ersten Layer in jedem Polygon des zweiten Layers. Es wird ein neuer Layer "Polygone" erzeugt, der genau den gleichen Inhalt hat wie der eingegebene Layer "Polygone", aber ein zusätzliches Feld mit der Anzahl der Punkte für jedes Polygon enthält. Setzen Sie den Layer für die Punkte auf pois-bereinigt und den Layer für das Gitter auf den dafür erzeugten Layer. Aktivieren Sie für die Punkte das Kontrollkästchen **Nur gewählte Symbole**, damit der Algorithmus nur die ausgewählten Punkte - die öffentlichen POIs - berechnet. Speichern Sie die Ausgabedatei als grid_info. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig840_c.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Anzahl öffentlicher POIS in jeder 10km x 10km Zelle"
+/>
 
 
-![Anzahl öffentlicher POIS in jeder 10km x 10km Zelle](/giscurriculum/images/de/module8/media/fig840_c.png)
 
 Abbildung 8.40c - Anzahl öffentlicher POIS in jeder 10kmx10km Zelle
 
-
-![Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle](/giscurriculum/images/de/module8/media/fig840_d.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig840_d.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle"
+/>
 
 
 Abbildung 8.40d - Räumliche Verteilung öffentlicher POIs pro 10X10km Zelle
@@ -780,9 +950,12 @@ Die Annahme, auf der die Interpolation basiert, ist, dass räumlich verteilte Ob
 Es gibt viele Interpolationsmethoden, die in GIS-Software implementiert sind. Die Entscheidung, welche in jedem einzelnen Fall die beste ist, hängt von der Spezifität der Daten ab, was sie repräsentieren und vom geostatistischen Verständnis der Person, die Interpolation durchführt. 
 
 Um schnell zu prüfen, welche Interpolationsmethoden in QGIS zur Verfügung stehen, gehen Sie in die Verarbeitungswerkzeuge und geben Sie in die Suchleiste das Stichwort Interpolation ein. Das Ergebnis sollte wie in Abbildung 8.41 aussehen. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig841.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="In QGIS verfügbare Interpolationsmethoden"
+/>
 
-
-![In QGIS verfügbare Interpolationsmethoden](/giscurriculum/images/de/module8/media/fig841.png "In QGIS verfügbare Interpolationsmethoden")
 
 Abbildung 8.41 - In QGIS verfügbare Interpolationsmethoden
 
@@ -799,16 +972,23 @@ Der erste Schritt ist also die Erstellung eines neuen Punk-Vektor Layers mit zuf
 
 Die Einstellungen sollte wie in Abbildung 8.42 aussehen. 
 
-
-![Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers](/giscurriculum/images/de/module8/media/fig842.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig842.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers"
+/>
 
 Abbildung 8.42 - Erzeugen von Zufallspunkten innerhalb eines Polygon-Layers
 
 
 Der resultierende Punkt-Layer sieht ungefähr so aus wie in Abbildung 8.43.
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig843.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt"
+/>
 
-![Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt](/giscurriculum/images/de/module8/media/fig843.png)
 
 Abbildung 8.43 - Punktdaten-Layer - zufällig innerhalb der angegebenen Polygone erzeugt
 
@@ -823,16 +1003,21 @@ Dazu können wir die von QGIS bereitgestellte Zufallsfunktion verwenden. Öffnen
 5. 5 - 63;
 6. 0 - 10;
 7. 0 - 21. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig844.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Zufallswerte innerhalb vorgegebener Grenzen erzeugen"
+/>
 
-
-![Zufallswerte innerhalb vorgegebener Grenzen erzeugen](/giscurriculum/images/de/module8/media/fig844.png "Zufallswerte innerhalb vorgegebener Grenzen erzeugen")
 
 Abbildung 8.44 - Erzeugen von Zufallswerten innerhalb vorgegebener Grenzen
 
 Nachdem Sie alle 7 Spalten hinzugefügt haben, sollte Ihre Attributtabelle wie in Abbildung 8.45 aussehen. 
-
-
-![Fiktive Nierderschlagsmengen in der Attributtabelle](/giscurriculum/images/de/module8/media/fig845.png)
+<img
+  src="/giscurriculum/images/de/module8/media/fig845.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Fiktive Nierderschlagsmengen in der Attributtabelle"
+/>
 
 Abbildung 8.45 - Fiktive Nierderschlagsmengen in der Attributtabelle
 
@@ -844,16 +1029,23 @@ Stellen Sie die folgenden Parameter ein:
 * Größe des Ausgaberasters: 50. 
 
 Ihre Parameter sollten wie in der folgenden Abbildung 8.46 aussehen.
+<img
+  src="/giscurriculum/images/de/module8/media/fig846.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage"
+/>
 
 
-![Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage](/giscurriculum/images/de/module8/media/fig846.png)
 
 Abbildung 8.46 - Einstellungen im Stapelverarbeitungsfensters zur Interpolation der Niederschlagswerte für alle 7 Tage
 
 Das Interpolationsergebnis sieht ungefähr so aus wie in Abbildung 8.47. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig847.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Interpolierte Datensätze"
+/>
 
-
-![Interpolierte Datensätze](/giscurriculum/images/de/module8/media/fig847.png)
 
 Abbildung 8.47 - Interpolierte Datensätze
 
@@ -866,22 +1058,34 @@ Betrachtet man die Punktdaten und die daraus erstellten Rasterdatensätze, so st
 Da wir jedoch Werte für 7 Tage interpoliert haben, wollen wir eine kurze Animation vorbereiten, wie sich die Niederschlagswerte entwickelt haben. 
 
 Öffnen Sie dazu die **Eigenschaften des Rasters wetterstationen_1 ‣ klicken Sie auf die Registerkarte Zeitlich ‣ markieren Sie die Option Zeitlich ‣ wählen Sie Start- und Enddatum**, wie in Abbildung 8.48. Führen Sie das gleiche für alle 7 Raterlayer - jeweils um einen Tag verschoben - durch.
+<img
+  src="/giscurriculum/images/de/module8/media/fig848.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Zeitliche Informationen zum Rasterdatensatz setzen (1)"
+/>
 
-![Zeitliche Informationen zum Rasterdatensatz setzen (1)](/giscurriculum/images/de/module8/media/fig848.png )
 
 Abbildung 8.48 - Einstellen der zeitlichen Informationen zum Rasterdatensatz
 
 
 Öffnen Sie das Bedienfeld "Zeitsteuerung" (zu finden in **Ansicht ‣ Bedienfelder ‣ Zeitsteuerung**) und stellen Sie die Parameter wie in Abbildung 8.49 ein. 
 
+<img
+  src="/giscurriculum/images/de/module8/media/fig849.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Einstellen der Parameter des Zeitsteuerungsfeldes"
+/>
 
-![Einstellen der Parameter des Zeitsteuerungsfeldes](/giscurriculum/images/de/module8/media/fig849.png)
 
 Abbildung 8.49 - Einstellen der Parameter des Zeitsteuerungsfeldes. 
 
 Klicken Sie auf den Play-Button ![Play-Button](/giscurriculum/images/de/module8/media/play-btn.png "Play-Button") und schauen Sie sich an, wie sich die Werte ändern. Sie können auswählen, welche anderen Layer sichtbar sein sollen. In Abbildung 8.50 haben wir den Gebäude-Vektor-Layer hinzugefügt. 
+<img
+  src="/giscurriculum/images/de/module8/media/fig850.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Auswählen anderer Layer, die in der zeitlichen Animation sichtbar sein sollen"
+/>
 
-![Auswählen anderer Layer, die in der zeitlichen Animation sichtbar sein sollen](/giscurriculum/images/de/module8/media/fig850.png)
 
 Abbildung 8.50 - Auswählen von anderen Layern, die in der zeitlichen Animation sichtbar sein sollen.
 
