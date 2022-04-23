@@ -32,44 +32,39 @@ outlines:
 
 In diesem Modul lernen Sie die grundlegenden Konzepte von Layern in QGIS und wie man sie lädt. Am Ende dieses Moduls sollten die Lernenden vertraut sein mit:
 
-* den verschiedenen Datenquellen und Dateiformaten, die in QGIS geladen werden können
-* den verschiedenen Arten, wie Daten in QGIS geladen werden können
-* einigen gängige Datenformaten
+- den verschiedenen Datenquellen und Dateiformaten, die in QGIS geladen werden können
+- den verschiedenen Arten, wie Daten in QGIS geladen werden können
+- einigen gängige Datenformaten
 
 Sie sollten außerdem in der Lage sein:
 
-* Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Bedienfelds und des Datenquellen-Managers zu laden
-* QGIS mit entfernten Diensten zu verbinden
-* mit temporären und virtuellen Layern zu arbeiten
-* Erweiterungen zu installieren, um andere Datensätze in QGIS laden
-* Ebeneneigenschaften wie Metadateninformationen anzeigen
-* Layer speichern und exportieren
-
+- Layer (sowohl Vektoren als auch Raster) mit Hilfe des Browser-Bedienfelds und des Datenquellen-Managers zu laden
+- QGIS mit entfernten Diensten zu verbinden
+- mit temporären und virtuellen Layern zu arbeiten
+- Erweiterungen zu installieren, um andere Datensätze in QGIS laden
+- Ebeneneigenschaften wie Metadateninformationen anzeigen
+- Layer speichern und exportieren
 
 ## Erforderliche Werkzeuge und Ressourcen
 
 Die benötigten Werkzeuge und Ressourcen für dieses Modul sind:
 
-* Computer
-* Internetverbindung
-* QGIS 3.16 auf dem Computer installiert ([https://qgis.org/de/site/forusers/download.html](https://qgis.org/de/site/forusers/download.html))
-
+- Computer
+- Internetverbindung
+- QGIS 3.16 auf dem Computer installiert ([https://qgis.org/de/site/forusers/download.html](https://qgis.org/de/site/forusers/download.html))
 
 ## Voraussetzungen
 
-* Grundkenntnisse in der Bedienung eines Computers
-* Vertrautheit mit räumlichen Datenformaten und der QGIS-Oberfläche (Abschluss der Module 0 und 1)
-
+- Grundkenntnisse in der Bedienung eines Computers
+- Vertrautheit mit räumlichen Datenformaten und der QGIS-Oberfläche (Abschluss der Module 0 und 1)
 
 ## Zusätzliche Ressourcen
 
-* QGIS Benutzerhandbuch - [https://docs.qgis.org/3.16/de/docs/user_manual/](https://docs.qgis.org/3.16/de/docs/user_manual/)
-* QGIS Schulungshandbuch - [https://docs.qgis.org/3.16/de/docs/training_manual/index.html](https://docs.qgis.org/3.16/de/docs/training_manual/index.html)
-* Basiskarten in QGIS (englischsprachig) - [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
-* Verbindung von QGIS mit Remote Services (englischsprachig) - [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
-* Spreadsheet Layers Plugin  (englischsprachig)- [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
-
-
+- QGIS Benutzerhandbuch - [https://docs.qgis.org/3.16/de/docs/user_manual/](https://docs.qgis.org/3.16/de/docs/user_manual/)
+- QGIS Schulungshandbuch - [https://docs.qgis.org/3.16/de/docs/training_manual/index.html](https://docs.qgis.org/3.16/de/docs/training_manual/index.html)
+- Basiskarten in QGIS (englischsprachig) - [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
+- Verbindung von QGIS mit Remote Services (englischsprachig) - [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html)
+- Spreadsheet Layers Plugin (englischsprachig)- [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
 
 ## Thematische Einführung
 
@@ -79,7 +74,6 @@ Abbildung 2.1. Ein Karten-Overlay mit verschiedenen Layern und Datentypen ([http
 
 Wir haben in den vorangegangenen Modulen gelernt, dass räumliche Datenmodelle wie Vektoren und Raster eine Modellierung von Objekten und Phänomenen der realen Welt sind.
 Um in der Praxis nützliche Analysen durchzuführen, reicht es nicht, einen einzelnen Layer zu benutzen. Wir müssen häufig mehrerer Datensätze (z.B. Höhe, Temperatur, Bevölkerungsverteilung, Zoneneinteilungs usw). miteinander kombinieren. Das Übereinanderlegen mehrerer thematischer Karten desselben Gebiets ist eine der ältesten und gängigsten geografischen Analysetechniken.
-
 
 ## Aufschlüsselung der Konzepte
 
@@ -97,12 +91,12 @@ Abgesehen von den räumlichen Datenmodellen (Raster und Vektoren), die im ersten
 
 Die meisten GIS-Neulinge werden in der Regel über Shapefiles an räumliche Daten herangeführt. Die meisten Leute wachsen nie darüber hinaus und verwenden Shapefile für alle Arten und Formen von Vektordaten. Dies ist vergleichbar damit, wie eine bestimmte Marke wie Coca Cola als allgemeiner Begriff für Softdrinks verwendet wird. Das ist nicht unbedingt falsch, aber eher unglücklich, da Shapefiles nur eine der vielen Arten von Vektordatenformaten sind. Tatsächlich gibt es auch viele andere Vektorformate wie z.B. geopackage, geojson, topojson, und flatgeobuf. Das Shapefile-Format ist zwar allgegenwärtig, hat aber einige wesentliche Einschränkungen, wie z. B.:
 
-* Es ist nicht nur 1 Datei. Ein Shapefile besteht eigentlich aus mehreren Dateien, von denen 3 obligatorisch sind: .shp, .shx, .dbf. Alle anderen Dateien werden Sidecar-Dateien genannt.
-* Die Größe jeder einzelnen Datei ist auf 2 GB begrenzt.
-* Feldnamen sind auf 10 Zeichen begrenzt.
-* Attributspalten sind auf 255 Spalten begrenzt.
-* Einige Datentypen, wie z. B. Zeit, werden nicht unterstützt.
-* Es speichert nicht explizit die Topologie.
+- Es ist nicht nur 1 Datei. Ein Shapefile besteht eigentlich aus mehreren Dateien, von denen 3 obligatorisch sind: .shp, .shx, .dbf. Alle anderen Dateien werden Sidecar-Dateien genannt.
+- Die Größe jeder einzelnen Datei ist auf 2 GB begrenzt.
+- Feldnamen sind auf 10 Zeichen begrenzt.
+- Attributspalten sind auf 255 Spalten begrenzt.
+- Einige Datentypen, wie z. B. Zeit, werden nicht unterstützt.
+- Es speichert nicht explizit die Topologie.
 
 Andere Datenformate wie GeoPackage, GeoJSON, TopoJSON und flatgeobuff beheben diese Einschränkungen von Shapefiles. Tatsächlich sind QGIS und GRASS GIS auf GeoPackage als Standard-Vektordateiformat umgestiegen, wenn es um den Import oder Export von Layern geht. Obwohl GeoPackage auch einige Einschränkungen hat, erlaubt es der Gemeinschaft, die Zukunft des Formats mitzugestalten, da es ein völlig offenes Format ist.
 
@@ -122,21 +116,19 @@ Für weitere Informationen über Dateiformate können Sie auch nachsehen: [https
 
 Geodaten können auch in Form von Geodatenbanken vorliegen. Dies können Datenbanken auf Unternehmensebene sein, wie das freie und quelloffene Postgres mit PostGIS-Erweiterung ([https://postgis.net/](https://postgis.net/)) oder das proprietäre ArcSDE von ESRI. Es gibt auch Dateigeodatenbanken, in denen verschiedene Datentypen (z. B. Vektoren und Raster) gespeichert werden können. Einige Beispiele sind das freie und offene OGC GeoPackage (.gpkg) ([https://www.geopackage.org/](https://www.geopackage.org/)) und das proprietäre File Geodatabase Format von ESRI (.gdb).
 
-
 #### **Arten von Datenquellen**
 
 Eine der leistungsfähigsten Funktionen von QGIS ist die Fähigkeit, verschiedene räumliche und nicht-räumliche Daten aus unterschiedlichen Quellen zu verbinden, zu laden und zu verwenden. QGIS kann folgende Formate öffnen:
 
-* lokale Raster- und Vektordateien
-* lokale Datenbanken
-* Dateien und Datenbanken im Internet über deren Uniform Resource Identifier (URI) oder Uniform Resource Locator (URL),
-* Webservices (OSGeo Webservices und ArcGIS Webservices), Kacheldienste und Datenportale wie GeoNode
-* und viele mehr...
+- lokale Raster- und Vektordateien
+- lokale Datenbanken
+- Dateien und Datenbanken im Internet über deren Uniform Resource Identifier (URI) oder Uniform Resource Locator (URL),
+- Webservices (OSGeo Webservices und ArcGIS Webservices), Kacheldienste und Datenportale wie GeoNode
+- und viele mehr...
 
 QGIS kann außerdem durch Erweiterungen auch Daten von Diensten wie NASAs SRTM, Planet Imagery, SentinelHub, Google Earth Engine und OpenStreetMap laden.
 
 Dies macht QGIS zu einer integralen Komponente für jede Geodateninfrastruktur und jeden Arbeitsablauf.
-
 
 #### **Laden von Layern in QGIS**
 
@@ -148,7 +140,6 @@ Es gibt mehrere Möglichkeiten, Layer in QGIS zu laden. Diese beinhalten:
 4. Verwenden der Symbolleiste **Datenquellenverwaltung** und der Symbolleiste **Ebenen verwalten**.
 
 **HINWEIS:** **Beim Laden von Ebenen können die Standardfarben Ihrer Ebenen von den in diesem Modul gezeigten Standardfarben abweichen.**
-
 
 #### **Das Browser-Bedienfeld**
 
@@ -170,8 +161,7 @@ Abbildung 2.2. Das Browser-Bedienfeld
 3. Beachten Sie, wie die Laufwerke und Ordner aufgeklappt werden können, um die Unterordner darin anzuzeigen.
 4. Suchen Sie den Ordner **Module 2 - Layers in QGIS** (Abbildung 2.3) im Dateibaum (beachten Sie, wo Sie die Datei gespeichert oder heruntergeladen haben). Sie sollten die notwendigen Daten für diese Arbeitsmappe sehen können. In meinem Beispiel auf der rechten Seite habe ich den oben genannten Ordner als einen meiner Favoriten verknüpft, so dass ich vom Browser-Bedienfeld aus leicht dorthin wechseln kann. Sie können ein Favoritenverzeichnis zum Browser-Bedienfeld hinzufügen, indem Sie mit der rechten Maustaste auf Favoriten klicken und das Verzeichnis hinzufügen.
 5. Überprüfen Sie die Dateien im Ordner (Abbildung 2.3). Es gibt mehrere von ihnen. Aus dem Dateibaum selbst können wir bereits eine Vorstellung von den Dateien und Layern gewinnen, die wir in QGIS laden können. Die Icons links neben den Namen zeigen an, ob es sich um einen Vektor ![Vektorsymbol](/giscurriculum/images/de/module2/media/symbol-vector.png "Vector symbol")
-, ein Raster ![Raster-Symbol](/giscurriculum/images/de/module2/media/symbol-raster.png "Raster-Symbol"), eine Datenbank ![Datenbank-Symbol](/giscurriculum/images/de/module2/media/symbol-db.png "Datenbank-Symbol"), oder einfache tabellarische Daten ![Tabellen-Symbol](/giscurriculum/images/de/module2/media/symbol-table.png "Tabellen-Symbol").
-
+   , ein Raster ![Raster-Symbol](/giscurriculum/images/de/module2/media/symbol-raster.png "Raster-Symbol"), eine Datenbank ![Datenbank-Symbol](/giscurriculum/images/de/module2/media/symbol-db.png "Datenbank-Symbol"), oder einfache tabellarische Daten ![Tabellen-Symbol](/giscurriculum/images/de/module2/media/symbol-table.png "Tabellen-Symbol").
 
 ![Modul-2-Dateien im Browser-Bedienfeld](/giscurriculum/images/de/module2/media/qgis-browser-2.png "Modul-2-Dateien im Browser-Bedienfeld")
 
@@ -179,14 +169,13 @@ Abbildung 2.3. Die Moduldateien im Browser-Bedienfeld
 
 6. Es befinden sich 5 Dateien unter dem Ordner data:
 
-    1. ein GeoPackage (Sachsen.gpkg), das eine Vektor- (McDonalds) und eine Rasterdatei (Sachsen_SRTM_DEM) enthält;
-    2. ein GeoJSON (Sachsen_Landkreise.geojson);
-    3. eine Flatgeobuf-Datei (Sachsen_Gemeinden.fgb);
-    4. ein Shapefile (Sachsen_Landesgrenze.shp); und
-    5. eine Datei mit kommagetrennten Werten (CSV) (Sachsen_Burger-King.csv).
+   1. ein GeoPackage (Sachsen.gpkg), das eine Vektor- (McDonalds) und eine Rasterdatei (Sachsen_SRTM_DEM) enthält;
+   2. ein GeoJSON (Sachsen_Landkreise.geojson);
+   3. eine Flatgeobuf-Datei (Sachsen_Gemeinden.fgb);
+   4. ein Shapefile (Sachsen_Landesgrenze.shp); und
+   5. eine Datei mit kommagetrennten Werten (CSV) (Sachsen_Burger-King.csv).
 
 7. Klicken Sie mit der rechten Maustaste auf Sachsen_Landesgrenze.shp und klicken Sie auf Layereigenschaften (Abbildung 2.4). Dadurch wird das Fenster mit den Layereigenschaften geöffnet (Abbildung 2.5). Beachten Sie die Informationen, die im Fenster angezeigt werden. Wie ist die Geometrie des Layers? Welches CRS wird verwendet? Wie viele Features befinden sich auf dem Layer?
-
 
 ![Layereigenschaften anzeigen](/giscurriculum/images/de/module2/media/qgis-browser-3.png "Layereigenschaften anzeigen")
 
@@ -196,13 +185,12 @@ Abbildung 2.4.Layereigenschaften anzeigen
 
 Abbildung 2.5. Layereigenschaften Fenster
 
-
 8. Neben der Bereitstellung von Metadaten zu den Layern können Sie im Layer-Eigenschaften-Fenster auch eine Vorschau der Geometrie und der Attribute des Layers anzeigen.
 9. Sie können eine Ebene aus dem Browser-Bedienfeld laden, indem Sie:
 
-    1. **Doppelklick auf den Layer**
-    2. **Rechtsklick auf den Layer ‣ Layer zu Projekt hinzufügen**.
-    3. **Layer auf die Kartenansicht ziehen**.
+   1. **Doppelklick auf den Layer**
+   2. **Rechtsklick auf den Layer ‣ Layer zu Projekt hinzufügen**.
+   3. **Layer auf die Kartenansicht ziehen**.
 
 10. Versuchen Sie, die Layer **Sachsen_Landesgrenze**, **Sachsen_Landkreise** und **Sachsen_Gemeinden** mit einer der oben genannten Methoden zu laden.
 
@@ -214,18 +202,15 @@ Abbildung 2.5. Layereigenschaften Fenster
 
 Abbildung 2.6. Die in QGIS geladenen Vektorlayer
 
-
 #### **Das Layer-Bedienfeld**
 
 Im Layer-Bedienfeld werden alle aktuellen Layer im Projekt aufgelistet. Er hilft bei der Verwaltung ihrer Sichtbarkeit und Reihenfolge und kann verwendet werden, um die Ebeneneigenschaften anzuzeigen. Das Layer-Bedienfeld kann über **Ansicht ‣ Bedienfelder ‣ Layer** oder über die Tastenkombination **CTRL+1** aktiviert werden. Es wird auch als Kartenlegende bezeichnet. Wenn Sie alle Vektoren aus der vorherigen Übung geladen haben, sollte Ihr Ebenenbedienfeld wie unten dargestellt aussehen:
-
 
 <img
   src="/giscurriculum/images/de/module2/media/layers-panel-1.png"
   style={{ width: "100%", maxWidth: "75vw" }}
   alt="Das Layer-Bedienfeld"
 />
-
 
 Abbildung 2.7. Das Layer-Bedienfeld
 
@@ -239,7 +224,6 @@ Die Attributtabelle eines Vektorlayers kann auch aus dem Ebenenbedienfeld heraus
 
 Weitere Informationen über das Ebenenbedienfeld finden Sie unter: [https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel](https://docs.qgis.org/3.16/en/docs/user_manual/introduction/general_tools.html#layers-panel)
 
-
 #### **Layer-Eigenschaften**
 
 Wenn Sie mit der rechten Maustaste auf eine Ebene im Ebenen-Bedienfeld klicken und "Eigenschaften" wählen, wird der Dialog "LayerEigenschaften" geöffnet.
@@ -252,9 +236,9 @@ Im Dialogfeld "Layereigenschaften" gibt es mehrere Registerkarten, auf denen Inf
 
 Die Registerkarte "Information" zeigt eine schreibgeschützte Darstellung der zusammengefassten Informationen und Metadaten des aktuellen Layers, darunter:
 
-* Datenanbieter
-* Metadaten
-* Geometrie- oder Feldinformationen
+- Datenanbieter
+- Metadaten
+- Geometrie- oder Feldinformationen
 
 Die Registerkarte Quelle zeigt allgemeine Einstellungen für einen Vektorlayer.
 
@@ -264,21 +248,20 @@ Andere Registerkarten ermöglichen es, Verknüpfungen mit dem Layer durchzuführ
 
 Eine weitere erwähnenswerte Registerkarte ist die Registerkarte "Metadaten", die dem/der Benutzer:in die Möglichkeit bietet, einen Metadatenbericht über den Layer zu erstellen und zu bearbeiten. Dieser enthält Informationen über:
 
-* Datenidentifikation: grundlegende Zuordnung des Datensatzes (Elternkennung, Kennung, Titel, Zusammenfassung, Sprache...);
-* Kategorien, zu denen die Daten gehören, wie z. B. ISO-Kategorien und benutzerdefinierte Kategorien;
-* Schlüsselworte zum Auffinden der Daten und zugehöriger Konzepte nach einem standardbasierten Vokabular;
-* Zugriff auf den Datensatz (Lizenzen, Rechte, Gebühren und Beschränkungen);
-* Umfang des Datensatzes, entweder räumlich (CRS, Kartenausdehnung, Höhen) oder zeitlich;
-* Kontakt des/der Eigentümer:in des Datensatzes;
-* Links zu ergänzenden Ressourcen und verwandten Informationen; und
-* Historie des Datensatzes.
+- Datenidentifikation: grundlegende Zuordnung des Datensatzes (Elternkennung, Kennung, Titel, Zusammenfassung, Sprache...);
+- Kategorien, zu denen die Daten gehören, wie z. B. ISO-Kategorien und benutzerdefinierte Kategorien;
+- Schlüsselworte zum Auffinden der Daten und zugehöriger Konzepte nach einem standardbasierten Vokabular;
+- Zugriff auf den Datensatz (Lizenzen, Rechte, Gebühren und Beschränkungen);
+- Umfang des Datensatzes, entweder räumlich (CRS, Kartenausdehnung, Höhen) oder zeitlich;
+- Kontakt des/der Eigentümer:in des Datensatzes;
+- Links zu ergänzenden Ressourcen und verwandten Informationen; und
+- Historie des Datensatzes.
 
 Eine Zusammenfassung der ausgefüllten Informationen wird auf der Registerkarte "Validierung" bereitgestellt und hilft dabei, potenzielle Probleme im Zusammenhang mit dem Metadaten zu identifizieren. Derzeit werden Metadaten in der Projektdatei gespeichert, sie können aber auch in einer separaten .qmd-Datei neben den dateibasierten Layern oder in einer lokalen .sqlite-Datenbank für entfernte Layer gespeichert werden.
 
 Weitere Informationen zu den Eigenschaften von Vektorlayern finden Sie unter: [https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html](https://docs.qgis.org/3.16/de/docs/user_manual/working_with_vector/vector_properties.html)
 
 Weitere Informationen zu den Eigenschaften von Rasterlayern finden Sie unter: [https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html](https://docs.qgis.org/3.16/de/docs/user_manual/working_with_raster/raster_properties.html)
-
 
 #### **Geospatiale Metadaten**
 
@@ -287,7 +270,6 @@ Metadaten sind Daten über Daten. Sie beantworten das Wer, Was, Wann, Wo und Wie
 _"eine Datei mit Informationen, in der Regel als XML-Dokument, das die grundlegenden Eigenschaften einer Daten- oder Informationsressource erfasst. Sie stellen das Wer, Was, Wann, Wo, Warum und Wie der Ressource dar. Geodaten-Metadaten dokumentieren in der Regel geografische digitale Daten wie GIS-Dateien (Geographic Information System), Geodatenbanken und Erdbilder, können aber auch zur Dokumentation von Georessourcen wie Datenkatalogen, Mapping-Anwendungen, Datenmodellen und zugehörigen Websites verwendet werden. Metadatensätze umfassen zentrale Bibliothekselemente wie Titel, Zusammenfassung und Publikationsdaten, geografische Elemente wie geografische Ausdehnung und Projektionsinformationen sowie Datenbankelemente wie Attribut-Label-Definitionen und Attribut-Domänenwerte."_
 
 Die Bedeutung von Metadaten liegt darin, dass sie nicht nur die Transparenz fördern, sondern auch den Austausch von Daten und Informationen erleichtern. Aus diesem Grund ist es wichtig, unseren Datensätzen immer Metadaten hinzuzufügen. Beim Hinzufügen von Metadaten ist es ebenso wichtig, Standards zu befolgen, damit die von uns erstellten Metadaten interoperabel sind. Ein solcher Standard ist die ISO 19115:2014 "Geographic Information -- Metadata" von ISO/TC 211 ([https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en](https://www.iso.org/obp/ui/#iso:std:iso:19115:-1:ed-1:v1:en)) (englischsprachig).
-
 
 #### **Übung 01.2: Hinzufügen von Metadaten**
 
@@ -310,15 +292,13 @@ Abbildung 2.10. Bearbeiten einiger Metadaten
 
 Abbildung 2.11. Die Registerkarte "Information" nach dem Bearbeiten einiger Metadaten
 
-
 #### Quizfragen
 
 1. Richtig oder Falsch:
 
-    1. Alle Vektordateien sind Shapefiles. -- ***Falsch (ein Shapefile ist ein Dateiformat einer Vektordatei. Andere Vektordatendateiformate sind geopackage, geojson und flatgeobuf)***
-    2. Beim Rendern auf der Kartenansicht überdeckt ein Layer, der im Ebenenbedienfeld höher ist, immer einen Layer, der im Ebenenbedienfeld niedriger ist, oder erscheint darüber. -- ***Falsch (wenn aktiviert, überschreibt die Anordnung im Layerreihenfolge-Bedienfeld die Anordnung im Layer-Bedienfeld)***
-    3. Sie können Metadaten-Informationen zu einem Layer im Layer-Bedienfeld und im Browser-Bedienfeld überprüfen. -- ***Richtig***
-
+   1. Alle Vektordateien sind Shapefiles. -- **_Falsch (ein Shapefile ist ein Dateiformat einer Vektordatei. Andere Vektordatendateiformate sind geopackage, geojson und flatgeobuf)_**
+   2. Beim Rendern auf der Kartenansicht überdeckt ein Layer, der im Ebenenbedienfeld höher ist, immer einen Layer, der im Ebenenbedienfeld niedriger ist, oder erscheint darüber. -- **_Falsch (wenn aktiviert, überschreibt die Anordnung im Layerreihenfolge-Bedienfeld die Anordnung im Layer-Bedienfeld)_**
+   3. Sie können Metadaten-Informationen zu einem Layer im Layer-Bedienfeld und im Browser-Bedienfeld überprüfen. -- **_Richtig_**
 
 ### Phase 2 Titel: Der Datenquellen-Manager und die Verbindung zu Remote-Diensten
 
@@ -332,19 +312,18 @@ Die **Datenquellenverwaltung** wurde mit der Veröffentlichung von QGIS 3 eingef
 
 Abbildung 2.12. Die Datenquellenverwaltung
 
-
 #### **Übung 02.1: Die Datenquellenverwaltung**
 
 1. Öffnen Sie die **Datenquellenverwaltung**. Sie enthält auf der linken Seite Registerkarten, die sich auf die Art der Datenquelle beziehen, die Sie laden oder mit der Sie eine Verbindung herstellen möchten. Ähnlich wie im Browser können Sie auch in der Datenquellenverwaltung verschiedene Arten von Daten laden und verbinden.
 2. **Laden von Vektordaten**
 
-    1. Um Vektordaten zu laden, gehen Sie auf die Registerkarte "Vektor". Es können Dateien, Datenbanken und sogar Remote-Dateien über Protokolle wie HTTP, Cloud usw. geladen werden.
-    2. Lassen Sie uns die Vektordatei (McDonalds) laden, die sich im Geopaket Sachsen.gpkg befindet. Dieser Layer ist ein Punkt-Layer mit den Standorten der McDonalds Filialen in Sachsen.
+   1. Um Vektordaten zu laden, gehen Sie auf die Registerkarte "Vektor". Es können Dateien, Datenbanken und sogar Remote-Dateien über Protokolle wie HTTP, Cloud usw. geladen werden.
+   2. Lassen Sie uns die Vektordatei (McDonalds) laden, die sich im Geopaket Sachsen.gpkg befindet. Dieser Layer ist ein Punkt-Layer mit den Standorten der McDonalds Filialen in Sachsen.
 
-        1. Quelltyp: Datei
-        2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
-        3. Klicken Sie auf Hinzufügen
-        4. Wenn mehr als eine Vektordatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll.
+      1. Quelltyp: Datei
+      2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
+      3. Klicken Sie auf Hinzufügen
+      4. Wenn mehr als eine Vektordatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll.
 
 ![Laden von Vektordaten aus einem Geopackage](/giscurriculum/images/de/module2/media/data-source-manager-vector.png "Laden von Vektordaten aus einem Geopackage")
 
@@ -352,12 +331,12 @@ Abbildung 2.13. Laden von Vektordaten aus ein GeoPackage
 
 3. **Laden von Rasterdaten**
 
-    1. Um Rasterdaten zu laden, gehen Sie auf die Registerkarte "Raster". Es können Dateien und Remote-Dateien über ein Protokoll wie HTTP, Cloud, etc. geladen werden. Es gibt ein Raster (Sachsen_SRTM_DEM) innerhalb des Geopakets Sachsen.gpkg. Dieses Raster ist ein digitales Höhenmodell für Sachsen. So laden Sie es:
+   1. Um Rasterdaten zu laden, gehen Sie auf die Registerkarte "Raster". Es können Dateien und Remote-Dateien über ein Protokoll wie HTTP, Cloud, etc. geladen werden. Es gibt ein Raster (Sachsen_SRTM_DEM) innerhalb des Geopakets Sachsen.gpkg. Dieses Raster ist ein digitales Höhenmodell für Sachsen. So laden Sie es:
 
-        1. Quelltyp: Datei
-        2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
-        3. Klicken Sie auf Hinzufügen
-        4. Wenn mehr als eine Rasterdatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll
+      1. Quelltyp: Datei
+      2. Quelle: Wählen Sie das Geopaket Sachsen über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
+      3. Klicken Sie auf Hinzufügen
+      4. Wenn mehr als eine Rasterdatei im Geopaket enthalten ist, fragt QGIS Sie, welche geladen werden soll
 
 ![Laden von Rasterdaten aus einem GeoPackage](/giscurriculum/images/de/module2/media/data-source-manager-raster.png "Laden von Rasterdaten aus einem GeoPackage")
 
@@ -365,34 +344,37 @@ Abbildung 2.14. Laden von Rasterdaten aus einem GeoPackage
 
 4. **Laden von CSV- und anders separierten Textdateien**
 
-    1. Neben Vektoren und Rastern sind CSVs und Tabellenkalkulationen eine weitere häufig verwendete Datei für GIS-Anwender:innen. Glücklicherweise ist es relativ einfach, diese Dateien in QGIS zu laden.
-    2. CSVs und anders separierte Textdateien können über die Registerkarte "Getrennte Texte" in der Datenquellenverwaltung geladen werden, sie können aus dem Browser-Bedienfeld hinzugefügt werden und sogar einfach in die Kartenansicht gezogen werden. Es sollten jedoch einige Dinge beachtet werden, wenn die vorliegende CSV-Datei Geometrieinformationen (d. h. Punktpositionen) enthält. Als Faustregel gilt Folgendes:
+   1. Neben Vektoren und Rastern sind CSVs und Tabellenkalkulationen eine weitere häufig verwendete Datei für GIS-Anwender:innen. Glücklicherweise ist es relativ einfach, diese Dateien in QGIS zu laden.
+   2. CSVs und anders separierte Textdateien können über die Registerkarte "Getrennte Texte" in der Datenquellenverwaltung geladen werden, sie können aus dem Browser-Bedienfeld hinzugefügt werden und sogar einfach in die Kartenansicht gezogen werden. Es sollten jedoch einige Dinge beachtet werden, wenn die vorliegende CSV-Datei Geometrieinformationen (d. h. Punktpositionen) enthält. Als Faustregel gilt Folgendes:
 
-        1. Verwenden Sie die Datenquellenverwaltung zum Laden von CSV-Dateien, unabhängig davon, ob sie Geometrieinformationen enthalten oder nicht.
-        2. Wenn CSVs über das Browser-Bedienfeld oder durch Ziehen geladen werden, stellen Sie sicher, dass eine entsprechende CSVT-Datei vorhanden ist, damit die Felddatentypen erhalten bleiben.
-        3. Wenn Sie Probleme mit der Erhaltung der Datentypen für Ihre CSVs haben, können Sie eine so genannte CSVT-Datei verwenden. Sie können mehr über das Laden von CSVs in QGIS unter folgendem englischsprachigen Link lesen: [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
+      1. Verwenden Sie die Datenquellenverwaltung zum Laden von CSV-Dateien, unabhängig davon, ob sie Geometrieinformationen enthalten oder nicht.
+      2. Wenn CSVs über das Browser-Bedienfeld oder durch Ziehen geladen werden, stellen Sie sicher, dass eine entsprechende CSVT-Datei vorhanden ist, damit die Felddatentypen erhalten bleiben.
+      3. Wenn Sie Probleme mit der Erhaltung der Datentypen für Ihre CSVs haben, können Sie eine so genannte CSVT-Datei verwenden. Sie können mehr über das Laden von CSVs in QGIS unter folgendem englischsprachigen Link lesen: [https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html ](https://bnhr.xyz/2018/08/07/specifying-csv-data-types-using-a-csvt-file.html)
 
-    3. CSVs und Tabellenkalkulationen können in QGIS mit oder ohne räumliche oder geometrische Informationen geladen werden. Wenn sie mit räumlichen Informationen geladen werden, werden sie als Vektordaten behandelt. Wenn sie ohne geladen werden, werden sie als normale tabellarische Daten behandelt.
-    4. Im Datenordner befindet sich eine CSV-Datei mit dem Namen Sachsen_Burger-King.csv, die Punktstandorte von Burger-King-Filialen in Sachsen enthält. Um sie zu laden:
+   3. CSVs und Tabellenkalkulationen können in QGIS mit oder ohne räumliche oder geometrische Informationen geladen werden. Wenn sie mit räumlichen Informationen geladen werden, werden sie als Vektordaten behandelt. Wenn sie ohne geladen werden, werden sie als normale tabellarische Daten behandelt.
+   4. Im Datenordner befindet sich eine CSV-Datei mit dem Namen Sachsen_Burger-King.csv, die Punktstandorte von Burger-King-Filialen in Sachsen enthält. Um sie zu laden:
 
-        1. Wechseln Sie auf die Registerkarte "Getrennte Texte"
-        2. Dateiname: Wählen Sie die Sachsen_Burger-King CSV über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
-        3. Dateiformat: CSV
-        4. Datensatz- und Feldoptionen: Standard beibehalten
-        5. Geometriedefinition:
+      1. Wechseln Sie auf die Registerkarte "Getrennte Texte"
+      2. Dateiname: Wählen Sie die Sachsen_Burger-King CSV über die Schaltfläche ![Suchbutton](/giscurriculum/images/de/module2/media/data-source-manager-search.png "Suchbutton")
+      3. Dateiformat: CSV
+      4. Datensatz- und Feldoptionen: Standard beibehalten
+      5. Geometriedefinition:
 
-            * Punktkoordinaten
-            * X-Feld: x
-            * Y-Feld: y
-            * Geometrie-KBS: EPSG: 4326 - WGS 84
+         - Punktkoordinaten
+         - X-Feld: x
+         - Y-Feld: y
+         - Geometrie-KBS: EPSG: 4326 - WGS 84
 
-        6. Layer-Einstellungen: Wählen sie Datei überwachen und Räumlichen Index benutzen aus
+      6. Layer-Einstellungen: Wählen sie Datei überwachen und Räumlichen Index benutzen aus
 
-            * Wenn "Datei überwachen" aktiviert ist, werden Aktualisierungen der lokalen CSV-Datei automatisch in den in QGIS geladenen Layer übernommen.
-            * "Räumlichen Index benutzen" fügt dem geladenen Layer einen räumlichen Index hinzu, was die Vektorverarbeitung beschleunigt.
+         - Wenn "Datei überwachen" aktiviert ist, werden Aktualisierungen der lokalen CSV-Datei automatisch in den in QGIS geladenen Layer übernommen.
+         - "Räumlichen Index benutzen" fügt dem geladenen Layer einen räumlichen Index hinzu, was die Vektorverarbeitung beschleunigt.
 
-
-![Laden einer CSV-Datei](/giscurriculum/images/de/module2/media/data-source-manager-csv.png "Laden einer CSV-Datei")
+<img
+  src="/giscurriculum/images/de/module2/media/data-source-manager-csv.png"
+  style={{ width: "100%", maxWidth: "75vw" }}
+  alt="Laden einer CSV-Datei"
+/>
 
 Abbildung 2.15. Laden einer CSV-Datei
 
@@ -401,7 +383,6 @@ Wenn alle Layer aus den vorangegangenen Übungen geladen sind, sollte das Layer-
 ![Layer-Bedienfeld mit allen geladenen Layern](/giscurriculum/images/de/module2/media/layers-panel-2.png "Layer-Bedienfeld mit allen geladenen Layern")
 
 Abbildung 2.16. Layer-Bedienfeld mit allen geladenen Layern
-
 
 Die Kartenansicht sollte in etwa so aussehen:
 
@@ -413,14 +394,11 @@ Die Kartenansicht sollte in etwa so aussehen:
 
 Abbildung 2.17. QGIS-Oberfläche mit allen geladenen Layern
 
-
 Sie können die Layer im Layer-Bedienfeld beliebig neu anordnen.
-
 
 #### **Verbinden von QGIS mit Remote Services**
 
 Neben Vektor- und Rasterdateien kann sich QGIS auch mit entfernten Diensten wie Kachelservices, OGC Web Services (WMS, WFS) und sogar ESRI ArcGIS Web Services verbinden. Diese Verbindung kann über das Browser-Panel oder die Datenquellenverwaltung hergestellt werden.
-
 
 #### **Übung 02.2: Verbinden mit XYZ-Tiles**
 
@@ -436,8 +414,8 @@ So stellen Sie eine Verbindung zu einem Kachelserver her:
     Name: Stamen Watercolor
     URL: http://tile.stamen.com/watercolor/{z}/{x}/{y}.jpg
 ```
-4. Klicken Sie auf OK.
 
+4. Klicken Sie auf OK.
 
 ![Hinzufügen einer XYZ-Verbindung in QGIS](/giscurriculum/images/de/module2/media/xyz-1.png "Hinzufügen einer XYZ-Verbindung in QGIS")
 
@@ -457,7 +435,6 @@ Abbildung 2.19. Stamen Watercolor-Kachelserver dem Browser-Bedienfeld hinzugefü
   alt="PGP Basemap Layer geladen in QGIS"
 />
 
-
 Abbildung 2.20. PGP Basemap Layer in QGIS geladen
 
 7. Versuchen Sie auch, den ESRI World Imagery Layer hinzuzufügen.
@@ -469,11 +446,9 @@ Abbildung 2.20. PGP Basemap Layer in QGIS geladen
 
 ![Adding ESRI World Imagery as XYZ Tiles](/giscurriculum/images/de/module2/media/xyz2-1.png "Adding ESRI World Imagery as XYZ Tiles")
 
-
 **BONUS:** Wenn Sie mehrere Grundkarten unter XYZ-Kacheln im Bedienfeld des Browsers hinzufügen möchten, können Sie die Anweisungen in diesem englischsprachigen Beitrag befolgen: [https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html](https://bnhr.xyz/2018/10/07/basemaps-in-qgis.html)
 
 **BONUS #2:** Sie können die URLs der Tileserver, die Sie auf der Website der Leaflet-Provider ([https://leaflet-extras.github.io/leaflet-providers/preview/](https://leaflet-extras.github.io/leaflet-providers/preview/)) finden, als XYZ-Kacheln im Bedienfeld hinzufügen.
-
 
 #### **Übung 02.3: Verbinden mit WMS/WMTS und WFS**
 
@@ -486,10 +461,12 @@ So stellen Sie eine Verbindung zu einem WFS her:
 1. Rufen Sie das **Browserbedienfeld** auf
 2. **Rechtsklick auf WMS/WMTS ‣ Neue Verbindung**
 3. Fügen Sie Folgendes hinzu:
+
 ```
 Name: Sachsen Ortophotos
-URL: https://geoportal.sachsen.de/portal/arcgis_wmts_capabilities/wmts_geosn_dop-rgb.xml  
+URL: https://geoportal.sachsen.de/portal/arcgis_wmts_capabilities/wmts_geosn_dop-rgb.xml
 ```
+
 4. Klicken Sie auf Hinzufügen
 
 ![Erstellen einer neuen WMS/WMTS-Verbindung](/giscurriculum/images/de/module2/media/wms-1.png "Erstellen einer neuen WMS/WMTS-Verbindung")
@@ -514,13 +491,11 @@ Abbildung 2.23. Ortophotos aus WMS in QGIS geladen
 
 7. Das Verbinden mit WFS erfolgt auf die gleiche Weise.
 
-
 #### **Quizfragen**
 
 1. Richtig oder Falsch:
 
-    1. Sie können in QGIS nur lokale Dateien laden -- ***Falsch (Sie können auch entfernte Dateien laden, z.B. solche, die online gespeichert sind oder von Webservices bereitgestellt werden)***
-
+   1. Sie können in QGIS nur lokale Dateien laden -- **_Falsch (Sie können auch entfernte Dateien laden, z.B. solche, die online gespeichert sind oder von Webservices bereitgestellt werden)_**
 
 ### Phase 3: Exportieren von Layern, Layern im Speicher (temporär) und virtuellen Layern
 
@@ -536,13 +511,13 @@ Das Exportieren von Layern (oder das Speichern von Layern in Dateien) ist in QGI
 
 Abbildung 2.24. Exportieren eines Layers aus QGIS
 
-* Mit **Objekt speichern als...** können Sie den Raster- oder Vektorlayer speichern.
+- Mit **Objekt speichern als...** können Sie den Raster- oder Vektorlayer speichern.
 
-    * Wenn ein **Filter** auf dem Vektor-Layer aktiv ist, werden nur die gefilterten Features (die auf der Kartenansicht erscheinen) exportiert.
+  - Wenn ein **Filter** auf dem Vektor-Layer aktiv ist, werden nur die gefilterten Features (die auf der Kartenansicht erscheinen) exportiert.
 
-* **Gewählte Objekte speichern als...** ist eine Option für Vektorlayer, mit der Sie nur die aktuell ausgewählten Features speichern können.
-* **Als Layerdefinitionsdatei speichern...** erzeugt eine QLR-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer
-* **Als QGIS-Layerstildatei speichern...** speichert eine QML-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer
+- **Gewählte Objekte speichern als...** ist eine Option für Vektorlayer, mit der Sie nur die aktuell ausgewählten Features speichern können.
+- **Als Layerdefinitionsdatei speichern...** erzeugt eine QLR-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer
+- **Als QGIS-Layerstildatei speichern...** speichert eine QML-Datei (siehe Modul 1, QGIS-Dateiformate) für den Layer
 
 Wenn Sie einen Layer exportieren, gibt Ihnen QGIS die Möglichkeit, das Format der Ausgabedatei, die einzuschließenden Felder (falls es sich um eine Vektordatei handelt), das Ausgabekoordinaten-Referenzsystem und andere Optionen zu wählen. Das bedeutet, dass Sie durch den Export eines Layers eine Koordinatenprojektion durchführen können.
 
@@ -551,7 +526,6 @@ Wenn Sie einen Layer exportieren, gibt Ihnen QGIS die Möglichkeit, das Format d
 Abbildung 2.25. Dialogfeld Vekorlayer speichern
 
 Weitere Informationen über das Speichern eines Layers aus einer bestehenden Datei finden Sie unter: [https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file](https://docs.qgis.org/3.16/de/docs/user_manual/managing_data_source/create_layers.html#save-layer-from-an-existing-file)
-
 
 #### **Layer im Speicher**
 
@@ -564,7 +538,6 @@ Die Ausgaben von Verarbeitungsalgorithmen werden standardmäßig als temporäre 
 Der Nachteil von temporären Layern ist, dass QGIS diese "**Layer im Speicher**" "vergisst", wenn es geschlossen wird. Um hier Abhilfe zu schaffen, können wir das **Memory Layer Saver Plugin** verwenden, um unsere temporären Layer persistent zu machen. Wenn Sie ein QGIS-Projekt speichern, das temporäre Layer verwendet, ist es eine gute Praxis, zuerst das Plugin "Memory Layer Saver" zu starten/aktivieren. Um das Plugin "Memory Layer Saver" zu verwenden, gehen Sie einfach zu **Plugins ‣ Memory Layer Saver**, bevor Sie Ihr QGIS-Projekt speichern und schließen. Wenn Sie Ihr QGIS-Projekt das nächste Mal öffnen, sollten die temporären Layer (oder Layer im Speicher) noch vorhanden sein.
 
 Natürlich können Sie den temporären Layer auch einfach dauerhaft machen, indem Sie den Layer in eine Datei exportieren. Ein Klick auf das Symbol ![Temporäres Layersymbol](/giscurriculum/images/de/module2/media/symbol-temp.png "Temporäres Layersymbol") öffnet automatisch einen Dialog zum Exportieren von Layern.
-
 
 #### **Virtuelle Layer**
 
@@ -582,29 +555,25 @@ Virtuelle Layer sind von anderen Layern abhängig, daher ist es wichtig, dass di
 
 Wenn der Basislayer aktualisiert wird, müssen Sie die Kartenanzeige durch Schwenken oder Zoomen der Karte aktualisieren, um die Aktualisierung der virtuellen Ebene anzuzeigen.
 
-
 #### **Quizfragen**
 
 1. Richtig oder Falsch:
 
-    1. Beim Exportieren eines Vektor-Layers können Sie das Format auswählen, in dem er gespeichert werden soll. -- ***Richtig***
-    2. Temporäre Layer werden von QGIS immer vergessen, wenn es geschlossen wird. -- ***Falsch (sie können mit Hilfe des Plugins Memory Layer Saver persistent gemacht werden)***
-    3. Wenn der Basis-Layer für einen virtuellen Layer aktualisiert wird, wird der virtuelle Layer automatisch auf der Kartenansicht aktualisiert, ohne dass eine Benutzereingabe erforderlich ist. -- ***Falsch (der/die Benutzer:in muss die Kartenansicht entweder durch Schwenken oder Zoomen aktualisieren, bevor die Aktualisierung der virtuellen Layer auf der Kartenansicht angezeigt wird)***
-
+   1. Beim Exportieren eines Vektor-Layers können Sie das Format auswählen, in dem er gespeichert werden soll. -- **_Richtig_**
+   2. Temporäre Layer werden von QGIS immer vergessen, wenn es geschlossen wird. -- **_Falsch (sie können mit Hilfe des Plugins Memory Layer Saver persistent gemacht werden)_**
+   3. Wenn der Basis-Layer für einen virtuellen Layer aktualisiert wird, wird der virtuelle Layer automatisch auf der Kartenansicht aktualisiert, ohne dass eine Benutzereingabe erforderlich ist. -- **_Falsch (der/die Benutzer:in muss die Kartenansicht entweder durch Schwenken oder Zoomen aktualisieren, bevor die Aktualisierung der virtuellen Layer auf der Kartenansicht angezeigt wird)_**
 
 ### Wenn Sie Lust auf mehr haben:
-
 
 #### **Installieren Sie einige Erweiterungen, die als Datenquellen dienen**
 
 Einige Erweiterungen bieten die Funktionalität, Daten in QGIS zu laden. Dazu gehören Vektordaten, Satellitenbilder, Rasterdateien, Basiskarten, etc. Versuchen Sie, die folgenden Erweiterungen zu installieren und finden Sie heraus, welche Art von Daten sie in QGIS laden:
 
-* QuickOSM ([https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/))
-* SRTM-Downloader ([https://plugins.qgis.org/plugins/SRTM-Downloader/](https://plugins.qgis.org/plugins/SRTM-Downloader/))
-* QuickMapServices ([https://plugins.qgis.org/plugins/quick_map_services/](https://plugins.qgis.org/plugins/quick_map_services/))
+- QuickOSM ([https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/))
+- SRTM-Downloader ([https://plugins.qgis.org/plugins/SRTM-Downloader/](https://plugins.qgis.org/plugins/SRTM-Downloader/))
+- QuickMapServices ([https://plugins.qgis.org/plugins/quick_map_services/](https://plugins.qgis.org/plugins/quick_map_services/))
 
 P.S. Für einige dieser Erweiterungen müssen Sie ein Konto beim Datenanbieter einrichten.
-
 
 #### **Verbindung zu GeoNode-Instanzen**
 
@@ -613,6 +582,7 @@ GeoNode ([https://geonode.org/](https://geonode.org/)) ist ein Open-Source Geosp
 1. Gehen Sie zum **Browser Bedienfeld**
 2. Klicken Sie mit der rechten Maustaste auf **GeoNode ‣ Neue Verbindung**.
 3. Fügen Sie Folgendes hinzu:
+
 ```
 Name: UNESCO IHP-WINS
 URL: http://ihp-wins.unesco.org/
@@ -621,7 +591,6 @@ URL: http://ihp-wins.unesco.org/
 ![Mit GeoNode verbinden](/giscurriculum/images/de/module2/media/connect-geonode.png "Mit GeoNode verbinden")
 
 Mehr über die Verbindung von QGIS mit entfernten Diensten erfahren Sie unter: [https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html](https://bnhr.xyz/2018/10/12/connecting-qgis-to-remote-services.html) (englischsprachig)
-
 
 #### **Übung/Tutorial zu virtuellen Layern**
 
@@ -648,10 +617,10 @@ Wenn Sie gefragt werden, ob die Datei bereits existiert, wählen Sie "Neuen Laye
   alt="Neue Punkte (Bäume) hinzugefügt"
 />
 
-
 9. Fügen Sie einen virtuellen Layer hinzu, indem Sie auf ![Virtuellen Layer hinzufügen](/giscurriculum/images/de/module2/media/symbol-virtual.png "Virtuellen Layer hinzufügen")
- in der Symbolleiste des Datenquellen-Managers.
+   in der Symbolleiste des Datenquellen-Managers.
 10. Setzen Sie den Layer-Namen auf Baumkronen. Bäume importieren. Fügen Sie die folgende Abfrage hinzu:
+
 ```
 select fid, buffer(geometry, radius), species from Trees
 ```
@@ -666,7 +635,6 @@ select fid, buffer(geometry, radius), species from Trees
 
 Fügen Sie einen neuen Punkt hinzu und aktualisieren Sie dann die Kartenansicht (durch Zoomen oder Schwenken der Kartenansicht), um die Aktualisierung im virtuellen Layer zu sehen. Was stellen Sie fest?
 
-
 ### Um Ihre neuen Fähigkeiten auszuprobieren, versuchen Sie...
 
 #### **Das Laden von Rastern und Vektoren aus dem Internet**
@@ -675,13 +643,11 @@ Neben den lokalen Binärdateien (Vektoren, Raster) kann QGIS auch Vektoren und R
 
 https://raw.githubusercontent.com/tursics/open-data-atlas/master/data/polygon-de.geojson
 
-
 #### **Laden einer Tabellenkalkulation in QGIS mit Hilfe des Spreadsheet Layers Plugins**
 
 Installieren Sie das Spreadsheet Layers Plugin und versuchen Sie, ein Tabellendokument in QGIS zu laden. Das Plugin akzeptiert Open Document Standard Formate (.ods) und Microsoft Excel Dateien (.xls, .xlsx).
 
 Weitere Informationen gibt es hier (englischsprachig): [https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html](https://bnhr.xyz/2018/07/27/plugin-fridays-spreadsheet-layers-plugin.html)
-
 
 ### Tipps
 
