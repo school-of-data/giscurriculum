@@ -105,6 +105,14 @@ const DesktopLayoutContent = ({
               <h3
                 style={{ padding: "0.25rem", cursor: "pointer" }}
                 onClick={() =>
+                  router.push(`/${router.query.locale}/`)
+                }
+              >
+                <a>{t("back_to_home")}</a>
+              </h3>
+              <h3
+                style={{ padding: "0.25rem", cursor: "pointer" }}
+                onClick={() =>
                   router.push(`/${router.query.locale}/${router.query.country}`)
                 }
               >
@@ -147,7 +155,6 @@ const DesktopLayoutContent = ({
                 padding: "4rem 2.5rem",
               }}
             >
-              {console.log("source", source)}
               <MDXRemote {...source} />
               <Grid style={{ marginTop: "1rem" }}>
                 <Grid.Row>

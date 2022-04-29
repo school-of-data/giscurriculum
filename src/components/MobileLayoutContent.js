@@ -68,6 +68,15 @@ const MobileLayoutContent = ({
             <br />
           </Menu.Item>
           <Menu.Item style={{ textAlign: "left" }}>
+          <h4
+              style={{ padding: "0.25rem", cursor: "pointer" }}
+              onClick={() =>
+                router.push(`/${router.query.locale}/`)
+              }
+            >
+              <a>{t("back_to_home")}</a>
+            </h4>
+
             <h4
               style={{ padding: "0.25rem", cursor: "pointer" }}
               onClick={() =>
