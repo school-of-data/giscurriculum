@@ -11,7 +11,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
 import nameCodes from "@src/config/nameCodes";
-import { toCapitalize } from "@src/lib/utils";
+import { toCapitalize, withBasePath } from "@src/lib/utils";
 
 const DesktopLayoutContent = ({
   source,
@@ -29,6 +29,7 @@ const DesktopLayoutContent = ({
   const { mods, outlines, prev, next } = frontMatter;
   const { t } = useTranslation("countrylevel");
   const router = useRouter();
+  
   return (
     <>
       <Modal
@@ -104,6 +105,14 @@ const DesktopLayoutContent = ({
               <h3
                 style={{ padding: "0.25rem", cursor: "pointer" }}
                 onClick={() =>
+                  router.push(`/${router.query.locale}/`)
+                }
+              >
+                <a>{t("back_to_home")}</a>
+              </h3>
+              <h3
+                style={{ padding: "0.25rem", cursor: "pointer" }}
+                onClick={() =>
                   router.push(`/${router.query.locale}/${router.query.country}`)
                 }
               >
@@ -123,7 +132,7 @@ const DesktopLayoutContent = ({
                       </li>
                     );
                   })}
-                </ul>
+              </ul>
 
               {/* <Grid style={{ height: '2%'}}>
                     <Grid.Row>

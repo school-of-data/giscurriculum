@@ -13,6 +13,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { useTranslation } from "next-i18next";
+import { withBasePath } from "@src/lib/utils";
 
 const MobileLayoutContent = ({
   source,
@@ -67,6 +68,15 @@ const MobileLayoutContent = ({
             <br />
           </Menu.Item>
           <Menu.Item style={{ textAlign: "left" }}>
+          <h4
+              style={{ padding: "0.25rem", cursor: "pointer" }}
+              onClick={() =>
+                router.push(`/${router.query.locale}/`)
+              }
+            >
+              <a>{t("back_to_home")}</a>
+            </h4>
+
             <h4
               style={{ padding: "0.25rem", cursor: "pointer" }}
               onClick={() =>

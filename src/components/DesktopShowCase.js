@@ -33,9 +33,9 @@ const DesktopShowCase = ({
     <Grid>
       <Grid.Row style={{ height: "100%" }}>
         <Grid.Column className="sidebar" width={3}>
-          {Object.keys(filters).map((filterCat) => {
+          {Object.keys(filters).map((filterCat, i) => {
             return (
-              <Grid.Row style={{ margin: "0px", padding: "0px" }}>
+              <Grid.Row style={{ margin: "0px", padding: "0px" }} key={i}>
                 <Grid.Column
                   style={{
                     color: "black",

@@ -1,4 +1,3 @@
-import { getLocaleFile } from './mdx';
 import { getI18nPaths } from './getI18nPaths'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
@@ -11,7 +10,6 @@ export function makeStaticProps(slug, ns = ['common']) {
   return async function getStaticProps(ctx) {
     return {
       props: {
-        ...await getLocaleFile(ctx?.params?.locale, slug),
         ...await serverSideTranslations(ctx?.params?.locale, ns, /*i18nextConfig*/),
       }
     }

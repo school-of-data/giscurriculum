@@ -61,12 +61,12 @@ const Footer = () => {
         <div style={{ textAlign: "left", fontSize: '1rem', color: 'black' }}>
           <p>
             <a href="https://github.com/school-of-data/giscurriculum" title="Site source code">
-              <i class="fa fa-code fa-lg fa-fw"></i> Source code
+              <i className="fa fa-code fa-lg fa-fw"></i> Source code
             </a>
             &nbsp;available under the MIT license.
           </p>
           <p>
-            <a class="license" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+            <a className="license" rel="license" href="https://creativecommons.org/licenses/by/4.0/">
               <svg width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.95 54.95">
                 <title>cc</title>
                 <path

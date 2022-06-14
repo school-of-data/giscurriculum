@@ -3,11 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "NEXT_PUBLIC_APP_ENV=development next build",
-    "build:prod": "NEXT_PUBLIC_APP_ENV=production next build",
-    "export": "NEXT_PUBLIC_APP_ENV=production next export -o docs",
-    "build:out": "yarn build:prod && yarn export",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
+    "build:out": "yarn build:prod && yarn export",
     "lint": "next lint"
   },
   "dependencies": {
