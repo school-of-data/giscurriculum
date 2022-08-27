@@ -1,9 +1,9 @@
 [
   {
     "language": "en",
-    "country": "bangladesh",
+    "country": "philippines",
     "d_language": "English",
-    "d_country": "Bangladesh",
+    "d_country": "Philippines",
     "modules": [
       "module0",
       "module1",
@@ -19,10 +19,10 @@
     ]
   },
   {
-    "language": "en",
-    "country": "ghana",
-    "d_language": "English",
-    "d_country": "Ghana",
+    "language": "ar",
+    "country": "united-arab-emirates",
+    "d_language": "Arabic",
+    "d_country": "United Arab Emirates",
     "modules": [
       "module0",
       "module1",
@@ -31,84 +31,7 @@
       "module4",
       "module5",
       "module6",
-      "module7",
-      "module8",
-      "module9",
-      "module10"
-    ]
-  },
-  {
-    "language": "en",
-    "country": "nigeria",
-    "d_language": "English",
-    "d_country": "Nigeria",
-    "modules": [
-      "module0",
-      "module1",
-      "module2",
-      "module3",
-      "module4",
-      "module5",
-      "module6",
-      "module7",
-      "module8",
-      "module9",
-      "module10"
-    ]
-  },
-  {
-    "language": "es",
-    "country": "argentina",
-    "d_language": "Spanish",
-    "d_country": "Argentina",
-    "modules": [
-      "module0",
-      "module1",
-      "module2",
-      "module3",
-      "module4",
-      "module5",
-      "module6",
-      "module7",
-      "module8",
-      "module9"
-    ]
-  },
-  {
-    "language": "es",
-    "country": "mexico",
-    "d_language": "Spanish",
-    "d_country": "Mexico",
-    "modules": [
-      "module0",
-      "module1",
-      "module2",
-      "module3",
-      "module4",
-      "module5",
-      "module6",
-      "module7",
-      "module8",
-      "module9"
-    ]
-  },
-  {
-    "language": "de",
-    "country": "germany",
-    "d_language": "German",
-    "d_country": "Germany",
-    "modules": [
-      "module0",
-      "module1",
-      "module2",
-      "module3",
-      "module4",
-      "module5",
-      "module6",
-      "module7",
-      "module8",
-      "module9",
-      "module10"
+      "module7"
     ]
   }
 ]

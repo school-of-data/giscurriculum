@@ -16,8 +16,8 @@ const Navbar = () => {
         <Container fluid>
           <Menu.Item
             as="a"
-            // href={withBasePath("/")}
-            href="https://okfn.org/"
+            href={withBasePath("/")}
+            // href="https://okfn.org/"
             id="navbar-menu"
           >
             <Image

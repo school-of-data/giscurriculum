@@ -1,8 +1,15 @@
 {
-  "bangladesh": ["en"],
-  "ghana": ["en"],
-  "nigeria": ["en"],
   "argentina": ["es"],
+  "australia": ["en"],
+  "bangladesh": ["en"],
+  "brazil": ["pt"],
+  "egypt": ["ar"],
+  "ethiopia": ["am", "en"],
+  "germany": ["de"],
+  "ghana": ["en"],
+  "india": ["en"],
+  "kenya": ["en"],
   "mexico": ["es"],
-  "germany": ["de"]
+  "nigeria": ["en"],
+  "philippines": ["en"]
 }

@@ -1,5 +1,10 @@
 {
+  "am": "Amharic",
+  "ar": "Arabic",
+  "de": "German",
   "en": "English",
   "es": "Spanish",
-  "de": "German"
+  "fr": "French",
+  "pt": "Portuguese",
+  "vi": "Vietnamese"
 }

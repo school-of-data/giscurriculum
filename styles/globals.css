@@ -184,3 +184,8 @@ div.item {
 #navbar-menu:hover {
   background-color: transparent !important;
 }
+
+img {
+  /* width: 100%; */
+  max-width: 100%;
+}

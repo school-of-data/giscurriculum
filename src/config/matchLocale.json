@@ -1,5 +1,9 @@
 {
-  "en": ["bangladesh", "ghana", "nigeria"],
+  "am": ["ethiopia"],
+  "ar": ["egypt", "united-arab-emirates"],
+  "de": ["germany"],
+  "en": ["australia", "bangladesh", "ethiopia", "ghana", "india", "kenya", "nigeria", "philippines", "south-africa", "sri-lanka"],
   "es": ["argentina", "mexico"],
-  "de": ["germany"]
+  "pt": ["brazil"],
+  "vi": ["vietnam"]
 }
